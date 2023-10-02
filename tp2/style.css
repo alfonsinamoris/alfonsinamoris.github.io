@@ -1,0 +1,65 @@
+:root{
+    --principal: #1D2429;
+    --sombra-ppal-1: #0B171F;
+    --sombra-ppal-2: #08141C;
+    --luz-ppal-1: #3A444B;
+    --luz-ppal-2: #54616B;
+    --secundario: #0005FD;
+    --sombra-sec-1: #0005BE;
+    --sombra-sec-2: #010594;
+    --luz-sec-1: #1E34FF;
+    --luz-sec-2: #B5D4EC;
+    --estado1: #3BC82F;
+    --estado2: #D71212;
+    --estado3: #EEE73C;
+    --acento: #D4AF37;
+    --sombra-acento: #B18E1A;
+    --textos-btn: 'Roboto', sans-serif,20px;
+}
+
+
+
+body{
+background-color: var(--sombra-ppal-1);
+}
+
+.header{
+    background-color:var(--principal);
+    height: 70px;
+    width: 1440px;
+}
+
+.navbar{
+    background-color:var(--principal);
+    width: 219px;
+    height: 470px;
+    color: var(--luz-sec-2);
+    display: none;
+    flex-direction: column;
+    font:var(--textos-btn);
+    text-transform: uppercase;
+    text-decoration: solid;
+}
+
+.logoheader{
+    width: 95px;
+    height: 75px;
+}
+.btnmenu{
+    width: 60px;
+}
+
+.btn_cat{
+    display: inline-flex;
+    padding: 18px 50px 18px 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--sombra-ppal-1);
+    margin: 10px;
+}
+
+.navbar.show{
+    display: flex;
+}
+
