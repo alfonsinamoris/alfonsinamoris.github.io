@@ -15,6 +15,7 @@
     --acento: #D4AF37;
     --sombra-acento: #B18E1A;
     --textos-btn: 'Roboto', sans-serif,20px;
+    --text-body:'Roboto'
 }
 
 
@@ -73,6 +74,7 @@ padding: 0px;
 .perfil-avatar{
 border-radius: 50px;
 width: 65px; 
+margin-left: 80%;
 }
 
 
@@ -80,27 +82,44 @@ width: 65px;
     display: flex;
    
 }
-/* Estilos generales para el footer */
+/*Estilos generales para el footer */
 footer {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
     background-color: var(--principal);
     color: var(--luz-sec-2);
-    padding: 20px 0;
+    background-image: url(images/logo.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 250px;
 }
+.section1, .section2{
+    display:flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.acerca-de{
+display: flex;
+flex-direction: column;
+margin-top: 20px;
+margin-left: 100px;
+align-items: center;
+width: 500px;
 
-#fat-footer {
-    max-width: 1200px;
-    margin: 0 auto;
+} 
+.text-footer, .acerca-de, .fat-footer{
+font-family: 'Roboto';
+} 
+.fat-footer {
+    margin-left: 250px;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 /* Estilos para cada sección del fat footer */
 .footer-section{
-    flex: 1;
+    /* flex-direction: column; */
     padding: 0 20px;
     text-align: left;
 }
@@ -127,13 +146,10 @@ footer {
 /* Estilos para los enlaces en el fat footer */
 .footer-section a:hover {
     text-decoration: underline;
-}
+} 
 
 /* Estilos para el contenido de contacto */
 .footer-section p {
     font-size: 14px;
     margin: 0;
-}
-.logo-footer{
-width: 150px;
 }
