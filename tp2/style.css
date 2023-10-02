@@ -85,6 +85,9 @@ footer {
     background-color: var(--principal);
     color: var(--luz-sec-2);
     padding: 20px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 250px;
 }
 
 #fat-footer {
@@ -96,7 +99,7 @@ footer {
 }
 
 /* Estilos para cada sección del fat footer */
-.footer-section {
+.footer-section{
     flex: 1;
     padding: 0 20px;
     text-align: left;
@@ -130,4 +133,7 @@ footer {
 .footer-section p {
     font-size: 14px;
     margin: 0;
+}
+.logo-footer{
+width: 150px;
 }
