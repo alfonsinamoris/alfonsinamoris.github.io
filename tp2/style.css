@@ -23,10 +23,11 @@ body{
 background-color: var(--sombra-ppal-1);
 }
 
-.header{
+header{
     background-color:var(--principal);
     height: 70px;
-    width: 1440px;
+    width: 100%;
+
 }
 
 .navbar{
@@ -39,6 +40,8 @@ background-color: var(--sombra-ppal-1);
     font:var(--textos-btn);
     text-transform: uppercase;
     text-decoration: solid;
+    align-items: center;
+    justify-content: center;
 }
 
 .logoheader{
@@ -46,9 +49,17 @@ background-color: var(--sombra-ppal-1);
     height: 75px;
 }
 .btnmenu{
-    width: 60px;
+    width: 65px;
+    height: 75px;
+    
 }
-
+.menu{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 0px;
+}
 .btn_cat{
     display: inline-flex;
     padding: 18px 50px 18px 50px;
@@ -59,7 +70,64 @@ background-color: var(--sombra-ppal-1);
     margin: 10px;
 }
 
-.navbar.show{
-    display: flex;
+.perfil-avatar{
+border-radius: 50px;
+width: 65px; 
 }
 
+
+.navbar.show{
+    display: flex;
+   
+}
+/* Estilos generales para el footer */
+footer {
+    background-color: var(--principal);
+    color: var(--luz-sec-2);
+    padding: 20px 0;
+}
+
+#fat-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Estilos para cada sección del fat footer */
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: var(--luz-ppal-1);
+    text-decoration: none;
+}
+
+/* Estilos para los enlaces en el fat footer */
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el contenido de contacto */
+.footer-section p {
+    font-size: 14px;
+    margin: 0;
+}
