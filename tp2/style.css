@@ -18,8 +18,6 @@
     --text-body:'Roboto';
 }
 
-@media screen and (min-width: 660px){
-
     body{
     background-color: var(--sombra-ppal-1);
     }
@@ -29,6 +27,13 @@
         height: 70px;
         width: 100%;
 
+    }
+    .buscador{
+    border-radius: 30px;
+    height: 40px;
+    width: 376px;
+    background-color:var(--luz-sec-2);
+    justify-content: center;
     }
 
     .navbar{
@@ -74,7 +79,6 @@
     .perfil-avatar{
     border-radius: 50px;
     width: 65px; 
-    margin-left: 80%;
     }
 
 
@@ -85,14 +89,14 @@
     /*Estilos generales para el footer */
     footer {
         display: flex;
-        flex-direction: row;
-        height: 300px;
+        flex-direction: column;
         background-color: var(--principal);
         color: var(--luz-sec-2);
         background-image: url(images/logo.png);
         background-repeat: no-repeat;
         background-position: center;
         background-size: 250px;
+        width:100%;
     }
     .section1, .section2{
         display:flex;
@@ -100,23 +104,21 @@
         margin: 10px;
     }
     .acerca-de{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-left: 100px;
+    align-content: center;
+    margin: 20px;
     align-items: center;
-    width: 400px;
+    width: 90%;
     text-align: justify;
 
     } 
+    .titulo-footer{
+        text-align: center;
+    }
+
     .text-footer, .acerca-de, .fat-footer{
     font-family: var(--text-body);
     } 
-    .fat-footer {
-        margin-left: 250px;
-        display: flex;
-        flex-direction: column;
-    }
+
 
     /* Estilos para cada sección del fat footer */
     .footer-section{
@@ -154,4 +156,3 @@
         font-size: 14px;
         margin: 0;
     }
-}
