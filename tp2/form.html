@@ -18,7 +18,6 @@
                 <img src="images/logo.png" class="logoheader">
             </div>
             <input type="text" class="buscador">
-            <img src="images/avatar.png" class="perfil-avatar" alt="avatar">
         </div>
         <nav class="navbar">
             <ul class="menu">
@@ -33,49 +32,42 @@
     
     </header> 
     <main>
-        <section class="carrusel">
-            <h2 class="cat-juego">accion</h2>
-            <img src="images/derecha.png">
-            <button class="btn-izquierda"><img src="images/izquierda.png"></button>
-            <div class="contenedor-carrusel">
-                <div class="contenedor-card">
-                    <img class="imagen-card" src="images/juego1.png">
-                    <div class="contenedor-info">
-                        <p class="titulo">Fuego y Agua</p>
-                        <div class="precio-carrito">
-                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
-                            <img class="carrito"src="images/Vector.svg">
-                        </div>
-                    </div>
+
+        <div class="formRegister">
+            <section class="headRegistro">
+            <h2 class="tituloRegistro">Registrate</h2>
+            <div class="tengoCuenta">
+            <p>¿Ya tienes una cuenta?</p>
+            <button class="btn-ingresar">Ingresar</button>
+        </div>
+    </section>
+        <div class="registros">
+            <form class="formularioRegistro">
+                <label class="nombre">Nombre</label>
+                <input type="text" name="nombre" class="nombrecap" required size="30">
+                <label>Apellido</label>
+                <input type="text" name="Apellido" class="apellidocap" required size="30" >
+                <label>Edad</label>
+                <input type="number" name="edad" class="edad" required size="30">
+                <label>Nickname</label>
+                <input type="text" name="edad" class="nickname" maxlength="10" size="30">
+                <label>Mail</label>
+                <input type="email" name="mail" id="mailcap" required size="30" size="30">
+                <label>Contraseña</label>
+                <input type="password" name="contraseña" limit="2" class="contraseña" required size="30">
+                <label>Repetir Contraseña</label>
+                <input type="password" name="contraseña" limit="2" class="contraseña" required size="30">
+                <img src="images/captcha.jpeg" alt="captcha" class="captcha">
+                <div class="Registrar">
+                  <button class="registrarse" type="submit" value="" >REGISTRAR</button>
                 </div>
-                <div class="contenedor-card">
-                     <!--<span class="etiqueta-card">Gratis</span>-->
-                    <img class="imagen-card" src="images/juego2.webp">
-                    <div class="contenedor-info">
-                        <p class="titulo">Fuego y Agua</p>
-                            <img class="play"src="images/boton-play.png">
-                    </div>
-                </div>
-                <div class="contenedor-card">
-                    <!--<span class="etiqueta-card">Gratis</span>-->
-                    <img class="imagen-card" src="images/juego2.webp">
-                    <div class="contenedor-info">
-                        <p class="titulo">Fuego y Agua</p>
-                            <img class="play"src="images/boton-play.png">
-                    </div>
-                </div>
-                <div class="contenedor-card">
-                    <img class="imagen-card" src="images/juego1.png">
-                    <div class="contenedor-info">
-                        <p class="titulo">Fuego y Agua</p>
-                        <div class="precio-carrito">
-                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
-                            <img class="carrito"src="images/Vector.svg">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </form>
+        <section class="registrarteCon">
+            <span class="facebook"> <img class="logoFb" src="images/logoFacebook.png" alt=""><p class="registrate" >Registrate con Facebook</p></span>
+            <span class="gmail"> <img class="logoMail" src="images/logoGoogle.png" alt=""><p class="registrate" >Registrate con Google</p></span>
         </section>
+        </div>
+    </div>
     </main> 
     <footer>
         <section class="acerca-de">
@@ -141,4 +133,4 @@
     </footer>
     <script src="menu.js"></script>
 </body>
-</html>
+</html
