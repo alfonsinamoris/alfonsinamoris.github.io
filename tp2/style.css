@@ -180,13 +180,13 @@
       flex-direction: row;
       background-color: var(--sombra-ppal-1) ;
     }
-    .wrapper{
+    .wrapper, .wrapper1{
         display: flex;
         max-width: 1200px;
         position: relative;
       }
 
-      .wrapper i{
+      .wrapper i,.wrapper1 i{
         top: 50%;
         height: 44px;
         width: 44px;
@@ -202,20 +202,20 @@
         transition: transform 0.1s linear;
         z-index: 2;
       }
-      .wrapper i:active{
+      .wrapper i:active, .wrapper1 i:active{
         transform: translateY(-50%) scale(0.9);
       }
-      .wrapper i:hover{
+      .wrapper i:hover, .wrapper1 i:hover{
         background: var(--luz-sec-1)
       }
-      .wrapper i:first-child{
+      .wrapper i:first-child, .wrapper1 i:first-child{
         left: 1px;
         display: none;
       }
-      .wrapper i:last-child{
+      .wrapper i:last-child, .wrapper1 i:last-child{
         right: 1px;
       }
-      .wrapper .carousel{
+      .wrapper , .wrapper1, .carousel{
         font-size: 0px;
         cursor: pointer;
         overflow: hidden;
@@ -351,6 +351,11 @@
 
 
     @media screen and (min-width: 1024px){
+        main{
+            margin-left: 175px;
+            margin-right: 175px;
+        }
+
         .text-footer{
         width: 300px;
         }
@@ -550,4 +555,17 @@
     height: 191px;
     } 
     
+    .carousel{
+        display: -webkit-inline-box;
+
+    }
+    .contenedor-card{
+        width: 179px;
+        height: 181px;
+    }
+
+    .imagen-card{
+        width: 167px;
+        height: 120px;
+    }
 }
