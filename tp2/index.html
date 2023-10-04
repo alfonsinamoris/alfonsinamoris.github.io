@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Juegos Onda</title>
 </head>
 <body>
@@ -33,14 +34,13 @@
     
     </header> 
     <main>
-        <section class="carrusel">
-            <h2 class="cat-juego">accion</h2>
-            <img src="images/derecha.png">
-            <button class="btn-izquierda"><img src="images/izquierda.png"></button>
-            <div class="contenedor-carrusel">
-                <div class="contenedor-card">
+        <h2 class="cat-juego">accion</h2>
+        <section class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <div class="carousel">
+                <div class="contenedor-card" draggable="false">
                     <img class="imagen-card" src="images/juego1.png">
-                    <div class="contenedor-info">
+                    <div class="infoCardPaga">
                         <p class="titulo">Fuego y Agua</p>
                         <div class="precio-carrito">
                             <span class="precio">$500</span><span class="precio-tachado">$2500</span>
@@ -48,25 +48,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="contenedor-card">
-                     <!--<span class="etiqueta-card">Gratis</span>-->
+                <div class="contenedor-card" draggable="false">
+                    <span class="etiqueta-card-gratis">Gratis</span>
                     <img class="imagen-card" src="images/juego2.webp">
-                    <div class="contenedor-info">
+                    <div class="infoCardGratis">
                         <p class="titulo">Fuego y Agua</p>
                             <img class="play"src="images/boton-play.png">
                     </div>
                 </div>
-                <div class="contenedor-card">
-                    <!--<span class="etiqueta-card">Gratis</span>-->
+                <div class="contenedor-card" draggable="false">
+                    <span class="etiqueta-card">Gratis</span>
                     <img class="imagen-card" src="images/juego2.webp">
-                    <div class="contenedor-info">
+                    <div class="infoCardGratis">
                         <p class="titulo">Fuego y Agua</p>
                             <img class="play"src="images/boton-play.png">
                     </div>
                 </div>
-                <div class="contenedor-card">
+                <div class="contenedor-card" draggable="false">
+                    <span class="etiqueta-card-dto">-40%</span>
                     <img class="imagen-card" src="images/juego1.png">
-                    <div class="contenedor-info">
+                    <div class="infoCardPaga">
                         <p class="titulo">Fuego y Agua</p>
                         <div class="precio-carrito">
                             <span class="precio">$500</span><span class="precio-tachado">$2500</span>
@@ -74,7 +75,132 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </section>
+        <h2 class="cat-juego">accion</h2>
+        <section class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <div class="carousel">
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <span class="etiqueta-card-gratis">Gratis</span>
+                    <img class="imagen-card" src="images/juego2.webp">
+                    <div class="infoCardGratis">
+                        <p class="titulo">Fuego y Agua</p>
+                            <img class="play"src="images/boton-play.png">
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <span class="etiqueta-card">Gratis</span>
+                    <img class="imagen-card" src="images/juego2.webp">
+                    <div class="infoCardGratis">
+                        <p class="titulo">Fuego y Agua</p>
+                            <img class="play"src="images/boton-play.png">
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <span class="etiqueta-card-dto">-40%</span>
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-card" draggable="false">
+                    <img class="imagen-card" src="images/juego1.png">
+                    <div class="infoCardPaga">
+                        <p class="titulo">Fuego y Agua</p>
+                        <div class="precio-carrito">
+                            <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                            <img class="carrito"src="images/Vector.svg">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <i id="right" class="fa-solid fa-angle-right"></i>
         </section>
     </main> 
     <footer>
@@ -97,7 +223,7 @@
                     <ul>
                         <li><a href="#">Equipo</a></li>
                         <li><a href="#">Lugar</a></li>
-                        <li><a href="#"></a></li>
+                        <li><a href="#">H</a></li>
                     </ul>
                 </div>
             </section>

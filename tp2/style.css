@@ -47,7 +47,7 @@
         align-items: center;
         justify-content: center;
     }
-
+   
     .logoheader{
         width: 95px;
         height: 75px;
@@ -116,11 +116,13 @@
         background-position: center;
         background-size: 250px;
         width:100%;
+        
     }
     .section1, .section2, .section3{
         display:flex;
         flex-direction: row;
         margin: 10px;
+        justify-content: center;
     }
     .acerca-de{
     align-content: center;
@@ -141,7 +143,6 @@
 
     /* Estilos para cada sección del fat footer */
     .footer-section{
-        /* flex-direction: column; */
         padding: 0 20px;
         text-align: left;
     }
@@ -151,13 +152,10 @@
         margin-bottom: 10px;
     }
 
-    .footer-section ul {
-        list-style: none;
-        padding: 0;
-    }
 
     .footer-section ul li {
         margin-bottom: 5px;
+        list-style-type:none;
     }
 
     .footer-section a {
@@ -176,21 +174,78 @@
         margin: 0;
     }
 
-    /*cards*/
-    .contenedor-carrusel{
+    /* Estilo para las cards*/
+    .carousel{
       display: flex;
       flex-direction: row;
       background-color: var(--sombra-ppal-1) ;
     }
+    .wrapper{
+        display: flex;
+        max-width: 1200px;
+        position: relative;
+      }
+
+      .wrapper i{
+        top: 50%;
+        height: 44px;
+        width: 44px;
+        color:var(--luz-sec-2);
+        cursor: pointer;
+        font-size: 1.15rem;
+        position: absolute;
+        text-align: center;
+        line-height: 44px;
+        background:var(--secundario);
+        border-radius: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.1s linear;
+        z-index: 2;
+      }
+      .wrapper i:active{
+        transform: translateY(-50%) scale(0.9);
+      }
+      .wrapper i:hover{
+        background: var(--luz-sec-1)
+      }
+      .wrapper i:first-child{
+        left: 1px;
+        display: none;
+      }
+      .wrapper i:last-child{
+        right: 1px;
+      }
+      .wrapper .carousel{
+        font-size: 0px;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+        z-index: 1;
+      }
+      .carousel.dragging{
+        cursor: grab;
+        scroll-behavior: auto;
+      }
 
     .contenedor-card{
-     width: 110px;
-     height: 130px;
+     width: 115px;
+     height: 120px;
      background-color: var(--principal);
      border: 20px;
      margin: 10px;
+     display:flex;
+     flex-direction:column;
+     position: relative;
     }
-
+    .infoCardPaga{
+        height: 40px;
+        margin: 0%;
+        display:flex;
+        flex-direction:column;  
+        margin-top:8px;
+    
+    }
     .imagen-card{
         width: 100px;
         height: 70px;
@@ -199,11 +254,16 @@
         margin-right: 7px;
         border-radius: 5px;
         align-items: center;
+        z-index: 1;
     }
 
-    .contenedor-info{
+    .infoCardGratis{
      height: 40px;
      margin: 0%;
+     display:flex;
+     flex-direction:row;
+     margin-top: 13px;
+     justify-content: space-between;
     }
 
     .carrito{
@@ -221,7 +281,7 @@
 
     .titulo{
         font-family: var(--text-body);
-        font-size: 15px;
+        font-size: 14px;
         color: var(--luz-sec-2);
         margin: 0px;
         display: flex;
@@ -251,21 +311,34 @@
         justify-content: space-between;
     }
     
-    .etiqueta-card{
-        position:static;
-        background-color:var(--secundario);
-        padding: 5px;
-        border-radius:5px;
-        color:var(--luz-sec-2) ;
-        right: 10px;
-        top: 10px;
+    .etiqueta-card-gratis, .etiqueta-card-dto{
+        height: 20px;
+        width: 45px;
         font-family: var(--text-body);
+        font-size: 15px;
+        position: absolute; 
+        top: 0; 
+        right: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        font-weight: 100;
+        
+    }
+    .etiqueta-card-gratis{
+        background-color:var(--secundario);
+        color:var(--luz-sec-2) ;
+    }
+    .etiqueta-card-dto{
+        background-color:var(--acento);
+        color:var(--principal) ;
 
     }
 
     .btn-derecha{
         right: 10px;
     }
+
     .btn-izquierda{
      left: 10px;
     }
@@ -278,7 +351,9 @@
 
 
     @media screen and (min-width: 1024px){
-        
+        .text-footer{
+        width: 300px;
+        }
         footer {
             display: flex;
             flex-direction: row;
@@ -290,10 +365,16 @@
             background-position: center;
             background-size: 250px;
         }
+
+        .footer-section ul {
+            padding: 0px;
+        }
+
         .section1, .section2, .section3{
             display:flex;
             flex-direction: column;
             margin: 10px;
+            justify-content: center;
         }
         .acerca-de{
             display: flex;
@@ -307,9 +388,10 @@
         }
 
         .fat-footer {
-            margin-left: 320px;
+            margin-left: 280px;
             display: flex;
             flex-direction: row;
+        
         }
 
        .buscador{
@@ -321,13 +403,15 @@
         
         background-color:var(--luz-sec-2);
        }
-    }
+
+
     /*resgistro*/
     .formRegister{
         width: 623px;
         height: 480px;
         background-color: var(--luz-sec-2);
         margin: 0px;
+        margin: auto;
     
        
         }
@@ -345,6 +429,7 @@
         flex-direction: row;
         }
         .formularioRegistro{
+        align-content: center;
         margin-left: 29px;
         height: 100px;
         width: 200px;
@@ -457,4 +542,12 @@
             justify-content: space-between;
             
         }
+        /* eEstilo para las cards */ 
+     
+
+     .contenedor-card{
+    width: 200px !important;
+    height: 191px;
+    } 
     
+}
