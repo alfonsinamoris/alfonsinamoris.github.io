@@ -19,7 +19,10 @@
                 <img src="images/logo.png" class="logoheader">
             </div>
             <input type="text" class="buscador">
-            <img src="images/avatar.png" class="perfil-avatar" alt="avatar">
+            <div class="header-der">
+                <img src="images/carrito.png" class="carrito-nav" onclick="toggleCarrito()">
+                <img src="images/avatar.png" class="perfil-avatar" alt="avatar" onclick="togglePerfil()">
+            </div>
         </div>
         <nav class="navbar">
             <ul class="menu">
@@ -31,9 +34,22 @@
                 <li class="btn_cat">deportes</li>
             </ul>
         </nav>
-    
+        <div class="desp-carrito">
+            <h3>Resumen de compra</h3>
+            <p>Fall guys</p><p>$999</p>
+            <p>Total</p><p>$999</p>
+            <button>Continuar compra</button>
+        </div>
+        <nav class="nav-perfil">
+            <ul class="menu-perfil">
+                <li class="btn-perfil">mi perfil</li>
+                <li class="btn-perfil">mi perfil</li>
+                <li class="btn-perfil">mi perfil</li>
+            </ul>
+        </nav>
     </header> 
     <main>
+
         <h2 class="cat-juego">accion</h2>
         <section class="wrapper1">
             <i id="left" class="fa-solid fa-angle-left"></i>
@@ -146,6 +162,7 @@
             </div> 
             <i id="right" class="fa-solid fa-angle-right"></i>
         </section>
+
         <h2 class="cat-juego">accion</h2>
         <section class="wrapper">
             <i class="fa-solid fa-angle-left"></i>
@@ -240,6 +257,15 @@
             </div> 
             <i class="fa-solid fa-angle-right"></i>
         </section>
+
+        <h2 class="cat-juego">Explorar categorias</h2>
+        <section class="carrusel-btns">
+            <button class="btn-carrusel">accion</button>
+            <button class="btn-carrusel">accion</button>
+            <button class="btn-carrusel">accion</button>
+            <button class="btn-carrusel">accion</button>
+        </section>
+
         <h2 class="cat-juego">accion</h2>
         <section class="wrapper">
             <i class="fa-solid fa-angle-left"></i>
@@ -330,6 +356,7 @@
             </div> 
             <i class="fa-solid fa-angle-right"></i>
         </section>
+
         <h2 class="cat-juego">accion</h2>
         <section class="wrapper">
             <i class="fa-solid fa-angle-left"></i>

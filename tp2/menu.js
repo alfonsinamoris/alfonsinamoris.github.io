@@ -3,6 +3,14 @@ function toggleMenu(){
     document.querySelector(".navbar").classList.toggle("show");
 }
 
+//menu perfil
+function togglePerfil(){
+    document.querySelector(".nav-perfil").classList.toggle("show");
+}
+
+function toggleCarrito(){
+    document.querySelector(".desp-carrito").classList.toggle("show");
+}
 
 //carrusel
 const carousel = document.querySelector(".carousel"),
