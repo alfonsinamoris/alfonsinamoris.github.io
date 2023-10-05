@@ -16,6 +16,9 @@
     --sombra-acento: #B18E1A;
     --text-body:'Roboto';
 }
+    .baseCucarda{
+    display: none;
+    }
     body, header, footer,span{
     font-family: var(--text-body);
     }
@@ -243,7 +246,7 @@
         margin: 0%;
         display:flex;
         flex-direction:column;  
-        margin-top:8px;
+        margin-top:2px;
     
     }
     .imagen-card{
@@ -262,9 +265,10 @@
      margin: 0%;
      display:flex;
      flex-direction:row;
-     margin-top: 13px;
-     justify-content: space-between;
+     align-items: center;
+     margin-top: 3px;
     }
+
 
     .carrito{
         height: 20px;
@@ -277,7 +281,26 @@
         height: 20px;
         width: 20px;
         justify-content: center;
+        margin-left: 5px;
+
     }
+    .infoCardGratis .titulo{
+        justify-content: left;
+        margin-left: 5px;
+
+    }
+    .infoCardGratis .titulo, .infoCardPaga .titulo{
+        width: 80px; /* Ancho máximo del contenedor */
+        white-space: nowrap; /* Evita que el texto se divida en líneas */
+        overflow: hidden; /* Oculta el texto que desborda */
+        text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se recorta */
+    }
+    .infoCardPaga .titulo{
+        margin: auto;
+        justify-content: center;
+
+    }
+
 
     .titulo{
         font-family: var(--text-body);
@@ -296,9 +319,12 @@
         margin: 0px;
         margin-left:7px;
     }
+    .precio, .precio-tachado{
+        color: var(--acento);
+    }
 
     .precio-tachado{
-        color: var(--luz-sec-2);
+        color: var(--estado2);
         font-size: 9px;
         text-decoration: line-through;
     }
@@ -497,50 +523,45 @@
         margin-top: 45px;
         }
         .facebook{   
-            margin-top: 45px;
-            width: 271px;
-            height: 34px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #3b5998;border-width: 2px;
-            border-style: solid;
+            background-color: #3b5998;
             border-color: #3b5998;
         }
-        .gmail{
+        .facebook, .gmail{
             margin-top: 49px;
             width: 271px;
             height: 34px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            background-color: #00A1F1;
             border-width: 2px;
             border-style: solid;
+            display: flex;
+        
+        }
+        .gmail{
+            background-color: #00A1F1;
             border-color: #00A1F1;
         
         }
         .logoMail{
             width: 51px;
             height: 34px;
-            margin-left: 0px;
-            border-width: 2px;
-            border-style: solid;
             border-color: #00A1F1;
         }
         .logoFb{
+            border-color: #3b5998;
+
+        }
+        .logoFb, .logoMail{
             margin-left: 0px;
             border-width: 2px;
             border-style: solid;
-            border-color: #3b5998;
         }
         .continuarCon{
             margin-left: 28px;
         
         }
-        .facebook, .gmail{
-            display: flex;
-        }
+
         .registros{
             display: flex;
             flex-direction: row;
@@ -549,11 +570,6 @@
         }
         /* eEstilo para las cards */ 
      
-
-     .contenedor-card{
-    width: 200px !important;
-    height: 191px;
-    } 
     
     .carousel{
         display: -webkit-inline-box;
@@ -567,5 +583,77 @@
     .imagen-card{
         width: 167px;
         height: 120px;
+    }
+    .titulo{
+        font-family: Roboto;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .play, .carrito{
+        width: 22px;
+        height: 25px;
+    }
+    .precio, .precio-tachado{
+        font-size: 18px;
+
+    }
+    .infoCardGratis{
+        margin-top: 14.5px;
+    }
+    .play{
+        display: flex;
+        margin-right: 16,49px;
+    }
+    .infoCardGratis .titulo{
+        justify-content: left;
+        margin-left: 5px;
+        overflow: hidden; /* Oculta el texto que desborda */
+   
+        
+    }
+    .infoCardGratis .titulo, .infoCardPaga .titulo{
+        width: 130px; /* Ancho máximo del contenedor */
+        white-space: nowrap; /* Evita que el texto se divida en líneas */
+        text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se recorta */
+    }
+
+    .infoCardPaga .titulo{
+        margin: auto;
+        justify-content: center;
+    }
+    .infoCardGratis{
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+    .etiqueta-card-gratis, .etiqueta-card-dto{
+        width: 80px;
+        height: 26px;
+        text-align: center;
+        margin-right: -18px;
+        font-size: 20px;
+    }
+    span.etiqueta-card-dto, span.etiqueta-card-gratis{
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); /* Propiedad box-shadow */   
+     }
+     .cucarda{
+        margin-right: 0px;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+     .baseCucarda{
+        display: block;
+        width: 50px;
+        height: 41px;
+        margin-top: 21px;
+        margin-right: -32px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+    }
+    .infoCardPaga{
+    margin-top: 2.5px;
     }
 }
