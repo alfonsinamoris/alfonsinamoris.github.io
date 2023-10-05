@@ -74,9 +74,9 @@
         margin: 0;
     
     }
-
+    /*animaciones navbar*/
     .btn_cat{
-        display: inline-flex;
+        display: inline-block;
         padding: 18px 50px 18px 50px;
         justify-content: center;
         align-items: center;
@@ -84,6 +84,8 @@
         background: var(--sombra-ppal-1);
         margin: 10px;
         width: 70px;
+        z-index: 1;
+        overflow: hidden;
     }
 
     .perfil-avatar{
@@ -111,6 +113,7 @@
     }
     /*Estilos generales para el footer */
     footer {
+        margin-top: 100px;
         display: flex;
         flex-direction: column;
         background-color: var(--principal);
@@ -179,6 +182,14 @@
     }
 
     /* Estilo para las cards*/
+    .carruselCompleto{
+        display: flex;
+        flex-direction: column;
+    }
+     .cat-juego{
+        margin-left: 17px;
+        margin-bottom: 0px;
+    }
     .carousel{
       display: flex;
       flex-direction: row;
@@ -231,16 +242,40 @@
         cursor: grab;
         scroll-behavior: auto;
       }
+    .contenedor-card-principal .infoCardPaga{
+        z-index: 2;
+    }
+    .contenedor-card, .contenedor-card-principal{
+        background-color: var(--principal);
 
+        position: relative;
+        border: 20px;
+        margin: 10px;
+    }
+    .contenedor-card-principal .imagen-card{
+    width: 140px;
+    height: 90px;
+    margin-left: 6px;
+    
+    }
+    .contenido-card-principal{
+    display: flex;
+    flex-direction: column;
+    }
+
+    .contenedor-card-principal{
+    width:155px;
+    height: 150px;
+    display: -webkit-inline-box;
+    flex-direction: column;  
+    }
     .contenedor-card{
+    display:flex;
+    flex-direction:column;
      width: 115px;
      height: 120px;
-     background-color: var(--principal);
      border: 20px;
      margin: 10px;
-     display:flex;
-     flex-direction:column;
-     position: relative;
     }
     .infoCardPaga{
         height: 40px;
@@ -288,7 +323,18 @@
     .infoCardGratis .titulo{
         justify-content: left;
         margin-left: 5px;
+ }
 
+    .contenido-card-principal .carrito{
+    height: 25px;
+    width: 25px;
+    margin-right: 0px;
+    }
+    .contenido-card-principal .play{
+        height: 25px;
+        width: 25px;
+        margin-right: 10px;
+    
     }
     .infoCardGratis .titulo, .infoCardPaga .titulo{
         width: 80px; /* Ancho máximo del contenedor */
@@ -301,8 +347,23 @@
         justify-content: center;
 
     }
-
-
+    .contenido-card-principal .infoCardGratis{
+        margin-left: 10px;
+    }
+    .contenido-card-principal .precio, .contenido-card-principal .precio-tachado{
+        font-size: 16px;
+    
+    }
+    .contenido-card-principal .titulo{
+        font-size: 17px;
+        margin:auto;
+         /* margin-left: 10px;
+        */width: 110px; /* Ancho máximo del contenedor */
+        white-space: nowrap; /* Evita que el texto se divida en líneas */
+        overflow: hidden; /* Oculta el texto que desborda */
+        text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se recorta */
+    
+    }
     .titulo{
         font-family: var(--text-body);
         font-size: 14px;
@@ -442,8 +503,8 @@
     }
 
     .carrito-nav{
-        width: 50px; 
-        height: 50px;
+        width: 40px; 
+        height: 40px;
         margin: 10px;
     }
     .header-izq{
@@ -472,6 +533,8 @@
         font-size: 12px;
         margin: 0px;
     }
+
+    
 
 
     @media screen and (min-width: 1024px){
@@ -754,4 +817,22 @@
     .infoCardPaga{
     margin-top: 2.5px;
     }
-}
+
+    .contenedor-card-principal{
+        width: 235px;
+        height: 250px;
+    }
+
+    .contenedor-card-principal .imagen-card{
+        width: 220px;
+        height: 150px;
+    }
+    .contenedor-card-principal .titulo{
+        font-size: 25px;
+        overflow: visible;
+    }
+
+    .contenedor-card-principal .precio, .precio{
+        font-size: 25px;
+    }
+    }
