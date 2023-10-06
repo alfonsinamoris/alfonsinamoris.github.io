@@ -94,10 +94,114 @@
     height: 50px;
     margin: 10px;
     }
+    .flechaPerfil{
+    width: 20px;
+    margin-left:45px;
+    z-index: 1;
+    margin-top: -37px;
 
+    }
+
+    .nav-perfil{
+        background-color:var(--principal);
+        width: 130px;
+        height: 200px;
+        color: var(--luz-sec-2);
+        display: none;
+        flex-direction: column;
+        font:var(--textos-btn);
+        text-transform: uppercase;
+        text-decoration: solid;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--luz-sec-2);
+        border-color: var(--luz-sec-2);
+    }
+    .nav-perfil.show{
+        display: flex;
+        position: absolute;
+        top: 85px;
+        right: 0;
+        z-index: 3;
+        border-color: var(--luz-sec-2);
+
+    }
+
+    .menu-perfil{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        border-color: var(--luz-sec-2);
+    }
+
+    .btn-perfil{
+        display: inline-flex;
+        padding: 10px 20px 10px 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background: var(--sombra-ppal-1);
+        margin: 5px;
+        color: var(--luz-sec-2);
+        margin: 5px;
+    }
+
+    .carrito-nav{
+        width: 40px; 
+        height: 40px;
+        margin: 10px;
+    }
+    .header-izq{
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .desp-carrito{
+        background-color: var(--acento);
+        width: 140px;
+        height: 200px;
+        flex-direction: column;
+        display: none;
+        align-items: start;
+    }
+    .desp-carrito h3{
+        margin: auto;
+        margin-left:10px
+    }
+    .desp-carrito.show{
+        display: flex;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        z-index: 3;
+    }
+
+    .desp-carrito p{
+        font-family: var(--text-body);
+        font-size: 17px;
+        margin: 0px;
+        margin-left: 10px;
+    }
+  /*no anda :( */
+    .continuar-compra{
+        display: flex;
+        height: 58.929px;
+        width: 100px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        border: 1px solid var(--sombra-acento);
+        background: var(--principal);
+        color: var(--acento);
+        margin: auto;
+
+
+    }
 
     .navbar.show{
-        display: flex;
         display: flex;
         position: absolute;
         top: 80px;
@@ -191,8 +295,7 @@
         margin-bottom: 0px;
     }
     .carousel{
-      display: flex;
-      flex-direction: row;
+      display: -webkit-inline-box;
       background-color: var(--sombra-ppal-1) ;
     }
     .wrapper, .wrapper1{
@@ -244,6 +347,7 @@
       }
     .contenedor-card-principal .infoCardPaga{
         z-index: 2;
+        
     }
     .contenedor-card, .contenedor-card-principal{
         background-color: var(--principal);
@@ -255,7 +359,7 @@
     .contenedor-card-principal .imagen-card{
     width: 140px;
     height: 90px;
-    margin-left: 6px;
+    margin-left: 10px;
     
     }
     .contenido-card-principal{
@@ -264,7 +368,7 @@
     }
 
     .contenedor-card-principal{
-    width:155px;
+    width:160px;
     height: 150px;
     display: -webkit-inline-box;
     flex-direction: column;  
@@ -326,13 +430,13 @@
  }
 
     .contenido-card-principal .carrito{
-    height: 25px;
+    height: 20px;
     width: 25px;
     margin-right: 0px;
     }
     .contenido-card-principal .play{
-        height: 25px;
-        width: 25px;
+        height: 20px;
+        width: 20px;
         margin-right: 10px;
     
     }
@@ -348,7 +452,9 @@
 
     }
     .contenido-card-principal .infoCardGratis{
+        margin:auto;
         margin-left: 10px;
+
     }
     .contenido-card-principal .precio, .contenido-card-principal .precio-tachado{
         font-size: 16px;
@@ -440,11 +546,12 @@
     .carrusel-btns{
         display: flex;
         flex-direction: row;
+        margin-left: 15px;
+        margin-top: 10px;
     }
 
-    .btn-carrusel{
+    .btn-carrusel-categorias{
         display: inline-flex;
-        padding: 8px 19px 7px 20px;
         width: 142px;
         height: 33px;
         color: var(--luz-sec-2);
@@ -455,14 +562,13 @@
         border-radius: 50px;
         font: var(--btn-sec);
         letter-spacing: 2px;
-        margin: 20px;
+        margin-right: 47px;
         font-family: var(--text-body);
         text-transform:uppercase;
-        overflow: hidden;
         transition: .3s;
     }
 
-    .btn-carrusel .span-btn{
+    .btn-carrusel-categorias .span-btn{
         width: 100%;
         height:33px ;
         border-radius: 50%;
@@ -473,108 +579,25 @@
         transition: .3s;
     }
 
-    .btn-carrusel:hover span.btn{
+    .btn-carrusel-categorias:hover span.btn{
         left: -10%;
     }
 
-    .btn-carrusel:hover{
+    .btn-carrusel-categorias:hover{
         color: aliceblue;
         box-shadow: 0 5px 5px;
     }
 
-    .nav-perfil{
-        background-color:var(--principal);
-        width: 130px;
-        height: 140px;
-        color: var(--luz-sec-2);
-        display: none;
-        flex-direction: column;
-        font:var(--textos-btn);
-        text-transform: uppercase;
-        text-decoration: solid;
-        align-items: center;
-        justify-content: center;
-    }
-    .nav-perfil.show{
-        display: flex;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        z-index: 3;
-    }
 
-    .menu-perfil{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0px;
-        border-color: var(--luz-sec-2);
-    }
-
-    .btn-perfil{
-        display: inline-flex;
-        padding: 10px 20px 10px 20px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        background: var(--sombra-ppal-1);
-        margin: 5px;
-        color: var(--luz-sec-2);
-        margin: 5px;
-    }
-
-    .carrito-nav{
-        width: 40px; 
-        height: 40px;
-        margin: 10px;
-    }
-    .header-izq{
-        flex-direction: row;
-        margin: 0;
-    }
-
-    .desp-carrito{
-        background-color: var(--acento);
-        width: 140px;
-        height: 170px;
-        top: 80px;
-        display: none;
-    }
-    .desp-carrito.show{
-        display: flex;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        z-index: 3;
-    }
-
-    .desp-carrito p{
-        font-family: var(--text-body);
-        font-size: 12px;
-        margin: 0px;
-    }
-  /*no anda :( */
-    .continuar-compra{
-        display: flex;
-        width: 191.267px;
-        height: 58.929px;
-        padding: 20px 11.267px 15.929px 16px;
-        justify-content: flex-end;
-        align-items: center;
-        flex-shrink: 0;
-        border-radius: 50px;
-        border: 1px solid var(--sombra-acento);
-        background: var(--principal)
-
-
-    }
 
 
 
     @media screen and (min-width: 1024px){
 
-
+        main {
+        margin-left: 175px;
+        margin-right: 175px;
+        }
         .text-footer{
         width: 300px;
         }
@@ -769,7 +792,7 @@
 
     }
     .contenedor-card{
-        width: 179px;
+        width: 175px;
         height: 181px;
     }
 
@@ -792,6 +815,28 @@
         font-size: 18px;
 
     }
+    .contenido-card-principal{
+        display: block;
+ }
+
+    .contenido-card-principal .infoCardGratis{
+        margin: auto;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    .contenido-card-principal .infoCardGratis .play, .contenido-card-principal .infoCardPaga .carrito{
+        width: 38px;
+        height: 33px;
+    }
+    .contenido-card-principal .infoCardPaga{
+    margin-top: 10px;
+
+    }
+    .contenido-card-principal .infoCardPaga{
+
+
+    }
+
     .infoCardGratis{
         margin-top: 14.5px;
     }
@@ -806,15 +851,16 @@
    
         
     }
+   
     .infoCardGratis .titulo, .infoCardPaga .titulo{
         width: 130px; /* Ancho máximo del contenedor */
         white-space: nowrap; /* Evita que el texto se divida en líneas */
         text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se recorta */
     }
-
     .infoCardPaga .titulo{
         margin: auto;
         justify-content: center;
+        overflow: hidden;
     }
     .infoCardGratis{
         margin-left: 5px;
@@ -864,10 +910,10 @@
         overflow: visible;
     }
 
-    .contenedor-card-principal .precio, .precio{
+    .contenedor-card-principal .precio, .contenedor-card-principal .precio-tachado{
         font-size: 25px;
     }
-
+    /* Estilos para menu ejecucion */
     .img-4enlinea{
         width: 650px;
         height: 650px;
