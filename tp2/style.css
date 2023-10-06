@@ -527,8 +527,7 @@
         z-index: 3;
     }
 
-    p.desp-carrito{
-        flex-direction: column;
+    .desp-carrito p{
         font-family: var(--text-body);
         font-size: 12px;
         margin: 0px;
