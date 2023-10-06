@@ -12,23 +12,292 @@
 </head>
 <body>
     <header class="header">
-       <div class="img-header">
-            <div class="header-izq">
-                <img class="btnmenu" src="images/hamburger-button2.png" onclick="toggleMenu()">
-                <img src="images/logo.png" class="logoheader">
-            </div>
-            <input type="text" class="buscador">
+        <div class="img-header">
+             <div class="header-izq">
+                 <img class="btnmenu" src="images/hamburger-button2.png" onclick="toggleMenu()">
+                 <img src="images/logo.png" class="logoheader">
+             </div>
+             <input type="text" class="buscador">
+             <div class="header-der">
+                 <img src="images/carrito.svg" class="carrito-nav" onclick="toggleCarrito()">
+                 <img src="images/avatar.png" class="perfil-avatar" alt="avatar" onclick="togglePerfil()">
+             </div>
+         </div>
+         <nav class="navbar">
+             <ul class="menu">
+                 <p class="txt_categoria">categorias</p>
+                 <li class="btn_cat">accion</li>
+                 <li class="btn_cat">shooter</li>
+                 <li class="btn_cat">arcade</li>
+                 <li class="btn_cat">estrategia</li>
+                 <li class="btn_cat">deportes</li>
+             </ul>
+         </nav>
+         <div class="desp-carrito">
+                 <h3>Resumen de compra</h3>
+                 <p>Fall guys</p><p>$999</p>
+                 <p>Total</p><p>$999</p>
+                 <button class="continuar-compra">Continuar compra</button>
+         </div>
+         <nav class="nav-perfil">
+             <ul class="menu-perfil">
+                 <li class="btn-perfil">mi perfil</li>
+                 <li class="btn-perfil">mi perfil</li>
+                 <li class="btn-perfil">mi perfil</li>
+             </ul>
+         </nav>
+     </header> 
+
+    <main>
+        <h1>4 En linea "Android vs Apple"</h1>
+        <div class="contenedor-juego">
+            <img class="img-4enlinea" src="images/4enlinea.png" alt="">
         </div>
-        <nav class="navbar">
-            <ul class="menu">
-                <p class="txt_categoria">categorias</p>
-                <li class="btn_cat">accion</li>
-                <li class="btn_cat">shooter</li>
-                <li class="btn_cat">arcade</li>
-                <li class="btn_cat">estrategia</li>
-                <li class="btn_cat">deportes</li>
-            </ul>
-        </nav>
-    
-    </header> 
+        <section class="carruseles-ejec">
+            <div class="carruselCompleto">
+                    <h2 class="cat-juego">accion</h2>
+                    <section class="wrapper">
+                        <i class="fa-solid fa-angle-left"></i>
+                        <div class="carousel">
+                            <div class="contenedor-card" draggable="false">
+                                <img class="imagen-card" src="images/juego1.png">
+                                <div class="infoCardPaga">
+                                    <p class="titulo">Fuego y Agua</p>
+                                    <div class="precio-carrito">
+                                        <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                        <img class="carrito"src="images/Vector.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-card" draggable="false">
+                                <span class="etiqueta-card-gratis">Gratis</span>
+                                <img class="imagen-card" src="images/juego2.webp">
+                                <div class="infoCardGratis">
+                                    <p class="titulo">Fuego y Agua</p>
+                                        <img class="play"src="images/boton-play.png">
+                                </div>
+                            </div>
+                            <div class="contenedor-card" draggable="false">
+                                <div class="cucarda">
+                                    <span class="etiqueta-card-gratis">Gratis</span>
+                                    <img class="baseCucarda" src="images/etiqueta (2).png" alt="">
+                                    </div>                    <img class="imagen-card" src="images/juego2.webp">
+                                <div class="infoCardGratis">
+                                    <p class="titulo">Fuego y Agua</p>
+                                        <img class="play"src="images/boton-play.png">
+                                </div>
+                            </div>
+                            <div class="contenedor-card" draggable="false">
+                                <span class="etiqueta-card-dto">-40%</span>
+                                <img class="imagen-card" src="images/juego1.png">
+                                <div class="infoCardPaga">
+                                    <p class="titulo">Fuego y Agua</p>
+                                    <div class="precio-carrito">
+                                        <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                        <img class="carrito"src="images/Vector.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-card" draggable="false">
+                                <img class="imagen-card" src="images/juego1.png">
+                                <div class="infoCardPaga">
+                                    <p class="titulo">Fuego y Agua</p>
+                                    <div class="precio-carrito">
+                                        <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                        <img class="carrito"src="images/Vector.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-card" draggable="false">
+                                <img class="imagen-card" src="images/juego1.png">
+                                <div class="infoCardPaga">
+                                    <p class="titulo">Fuego y Agua</p>
+                                    <div class="precio-carrito">
+                                        <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                        <img class="carrito"src="images/Vector.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-card" draggable="false">
+                                <img class="imagen-card" src="images/juego1.png">
+                                <div class="infoCardPaga">
+                                    <p class="titulo">Fuego y Agua</p>
+                                    <div class="precio-carrito">
+                                        <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                        <img class="carrito"src="images/Vector.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-card" draggable="false">
+                                <img class="imagen-card" src="images/juego1.png">
+                                <div class="infoCardPaga">
+                                    <p class="titulo">Fuego y Agua</p>
+                                    <div class="precio-carrito">
+                                        <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                        <img class="carrito"src="images/Vector.svg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    <i class="fa-solid fa-angle-right"></i>
+                </section>
+            </div>
+            <div class="carruselCompleto">
+                <h2 class="cat-juego">accion</h2>
+                <section class="wrapper">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <div class="carousel">
+                        <div class="contenedor-card" draggable="false">
+                            <img class="imagen-card" src="images/juego1.png">
+                            <div class="infoCardPaga">
+                                <p class="titulo">Fuego y Agua</p>
+                                <div class="precio-carrito">
+                                    <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                    <img class="carrito"src="images/Vector.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor-card" draggable="false">
+                            <span class="etiqueta-card-gratis">Gratis</span>
+                            <img class="imagen-card" src="images/juego2.webp">
+                            <div class="infoCardGratis">
+                                <p class="titulo">Fuego y Agua</p>
+                                    <img class="play"src="images/boton-play.png">
+                            </div>
+                        </div>
+                        <div class="contenedor-card" draggable="false">
+                            <div class="cucarda">
+                                <span class="etiqueta-card-gratis">Gratis</span>
+                                <img class="baseCucarda" src="images/etiqueta (2).png" alt="">
+                                </div>                    <img class="imagen-card" src="images/juego2.webp">
+                            <div class="infoCardGratis">
+                                <p class="titulo">Fuego y Agua</p>
+                                    <img class="play"src="images/boton-play.png">
+                            </div>
+                        </div>
+                        <div class="contenedor-card" draggable="false">
+                            <span class="etiqueta-card-dto">-40%</span>
+                            <img class="imagen-card" src="images/juego1.png">
+                            <div class="infoCardPaga">
+                                <p class="titulo">Fuego y Agua</p>
+                                <div class="precio-carrito">
+                                    <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                    <img class="carrito"src="images/Vector.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor-card" draggable="false">
+                            <img class="imagen-card" src="images/juego1.png">
+                            <div class="infoCardPaga">
+                                <p class="titulo">Fuego y Agua</p>
+                                <div class="precio-carrito">
+                                    <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                    <img class="carrito"src="images/Vector.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor-card" draggable="false">
+                            <img class="imagen-card" src="images/juego1.png">
+                            <div class="infoCardPaga">
+                                <p class="titulo">Fuego y Agua</p>
+                                <div class="precio-carrito">
+                                    <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                    <img class="carrito"src="images/Vector.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor-card" draggable="false">
+                            <img class="imagen-card" src="images/juego1.png">
+                            <div class="infoCardPaga">
+                                <p class="titulo">Fuego y Agua</p>
+                                <div class="precio-carrito">
+                                    <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                    <img class="carrito"src="images/Vector.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor-card" draggable="false">
+                            <img class="imagen-card" src="images/juego1.png">
+                            <div class="infoCardPaga">
+                                <p class="titulo">Fuego y Agua</p>
+                                <div class="precio-carrito">
+                                    <span class="precio">$500</span><span class="precio-tachado">$2500</span>
+                                    <img class="carrito"src="images/Vector.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <i class="fa-solid fa-angle-right"></i>
+                </section>
+            </div>
+            <div class="instrucciones">
+                <h2>¿De que trata?</h2>
+                <p> "¡Prepárate para la batalla definitiva entre dos de las plataformas más icónicas del mundo tecnológico! En '4 en linea: La Batalla de Plataformas', Android y Apple se enfrentan en un emocionante juego de 4 en línea que desafiará tu estrategia y habilidades tácticas.</p>
+            </div>
+        </section>
+    </main>
 </body>
+<footer>
+    <section class="acerca-de">
+        <h2 class="titulo-footer">Acerca de nosotros</h2>
+        <span class="text-footer">Bienvenidos a nuestra plataforma de juegos en línea, tu destino favorito para sumergirte en emocionantes aventuras virtuales. Permítenos presentarnos: somos Mateo Viera y Alfonsina Moris, estudiantes de la Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN), inscriptos en la carrera de Tecnología Universitaria en Desarrollo de Aplicaciones Informáticas (TUDAI).</span>
+    </section>
+    <div class="fat-footer">
+        <section class="section1">
+            <div class="footer-section">
+                <h2>Tendencia</h2>
+                <ul>
+                    <li><a href="#">Arcade</a></li>
+                    <li><a href="#">Estrategia</a></li>
+                    <li><a href="#">Deportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Nosotros</h2>
+                <ul>
+                    <li><a href="#">Equipo</a></li>
+                    <li><a href="#">Lugar</a></li>
+                    <li><a href="#">H</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="section2">     
+            <div class="footer-section">
+                <h2>Redes sociales</h2>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Informacíon</h2>
+                <ul>
+                    <li><a href="/acerca-de">Ayuda</a></li>
+                    <li><a href="/politica-de-privacidad">Desarrollo</a></li>
+                    <li> <a href="">Docu</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="section3">
+            <div class="footer-section">
+                <h2>Tendencia</h2>
+                <ul>
+                    <li><a href="#">Arcade</a></li>
+                    <li><a href="#">Estrategia</a></li>
+                    <li><a href="#">Deportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Enlaces útiles</h2>
+                <ul>
+                    <li><a href="/acerca-de">Cookies</a></li>
+                    <li><a href="/politica-de-privacidad">Políticas</a></li>
+                    <li> <a href="">Términos</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</footer>
+<script src="menu.js"></script>
+</html>
