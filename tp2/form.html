@@ -32,42 +32,59 @@
     
     </header> 
     <main>
-
+        <section class="registro">
         <div class="formRegister">
             <section class="headRegistro">
             <h2 class="tituloRegistro">Registrate</h2>
             <div class="tengoCuenta">
             <p>¿Ya tienes una cuenta?</p>
-            <button class="btn-ingresar">Ingresar</button>
-        </div>
-    </section>
+            <a href="login.html"><button class="btn-ingresar">Ingresar</button></a>
+            </div>
+             </section>
         <div class="registros">
             <form class="formularioRegistro" action="index.html">
+
+                <div class="inputEmail">
                 <label class="nombre">Nombre</label>
                 <input type="text" name="nombre" class="nombrecap" required size="30">
+                </div>
+                <div class="inputEmail">
                 <label>Apellido</label>
                 <input type="text" name="Apellido" class="apellidocap" required size="30" >
+                </div>
+                <div class="inputEmail">
                 <label>Edad</label>
                 <input type="number" name="edad" class="edad" required size="30">
+                </div>
+                <div class="inputEmail">
                 <label>Nickname</label>
                 <input type="text" name="edad" class="nickname" maxlength="10" size="30">
+                </div>
+                <div class="inputEmail">
                 <label>Mail</label>
                 <input type="email" name="mail" id="mailcap" required size="30" size="30">
+                </div>
+                <div class="inputEmail">
                 <label>Contraseña</label>
                 <input type="password" name="contraseña" limit="2" class="contraseña" required size="30">
+                </div>
+                <div class="inputEmail">
                 <label>Repetir Contraseña</label>
                 <input type="password" name="contraseña" limit="2" class="contraseña" required size="30">
+                 </div>
+
                 <img src="images/captcha.jpeg" alt="captcha" class="captcha">
                 <div class="Registrar">
-                  <button class="registrarse" type="submit" value="" >REGISTRAR</button>
+                  <button class="registrarse" type="submit" value="" >Registrar</button>
                 </div>
             </form>
         <section class="registrarteCon">
-            <span class="facebook"> <img class="logoFb" src="images/logoFacebook.png" alt=""><p class="registrate" >Registrate con Facebook</p></span>
-            <span class="gmail"> <img class="logoMail" src="images/logoGoogle.png" alt=""><p class="registrate" >Registrate con Google</p></span>
+            <a href="index.html"><span class="facebook"> <img class="logoFb" src="images/logoFacebook.png" alt=""><p class="registrate" >Registrate con Facebook</p></span></a>
+            <a href="index.html"><span class="gmail"> <img class="logoMail" src="images/logoGoogle.png" alt=""><p class="registrate" >Registrate con Google</p></span></a>
         </section>
         </div>
     </div>
+</section>
     </main> 
     <footer>
         <section class="acerca-de">

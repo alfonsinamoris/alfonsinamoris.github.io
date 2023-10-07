@@ -651,18 +651,57 @@
         background-color:var(--luz-sec-2);
        }
 
-
-    /*resgistro*/
+       .flechaPerfil{
+        width: 40px;
+        margin-top:-35px
+    }
+        .nav-perfil.show{
+        top:103px
+        }
+    /* Estilo para form resgistro*/
+    .registro .formRegister{
+        height: 510px;
+    }
     .formRegister{
         width: 623px;
         height: 480px;
         background-color: var(--luz-sec-2);
         margin: 0px;
         margin: auto;
-    
-       
+    }
+    .registro .Registrar{
+        display:flex;
+        justify-content:center;
+        margin-top: 10px;
+    }
+
+    .registro .captcha{
+        margin-left: 25px;
+        margin-top:10px;
+    }
+    .registro .registrarse{
+        width: 125px;
+    }
+    .registro .tituloRegistro{
+        margin:5px;
+    }
+    .registro .gmail{
+        margin-top:50px
+    }
+        .registro .tengoCuenta{
+        margin: 0px;
         }
-        
+        .registro .registrarteCon{
+        margin-top: 100px;
+        align-items: start;
+        margin-right: 30px;
+        }
+        .registro .btn-ingresar{
+        margin: auto;
+        }
+        .headRegistro p{
+            margin-right: 10px;
+        }
         .headRegistro{
         display: flex;
         flex-direction: column;
@@ -695,10 +734,8 @@
         .registrarse{
             display: inline-flex;
             padding: 8px 19px 7px 20px;
-            width: 142px;
             height: 33px;
             color: var(--luz-sec-2);
-            font-size: 15px;
             justify-content: center;
             align-items: center;
             background-color: var(--secundario);
@@ -942,7 +979,57 @@
     .instruccion{
        height: 120px;
        width: 120px; 
+        margin: 30px;
     }
+    .instrucciones {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .deQueTrata,.controles {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+    .controles, .img-comojugar{
+        margin-left: 40px;
+    }
+    .comoJugar ,.img-comojugar{
+        width: 45%;
+    }
+
+    .input-nuevo-comentario{
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--luz-sec-2);
+        width: 670px;
+        height: 30px;
+    }
+
+    .comentarios h2{
+        font-family: var(--text-body);
+        color: var(--luz-sec-2);
+        
+    }
+
+    .nuevo-comentario{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .btn-agregar{
+        height: 35px;
+        background-color: var(--luz-sec-2);
+        border-radius: 7px;
+    }
+
+    .comentario{
+        background-color: var(--luz-sec-2);
+        color: var(--sombra-ppal-1);
+        margin: 5px;
+        
+    }
+
     /*Estilos para login */
     .login .formRegister{
         width: 340px;
@@ -1027,5 +1114,12 @@
         margin-top: 20px;
         width: 125px;
     }
+    .login a, .registro a {
+        color: var(--luz-sec-2);
+        text-decoration: none;
+    }
+    .login a:hover, .registro a:hover{
+        text-decoration: underline;
+    } 
 }
 
