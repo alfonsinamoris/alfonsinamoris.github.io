@@ -943,12 +943,12 @@
        height: 120px;
        width: 120px; 
     }
-
+    /*Estilos para login */
     .login .formRegister{
         width: 340px;
         height: 450px;
     }
-    .login .iniciarSes{
+    .login .login{
         margin: 0px;
         display: block;
     }
@@ -956,6 +956,76 @@
         margin: 0px;
     }
     .login{
-    justify-content: center;
+        justify-content: center;
+    }
+    .facebook{
+        margin-top: 0px;
+ 
     } 
+    .facebook, .gmail{
+        margin-left: 47px;
+        width: 245px;
+        height: 34px;
+
+    }
+    .registrate{
+        margin: 0px;
+        padding-left: 15px;
+    }
+    .gmail{
+        margin-top: 12px;
+    }
+    .login .tituloRegistro{
+        display: flex;
+        justify-content: center;
+    
+    }
+    .separadorReg{
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+    }
+    .separadorReg .lineaSeparador{
+        flex-grow: 1;
+        height: 1px;
+        background-color: var(--luz-ppal-2); /* Color de la línea */
+        margin: 0 10px; /* Espacio alrededor de la línea */
+    }
+    .formLogin{
+        display: flex;
+        flex-direction: column;
+        margin:auto;
+    }
+    .formLogin label{
+        font-size: 15px;
+    }
+    .formLogin input{
+        height: 20px;
+        width: 280px;
+    }
+    .inputEmail{
+    display: flex;
+    flex-direction: column;
+    margin: 7px;
+    }
+    .login .captcha{
+        margin: auto;
+        margin-top: 10px;
+    }
+    .login .registrar{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .login .btn-ingresar{
+        margin: 0px;
+        margin-left: 16px;
+    }
+    .login .registrarse{
+        margin: auto;
+        margin-top: 20px;
+        width: 125px;
+    }
 }
+
