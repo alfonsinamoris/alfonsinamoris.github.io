@@ -593,11 +593,11 @@
 
 
     @media screen and (min-width: 1024px){
-
-        main {
-        margin-left: 175px;
-        margin-right: 175px;
+        main{
+            margin-left: 175px;
+            margin-right: 175px;
         }
+
         .text-footer{
         width: 300px;
         }
@@ -794,6 +794,7 @@
     .contenedor-card{
         width: 175px;
         height: 181px;
+        border-radius: 20px;
     }
 
     .imagen-card{
@@ -822,18 +823,14 @@
     .contenido-card-principal .infoCardGratis{
         margin: auto;
         margin-left: 10px;
-        margin-top: 20px;
+        margin-top: 15px;
     }
     .contenido-card-principal .infoCardGratis .play, .contenido-card-principal .infoCardPaga .carrito{
         width: 38px;
         height: 33px;
     }
     .contenido-card-principal .infoCardPaga{
-    margin-top: 10px;
-
-    }
-    .contenido-card-principal .infoCardPaga{
-
+    margin-top: 1px;
 
     }
 
@@ -897,13 +894,16 @@
     }
 
     .contenedor-card-principal{
-        width: 235px;
+        width: 305px;
         height: 250px;
+        border-radius: 20px;
     }
 
     .contenedor-card-principal .imagen-card{
-        width: 220px;
-        height: 150px;
+        width: 290px;
+        height: 175px;
+        margin-left: 7px;
+        border-radius: 10px;
     }
     .contenedor-card-principal .titulo{
         font-size: 25px;
@@ -917,21 +917,45 @@
     .img-4enlinea{
         width: 650px;
         height: 650px;
-        margin-left: 100px;
-        margin-left: 275px;
-        margin-right: 275px;
+        margin-left: 120px;
 
     }
-    .contenedor-juego{
+   main .contenedor-juego{
         background-color: var(--principal);
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
-    .carruseles-ejec{
-        margin-left: 175px;
-        margin-right: 175px;
-    }
 
     .instrucciones{
         color: var(--luz-sec-2);
     }
+
+    main .contenedor-juego{
+        margin: 0px;
+    }
+
+    .encabezado-juego h1{
+        color: var(--luz-sec-2);
+    }
+
+    .instruccion{
+       height: 120px;
+       width: 120px; 
+    }
+
+    .login .formRegister{
+        width: 340px;
+        height: 450px;
+    }
+    .login .iniciarSes{
+        margin: 0px;
+        display: block;
+    }
+    .login .titulo, p, .registrarteCon{
+        margin: 0px;
+    }
+    .login{
+    justify-content: center;
+    } 
 }
