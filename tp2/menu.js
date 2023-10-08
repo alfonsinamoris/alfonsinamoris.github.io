@@ -31,5 +31,23 @@ arrowIcons.forEach(icon => {
     });
 });
 
+//simular porcentaje de carga 
+document.addEventListener("DOMContentLoaded", function () {
+    // Simula la carga de la página
+    let cargaActual = 0;
+    const porcentajeCarga = document.getElementById("porcentaje-carga");
+
+    const simularCarga = setInterval(function () {
+        cargaActual += 1;
+        porcentajeCarga.innerText = cargaActual + "%";
+
+        if (cargaActual >= 100) {
+            clearInterval(simularCarga);
+            // Oculta el spinner y el porcentaje de carga una vez que la carga esté completa
+            document.querySelector(".spinner-container").style.display = "none";
+        }
+    }, 50);
+});
+
 
 

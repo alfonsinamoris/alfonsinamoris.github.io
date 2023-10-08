@@ -591,8 +591,7 @@
 
 
 
-
-    @media screen and (min-width: 1024px){ 
+ @media screen and (min-width: 1024px){ 
         /*estilos para botones animados */ 
             .btn-perfil{
                 padding: 0px;
@@ -702,6 +701,8 @@
             overflow: hidden;
             display: inline-block;
             padding: 10px;
+            text-align: center;
+            width: 100px;
         }
         .ov-btn-slide-left:hover {
             color: #fff; /* color de fuente hover */
@@ -782,15 +783,14 @@
         border-radius: 30px;
         height: 40px;
         width: 370px;
-        margin: 15px;
-        
+        margin: 15px;    
         background-color:var(--luz-sec-2);
        }
 
        .flechaPerfil{
         width: 40px;
         margin-top:-35px
-    }
+         }
         .nav-perfil.show{
         top:103px
         }
@@ -798,14 +798,6 @@
             color:var(--secundario);
             text-decoration: solid;
         }
-
-        
-
-
-
-
-
-
 
     /* Estilo para form resgistro*/
     .registro .formRegister{
@@ -964,7 +956,7 @@
         
         }
 
-        .registros{
+  .registros{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -1083,6 +1075,10 @@
         width: 305px;
         height: 250px;
         border-radius: 20px;
+        transform: 0.2s ease;
+    }
+    .contenedor-card-principal:hover{
+        transform: scale(1.05);
     }
 
     .contenedor-card-principal .imagen-card{
@@ -1115,6 +1111,10 @@
 
     .instrucciones{
         color: var(--luz-sec-2);
+        border-bottom: solid var(--luz-sec-2) 1px;
+        border-top: solid var(--luz-sec-2) 1px;
+        margin-top: 5px;
+
     }
 
     main .contenedor-juego{
@@ -1222,7 +1222,6 @@
         border-bottom: solid 1px var(--luz-ppal-2);
     }
 
-    
 
     /*Estilos para login */
     .login .formRegister{
@@ -1315,5 +1314,28 @@
     .login a:hover, .registro a:hover{
         text-decoration: underline;
     } 
+
+    .spinner-container {
+        text-align: center;
+    }
+
+    #porcentaje-carga{
+        color: var(--luz-sec-2);
+    }
+
+    .spinner {
+        border: 8px solid #3498db;
+        border-top: 8px solid transparent;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 }
 
