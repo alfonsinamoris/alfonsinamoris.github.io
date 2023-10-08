@@ -31,23 +31,40 @@ arrowIcons.forEach(icon => {
     });
 });
 
-//simular porcentaje de carga 
 document.addEventListener("DOMContentLoaded", function () {
     // Simula la carga de la página
     let cargaActual = 0;
     const porcentajeCarga = document.getElementById("porcentaje-carga");
+    const logoSpinner = document.querySelector(".logoSpinner");
 
     const simularCarga = setInterval(function () {
         cargaActual += 1;
         porcentajeCarga.innerText = cargaActual + "%";
 
-        if (cargaActual >= 100) {
+        // Calcula la opacidad gradualmente
+        const opacityValue = 1 - cargaActual / 100;
+
+        // Aplica la opacidad a la imagen con la clase "logoSpinner"
+        logoSpinner.style.opacity = opacityValue;
+
+        if (cargaActual < 100) {
+            document.querySelectorAll(".index, .header, .footer").forEach(function(element) {
+                element.style.display = "none";
+            });
+        } else {
             clearInterval(simularCarga);
             // Oculta el spinner y el porcentaje de carga una vez que la carga esté completa
             document.querySelector(".spinner-container").style.display = "none";
+            document.querySelectorAll(".index, .header, .footer").forEach(function(element) {
+                element.style.display = "block";
+            });
         }
     }, 50);
 });
+
+
+
+
 
 
 

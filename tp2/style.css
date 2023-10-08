@@ -1317,10 +1317,18 @@
 
     .spinner-container {
         text-align: center;
-    }
+        margin-top: 70px;
 
+    }
+  
+  
     #porcentaje-carga{
         color: var(--luz-sec-2);
+    }
+    /* Aplica un efecto de desvanecimiento a la imagen con la clase ".logoSpinner" */
+    .logoSpinner {
+        opacity: 1;
+        transition: opacity 0.5s ease;
     }
 
     .spinner {
