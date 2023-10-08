@@ -1089,11 +1089,11 @@
         display: flex;
         justify-content: space-between;
         background-color: var(--luz-sec-2);
-        width: 670px;
+        width: 600px;
         height: 30px;
     }
 
-    .comentarios h2{
+    .comentarios h2, .comentarios h3{
         font-family: var(--text-body);
         color: var(--luz-sec-2);
         
@@ -1102,6 +1102,12 @@
     .nuevo-comentario{
         display: flex;
         flex-direction: row;
+    }
+
+    .comentario p{
+        font-weight:bold;
+        color: var(--sombra-ppal-2);
+
     }
 
     .btn-agregar{
@@ -1113,9 +1119,48 @@
     .comentario{
         background-color: var(--luz-sec-2);
         color: var(--sombra-ppal-1);
-        margin: 5px;
+        margin: 10px;
+        width: 600px;
         
     }
+    /* Estilos para el ícono dentro del input */
+    .input-con-icono {
+        position: relative;
+    }
+
+    .input-con-icono input[type="text"] {
+        padding-right: 30px; /* Espacio para el ícono */
+    }
+
+    .input-con-icono span {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: var(--luz-ppal-2);
+        cursor: pointer;
+    }
+
+    .input-con-icono span:hover {
+        color:var(--sombra-ppal-1);
+    }
+
+    .avatar-comentario{
+        border-radius: 50%;
+        margin: 5px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .encabezado-comentario{
+        display: flex;
+        flex-direction: row;
+        height: 20px;
+        border-bottom: solid 1px var(--luz-ppal-2);
+    }
+
+    
 
     /*Estilos para login */
     .login .formRegister{
