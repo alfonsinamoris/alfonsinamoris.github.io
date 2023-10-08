@@ -592,7 +592,81 @@
 
 
 
-    @media screen and (min-width: 1024px){
+    @media screen and (min-width: 1024px){ 
+        /*estilos para botones animados */ 
+            .btn-perfil{
+                padding: 0px;
+        }
+        /*** ESTILOS BOTÓN GROW SPIN ***/
+        .ov-btn-grow-spin {
+            background: #fff; /* color de fondo */
+            color: #4741d7; /* color de fuente */
+            border: 2px solid #4741d7; /* tamaño y color de borde */
+            padding: 16px 20px;
+            border-radius: 3px; /* redondear bordes */
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .ov-btn-grow-spin:hover {
+            color: #fff;/* color de fuente hover */
+        }
+        .ov-btn-grow-spin::after {
+            content: "";
+            background: #4741d7; /* color de fondo hover */
+            position: absolute;
+            z-index: -1;
+            padding: 16px 20px;
+            display: block;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: scale(0, 0) rotate(-180deg);
+            transition: all 0.3s ease;
+        }
+        .ov-btn-grow-spin:hover::after {
+            transition: all 0.3s ease-out;
+            transform: scale(1, 1) rotate(0deg);
+        }
+        /*** ESTILOS BOTÓN SLIDE LEFT ***/
+        .ov-btn-slide-left {
+            color: var(--secundario); /* color de fuente */
+            border: 2px solid var(--secundario); /* tamaño y color de borde */
+            border-radius: 3px; /* redondear bordes */
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            display: inline-block;
+            padding: 10px;
+        }
+        .ov-btn-slide-left:hover {
+            color: #fff; /* color de fuente hover */
+        }
+        .ov-btn-slide-left::after {
+            content: "";
+            background: var(--secundario); /* color de fondo hover */
+            position: absolute;
+            z-index: -1;
+            padding: 16px 20px;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: -100%;
+            right: 100%;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s;
+        }
+        .ov-btn-slide-left:hover::after {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s;
+        }
+
         main{
             margin-left: 175px;
             margin-right: 175px;
@@ -658,6 +732,19 @@
         .nav-perfil.show{
         top:103px
         }
+        .btn-perfil:hover{
+            color:var(--secundario);
+            text-decoration: solid;
+        }
+
+        
+
+
+
+
+
+
+
     /* Estilo para form resgistro*/
     .registro .formRegister{
         height: 510px;
@@ -1114,7 +1201,7 @@
         margin-top: 20px;
         width: 125px;
     }
-    .login a, .registro a {
+    .login a, .registro a, .btn-perfil a {
         color: var(--luz-sec-2);
         text-decoration: none;
     }
