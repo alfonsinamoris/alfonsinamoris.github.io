@@ -596,25 +596,87 @@
         /*estilos para botones animados */ 
             .btn-perfil{
                 padding: 0px;
+        } 
+        /* Estilos para boton animado menu hamburguesa */
+        .btn_cat{
+            padding: 0px; 
+            overflow: visible;
+            background-color:var(--principal);     
         }
+        ul.menu {
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        li.btn_cat{
+            font-size: 25px;
+            width: 150px;
+            height: 50px;
+            color: var(--luz-sec-2);
+            border-left: 0.08em solid;
+            position: relative;
+            margin-top: 0.8em;
+            cursor: pointer;
+        }
+        
+        li.btn_cat::before,
+        li.btn_cat::after
+         {
+            content: '';
+            position: absolute;
+            width: inherit;
+            border-left: inherit;
+            z-index: -1;
+        }
+        
+        li.btn_cat::before {
+            height: 80%;
+            top: 10%;
+            left: calc(-0.15em - 0.08em * 2);
+            filter: brightness(0.8);
+        }
+        
+        li.btn_cat::after {
+            height: 60%;
+            top: 20%;
+            left: calc(-0.15em * 2 - 0.08em * 3);
+            filter: brightness(0.6);
+        }
+        
+        li.btn_cat span {
+            position: relative;
+            height: 120%;
+            top: -10%;
+            box-sizing: border-box;
+            border: 0.08em solid;
+            background-color: var(--principal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            text-transform: capitalize;
+            transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+            transition: 0.3s;
+        }
+        
+        li.btn_cat:hover span {
+            transform: translateX(0.15em);
+        }
+
+
         /*** ESTILOS BOTÓN GROW SPIN ***/
         .ov-btn-grow-spin {
-            background: #fff; /* color de fondo */
-            color: #4741d7; /* color de fuente */
-            border: 2px solid #4741d7; /* tamaño y color de borde */
-            padding: 16px 20px;
-            border-radius: 3px; /* redondear bordes */
             position: relative;
             z-index: 1;
             overflow: hidden;
             display: inline-block;
         }
         .ov-btn-grow-spin:hover {
-            color: #fff;/* color de fuente hover */
+            color: var(--luz-sec-2);/* color de fuente hover */
         }
         .ov-btn-grow-spin::after {
             content: "";
-            background: #4741d7; /* color de fondo hover */
+            background: var(--secundario); /* color de fondo hover */
             position: absolute;
             z-index: -1;
             padding: 16px 20px;
@@ -825,7 +887,7 @@
             color: var(--luz-sec-2);
             justify-content: center;
             align-items: center;
-            background-color: var(--secundario);
+            background-color: var(--principal);
             border-radius: 50px;
             font: var(--btn-sec);
             letter-spacing: 3px;
