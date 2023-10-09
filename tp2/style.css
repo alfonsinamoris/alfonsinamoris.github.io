@@ -184,7 +184,7 @@
         margin: 0px;
         margin-left: 10px;
     }
-  /*no anda :( */
+
     .continuar-compra{
         display: flex;
         height: 58.929px;
@@ -500,7 +500,7 @@
     .precio-carrito{
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-end;
         margin: 0%;
         justify-content: space-between;
     }
@@ -561,32 +561,14 @@
         background-color: var(--secundario);
         border-radius: 50px;
         font: var(--btn-sec);
-        letter-spacing: 2px;
         margin-right: 47px;
         font-family: var(--text-body);
         text-transform:uppercase;
         transition: .3s;
     }
 
-    .btn-carrusel-categorias .span-btn{
-        width: 100%;
-        height:33px ;
-        border-radius: 50%;
-        background-color: var(--luz-sec-1);
-        position: absolute;
-        top: -50%;
-        left: -100%;
-        transition: .3s;
-    }
 
-    .btn-carrusel-categorias:hover span.btn{
-        left: -10%;
-    }
 
-    .btn-carrusel-categorias:hover{
-        color: aliceblue;
-        box-shadow: 0 5px 5px;
-    }
 
 
 
@@ -963,6 +945,7 @@
             justify-content: space-between;
             
         }
+        
         /* eEstilo para las cards */ 
      
     
@@ -973,9 +956,10 @@
     .contenedor-card{
         width: 175px;
         height: 181px;
+
     }
     .contenedor-card .imagen-card{
-        margin: auto;
+        margin: 3px;
     }
     .imagen-card{
         width: 167px;
@@ -987,6 +971,7 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        overflow: hidden; /* Ocultar el texto que no cabe en la tarjeta */
     }
     .play, .carrito{
         width: 22px;
@@ -1014,9 +999,6 @@
 
     }
 
-    .infoCardGratis{
-        margin-top: 14.5px;
-    }
     .play{
         display: flex;
         margin-right: 16,49px;
@@ -1037,7 +1019,7 @@
     .infoCardPaga .titulo{
         margin: auto;
         justify-content: center;
-        overflow: hidden;
+        overflow: visible;
     }
     .infoCardGratis{
         margin-left: 5px;
@@ -1068,9 +1050,6 @@
         top: 0;
         right: 0;
         z-index: 2;
-    }
-    .infoCardPaga{
-    margin-top: 2.5px;
     }
 
     .contenedor-card-principal{
@@ -1195,6 +1174,20 @@
     .comentarios-adicionales, .btn-verMenos{
         display: none;
     
+    }
+
+    .btn-verMenos, .btn-verMas{
+        font-family: var(--btn-sec);
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        width: 80px;
+        margin-left: 7px;
+        margin-top: 16px;
+        height: 20px;
+        align-items: center;
+        background-color: var(--principal);
+        color: var(--luz-sec-2);
     }
 
     /* Estilos para el ícono dentro del input */
@@ -1357,7 +1350,7 @@
         100% { transform: rotate(360deg); }
     }
 
-    
+
 
 }
 

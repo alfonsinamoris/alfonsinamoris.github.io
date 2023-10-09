@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 50);
 });  
 
-
+/*
 function registroCompleto(){
     alert("gracias hdp");
 
@@ -94,6 +94,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  */
+
+  document.querySelector(".formularioRegistro").document.addEventListener("submit",EnviarRegistro())
+  function EnviarRegistro(){
+    alert("registro completo")
+  }
+
 
   document.addEventListener("DOMContentLoaded", function () {
     // Encuentra el botón "Ver más" y los comentarios adicionales
