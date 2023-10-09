@@ -1155,13 +1155,13 @@
     .contenedor-card-principal{
         width: 310px;
         height: 250px;
-        transition: box-shadow 0.3s;
+        transition: transform 0.3s, opacity 0.3s;
+        transform: scale(1);
+        opacity: 1;
     }
     .contenedor-card-principal:hover{
-       
-        box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.5);
-
-        
+        transform: scale(1.1); /* Aumenta el tamaño al hacer hover */
+        opacity: 0.8; /* Reduce la opacidad al hacer hover */
     }
 
     .contenedor-card-principal .imagen-card{
@@ -1477,6 +1477,15 @@
         margin-top: 10px;
         opacity: 0; /* Inicialmente establecemos la opacidad en 0 */
         transition: opacity 1s; /* Agregamos una transición suave de 0.5 segundos */
+    }
+    .mensaje{
+    font-size: 50px;
+    margin: auto;
+    display: none;
+    font: 'Roboto';
+    color: var(--luz-sec-2);
+    justify-content: center;
+    align-items: center;
     }
 }
 

@@ -14,7 +14,7 @@ function toggleCarrito(){
 
 //carrusel
 const carousel = document.querySelector(".carousel"),
-firstImg = carousel.querySelectorAll("img")[0],
+ // firstImg = carousel.querySelectorAll("img")[0],
 arrowIcons = document.querySelectorAll(".wrapper1 i ");
 let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
 const showHideIcons = () => {
@@ -92,16 +92,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
   
-const formularioRegistro = document.querySelector(".formularioRegistro");
-const mensaje = document.getElementById("mensaje");
-formularioRegistro.addEventListener("submit", function(event) {
-    event.preventDefault(); 
-    mensaje.textContent = "El formulario se envió correctamente.";
-    mensaje.style.display = "block";
-    mensaje.style.opacity = "1"; 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("formLogin");
+    const mensajeBienvenida = document.getElementById("mensajeBienvenida");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+
+        mensajeBienvenida.style.display = "flex";
+        document.getElementById("formRegistro").style.display= "none";
+        setTimeout(function () {
+            window.location.href = "index.html";
+        }, 3000);
+    });
 });
-
-
 
 
 

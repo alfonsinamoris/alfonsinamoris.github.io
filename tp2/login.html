@@ -32,10 +32,13 @@
     
     </header> 
     <main>
-        <section class="login">
+        <div id="mensajeBienvenida" class="mensaje">
+        <p>Bienvenido, has ingresado correctamente.</p>
+    </div>
+        <section class="login"  id="formRegistro">
         <div class="formRegister">
             <h2 class="tituloRegistro">Iniciar Sesion</h2>
-           
+            
             <section class="registrarteCon">
                <a href="index.html"> <span class="facebook"> <img class="logoFb" src="images/logoFacebook.png" alt=""><p class="registrate" >Continuar con Facebook</p></span></a>
                <a href="index.html"> <span class="gmail"> <img class="logoMail" src="images/logoGoogle.png" alt=""><p class="registrate" >Continuar con Google</p></span></a>
@@ -44,7 +47,7 @@
                 <span>O</span>
                 <div class="lineaSeparador"> </div>
                 </div>
-                <form class="formLogin" id="formLogin" action="index.html">
+                <form class="formLogin" id="formLogin">
                 <section class="inputEmail">
                 <label>Email</label>
                 <input type="email" name="mail" id="mailcap" required>
@@ -56,12 +59,12 @@
                 <img src="images/captcha.jpeg" alt="captcha" class="captcha">
                 <button class="registrarse ov-btn-grow-spin" type="submit" value="" >Ingresar</button>
             </form>
-
                 <div class="registrar">
                     <p>¿No tienes cuenta?</p>
                     <button class="btn-ingresar" type="submit" > <a href="form.html">Registrate </a></button>
                 </div>
         </section>
+        
         </div>
 </section>
 </div>
