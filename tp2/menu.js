@@ -96,12 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   */
 
-  document.querySelector(".formularioRegistro").document.addEventListener("submit",EnviarRegistro())
-  function EnviarRegistro(){
-    alert("registro completo")
-  }
-
-
   document.addEventListener("DOMContentLoaded", function () {
     // Encuentra el botón "Ver más" y los comentarios adicionales
     const verMasBoton = document.getElementById("verMasComentarios");

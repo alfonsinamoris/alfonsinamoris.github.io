@@ -673,10 +673,54 @@
             transition: all 0.3s ease-out;
             transform: scale(1, 1) rotate(0deg);
         }
+        /* estilo para boton slide right */
+        
+        .ov-btn-slide-right {
+            background: var(--principal); /* color de fondo */
+            color:var(--luz-sec-2); /* color de fuente */
+            border: 2px solid var(--luz-sec-2); /* tamaño y color de borde */
+            padding: 10px;
+            border-radius: 3px; /* redondear bordes */
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            width: 100px;
+            display: inline-block;
+        }
+        .ov-btn-slide-right:hover {
+            color: var(--luz-sec-2); /* color de fuente hover */
+        }
+        .ov-btn-slide-right::after {
+            content: "";
+            background: var(--secundario); /* color de fondo hover */
+            position: absolute;
+            z-index: -1;
+            padding: 16px 20px;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 100%;
+            right: -100%;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s;
+        }
+        .ov-btn-slide-right:hover::after {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            -webkit-transition: all 0.35s;
+            transition: all 0.35s;
+        }
+
+
         /*** ESTILOS BOTÓN SLIDE LEFT ***/
+        .btn-verMas.ov-btn-slide-left{
+            background-color: var(--principal);
+        }
         .ov-btn-slide-left {
-            color: var(--secundario); /* color de fuente */
-            border: 2px solid var(--secundario); /* tamaño y color de borde */
+            color: var(--luz-sec-2); /* color de fuente */
+            border: 2px solid var(--luz-sec-2); /* tamaño y color de borde */
             border-radius: 3px; /* redondear bordes */
             position: relative;
             z-index: 1;
@@ -687,7 +731,7 @@
             width: 100px;
         }
         .ov-btn-slide-left:hover {
-            color: #fff; /* color de fuente hover */
+            color: var(--luz-sec-2); /* color de fuente hover */
         }
         .ov-btn-slide-left::after {
             content: "";
@@ -1019,7 +1063,7 @@
     .infoCardPaga .titulo{
         margin: auto;
         justify-content: center;
-        overflow: visible;
+        overflow: hidden;
     }
     .infoCardGratis{
         margin-left: 5px;
@@ -1071,7 +1115,22 @@
         font-size: 25px;
         overflow: visible;
     }
-
+    /* estaba aca */
+    .contenedor-card-principal .infoCardPaga .titulo {
+        margin-bottom: 10px;
+        display: block;
+        width: 250px; /* Cambié el ancho máximo a 250px */
+        margin-left: 7px;
+        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+        overflow: hidden; /* Oculta el texto que desborda */
+        text-overflow: ellipsis; /* Agrega puntos suspensivos (...) para indicar que hay más texto oculto */
+    }
+    
+    .contenedor-card-principal .infoCardGratis .titulo{
+    
+        overflow: hidden;
+        width: 230px;
+    }
     .contenedor-card-principal .precio, .contenedor-card-principal .precio-tachado{
         font-size: 25px;
     }
@@ -1175,27 +1234,9 @@
         display: none;
     
     }
-
-    .btn-verMenos, .btn-verMas{
-        font-family: var(--btn-sec);
-        align-items: center;
-        justify-content: center;
-        border-radius: 50px;
-        width: 80px;
-        margin-left: 7px;
-        margin-top: 16px;
-        height: 20px;
-        align-items: center;
-        background-color: var(--principal);
-        color: var(--luz-sec-2);
-    }
-
     /* Estilos para el ícono dentro del input */
     .input-con-icono {
         position: relative;
-    }
-
-    .input-con-icono input[type="text"] {
     }
 
     .input-con-icono span {
