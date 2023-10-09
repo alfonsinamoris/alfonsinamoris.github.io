@@ -22,71 +22,71 @@
         <nav class="navbar">
             <ul class="menu">
                 <p class="txt_categoria"> <span></span>categorias</p>
-                <a href="#masjugados"><li class="btn_cat"><span>Mas jugados</span></li></a>
-               <a href="#nuevos"><li class="btn_cat"><span>Nuevos</span></li></a>
-                <a href="#accion"><li class="btn_cat"><span>Acción</span></li></a>
-                <a href="#shooter"><li class="btn_cat"><span>Shooter</span></li></a>
-                <a href="#arcade"><li class="btn_cat"><span>Arcade</span></li></a>
+                <a href="index.html#masjugados"><li class="btn_cat"><span>Mas jugados</a></span></li>
+               <a href="index.html#nuevos"><li class="btn_cat"><span>Nuevos</a></span></li>
+                <a href="index.html#accion"><li class="btn_cat"><span>Acción</a></span></li>
+                <a href="index.html#shooter"><li class="btn_cat"><span>Shooter</a></span></li>
+                <a href="index.html#arcade"><li class="btn_cat"><span>Arcade</a></span></li>
             </ul>
         </nav>
     
     </header> 
-    <main>
-        <section class="registro">
+<main>
+    <section class="registro">
         <div class="formRegister">
             <section class="headRegistro">
-            <h2 class="tituloRegistro">Registrate</h2>
-            <div class="tengoCuenta">
-            <p>¿Ya tienes una cuenta?</p>
-            <a href="login.html"><button class="btn-ingresar">Ingresar</button></a>
+                <h2 class="tituloRegistro">Registrate</h2>
+                <div class="tengoCuenta">
+                    <p>¿Ya tienes una cuenta?</p>
+                    <a href="login.html"><button class="btn-ingresar">Ingresar</button></a>
+                </div>
+            </section>
+            <div class="registros">
+                <form class="formularioRegistro" action="index.html">
+
+                    <div class="inputEmail">
+                        <label class="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="nombrecap" required size="30">
+                    </div>
+                    <div class="inputEmail">
+                        <label>Apellido</label>
+                        <input type="text" name="Apellido" class="apellidocap" required size="30" >
+                    </div>
+                    <div class="inputEmail">
+                        <label>Edad</label>
+                        <input type="number" name="edad" class="edad" required size="30">
+                    </div>
+                    <div class="inputEmail">
+                        <label>Nickname</label>
+                        <input type="text" name="edad" class="nickname" maxlength="10" size="30">
+                    </div>
+                    <div class="inputEmail">
+                        <label>Mail</label>
+                        <input type="email" name="mail" id="mailcap" required size="30" size="30">
+                    </div>
+                    <div class="inputEmail">
+                        <label>Contraseña</label>
+                        <input type="password" name="contraseña" limit="2" class="contraseña" required size="30">
+                    </div>
+                    <div class="inputEmail">
+                        <label>Repetir Contraseña</label>
+                        <input type="password" name="contraseña" limit="2" class="contraseña" required size="30">
+                    </div>
+                    <img src="images/captcha.jpeg" alt="captcha" class="captcha">
+                    <div class="Registrar">
+                        <button class="registrarse ov-btn-grow-spin" type="submit" value="" >Registrar </a></button>
+                    </div>
+                </form>
+                <section class="registrarteCon">
+                    <a href="index.html"><span class="facebook"> <img class="logoFb" src="images/logoFacebook.png" alt=""><p class="registrate" >Registrate con Facebook</p></span></a>
+                    <a href="index.html"><span class="gmail"> <img class="logoMail" src="images/logoGoogle.png" alt=""><p class="registrate" >Registrate con Google</p></span></a>
+                </section>
             </div>
-             </section>
-        <div class="registros">
-            <form class="formularioRegistro" action="index.html">
-
-                <div class="inputEmail">
-                <label class="nombre">Nombre</label>
-                <input type="text" name="nombre" class="nombrecap" required size="30">
-                </div>
-                <div class="inputEmail">
-                <label>Apellido</label>
-                <input type="text" name="Apellido" class="apellidocap" required size="30" >
-                </div>
-                <div class="inputEmail">
-                <label>Edad</label>
-                <input type="number" name="edad" class="edad" required size="30">
-                </div>
-                <div class="inputEmail">
-                <label>Nickname</label>
-                <input type="text" name="edad" class="nickname" maxlength="10" size="30">
-                </div>
-                <div class="inputEmail">
-                <label>Mail</label>
-                <input type="email" name="mail" id="mailcap" required size="30" size="30">
-                </div>
-                <div class="inputEmail">
-                <label>Contraseña</label>
-                <input type="password" name="contraseña" limit="2" class="contraseña" required size="30">
-                </div>
-                <div class="inputEmail">
-                <label>Repetir Contraseña</label>
-                <input type="password" name="contraseña" limit="2" class="contraseña" required size="30">
-                 </div>
-
-                <img src="images/captcha.jpeg" alt="captcha" class="captcha">
-                <div class="Registrar">
-                  <button class="registrarse ov-btn-grow-spin" type="submit" value="" >Registrar </a></button>
-                </div>
-            </form>
-        <section class="registrarteCon">
-            <a href="index.html"><span class="facebook"> <img class="logoFb" src="images/logoFacebook.png" alt=""><p class="registrate" >Registrate con Facebook</p></span></a>
-            <a href="index.html"><span class="gmail"> <img class="logoMail" src="images/logoGoogle.png" alt=""><p class="registrate" >Registrate con Google</p></span></a>
-        </section>
+            <div id="mensaje"></div> 
         </div>
-    </div>
-</section>
-    </main> 
-    <footer>
+    </section>
+</main> 
+    <footer class="footer">
         <section class="acerca-de">
             <h2 class="titulo-footer">Acerca de nosotros</h2>
             <span class="text-footer">Bienvenidos a nuestra plataforma de juegos en línea, tu destino favorito para sumergirte en emocionantes aventuras virtuales. Permítenos presentarnos: somos Mateo Viera y Alfonsina Moris, estudiantes de la Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN), inscriptos en la carrera de Tecnología Universitaria en Desarrollo de Aplicaciones Informáticas (TUDAI).</span>

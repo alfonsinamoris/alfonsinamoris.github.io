@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoSpinner = document.querySelector(".logoSpinner");
 
     const simularCarga = setInterval(function () {
+        
         cargaActual += 1;
         porcentajeCarga.innerText = cargaActual + "%";
 
@@ -48,53 +49,22 @@ document.addEventListener("DOMContentLoaded", function () {
         logoSpinner.style.opacity = opacityValue;
 
         if (cargaActual < 100) {
-            document.querySelectorAll(".index, .header, .footer").forEach(function(element) {
+            document.querySelectorAll(".index, .header, .footerHome").forEach(function(element) {
                 element.style.display = "none";
             });
         } else {
             clearInterval(simularCarga);
             // Oculta el spinner y el porcentaje de carga una vez que la carga esté completa
             document.querySelector(".spinner-container").style.display = "none";
-            document.querySelectorAll(".index, .header, .footer").forEach(function(element) {
+            document.querySelector(".footerHome").style.display = "flex";
+            document.querySelectorAll(".index, .header").forEach(function(element) {
                 element.style.display = "block";
             });
         }
     }, 50);
 });  
 
-/*
-function registroCompleto(){
-    alert("gracias hdp");
 
-
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const formulario = document.querySelector(".formLogin");
-    formulario.addEventListener("submit", function (event) {
-      event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
-  
-      // Simula un envío exitoso (reemplaza esto con tu lógica real)
-      const envioExitoso = true;
-  
-      if (envioExitoso) {
-        // Realiza acciones adicionales después del envío exitoso, por ejemplo:
-        alert("El formulario se envió con éxito.");
-  
-        // Agrega funcionalidad al botón después del envío exitoso
-        const boton = document.querySelector("button[type='submit']");
-        boton.textContent = "Enviado"; // Cambia el texto del botón
-        boton.disabled = true; // Deshabilita el botón
-  
-        // También puedes agregar otras acciones, como redireccionar a otra página
-        // window.location.href = "pagina-de-agradecimiento.html";
-      } else {
-        // En caso de error en el envío, puedes mostrar un mensaje de error o tomar otras acciones
-        alert("Hubo un problema al enviar el formulario. Inténtalo de nuevo más tarde.");
-      }
-    });
-  });
-  */
 
   document.addEventListener("DOMContentLoaded", function () {
     // Encuentra el botón "Ver más" y los comentarios adicionales
@@ -122,6 +92,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
   
+const formularioRegistro = document.querySelector(".formularioRegistro");
+const mensaje = document.getElementById("mensaje");
+formularioRegistro.addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    mensaje.textContent = "El formulario se envió correctamente.";
+    mensaje.style.display = "block";
+    mensaje.style.opacity = "1"; 
+});
 
 
 
