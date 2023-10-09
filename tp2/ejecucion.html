@@ -17,7 +17,7 @@
         <div class="img-header">
              <div class="header-izq">
                  <img class="btnmenu" src="images/hamburger-button2.png" onclick="toggleMenu()">
-                 <img src="images/logo.png" class="logoheader">
+               <a href="index.html"><img src="images/logo.png" class="logoheader"></a>
              </div>
              <input type="text" class="buscador">
              <div class="header-der">
@@ -28,11 +28,11 @@
          <nav class="navbar">
             <ul class="menu">
                 <p class="txt_categoria">categorias</p>
-                <li class="btn_cat"><span>accion</span></li>
-                <li class="btn_cat"><span>shooter</span></li>
-                <li class="btn_cat"><span>arcade</span></li>
-                <li class="btn_cat"><span>estrategia</span></li>
-                <li class="btn_cat"><span>deportes</span></li>
+                <a href="#masjugados"><li class="btn_cat"><span>Mas jugados</span></li></a>
+               <a href="#nuevos"><li class="btn_cat"><span>Nuevos</span></li></a>
+                <a href="#accion"><li class="btn_cat"><span>Acción</span></li></a>
+                <a href="#shooter"><li class="btn_cat"><span>Shooter</span></li></a>
+                <a href="#arcade"><li class="btn_cat"><span>Arcade</span></li></a>
             </ul>
          </nav>
          <div class="desp-carrito">
@@ -42,12 +42,13 @@
                  <button class="continuar-compra">Continuar compra</button>
          </div>
          <nav class="nav-perfil">
+            <img class="flechaPerfil" src="images/flechaPerfil.png" alt="">
             <ul class="menu-perfil">
                 <li class="btn-perfil"><a href="login.html" class="ov-btn-slide-left">Mi perfil</a></li>
                 <li class="btn-perfil"><a href="login.html" class="ov-btn-slide-left">Favoritos</a></li>
                 <buttom class="btn-perfil"><a href="login.html" class="ov-btn-slide-left">Cerrar Sesion</a></buttom>
             </ul>
-         </nav>
+        </nav>
      </header> 
 
     <main>
@@ -259,7 +260,7 @@
                 </section>
             </div>
             <section class="comentarios">
-                <h2>Que te parecio el juego? Dejanos tu comentario</h2>
+                <h2>Dejá tu comentario</h2>
                 <div class="nuevo-comentario">
                     <div class="input-con-icono">
                         <input placeholder="Escribe tu comentario aqui" class="input-nuevo-comentario" type="text">
@@ -283,20 +284,23 @@
                         </div>
                         ¡Excelente artículo!
                     </div>
+                    <div class="comentarios-adicionales">
                     <div class="comentario">
                         <div class="encabezado-comentario">
                         <img src="images/avatar.png" class="avatar-comentario">
                         <p class="nombre-usuario">marioGamer777</p>
                         </div>
-                        ¡Excelente artículo!
+                        ¡Excelente artículsasaso!
                     </div>
                     <div class="comentario">
                         <div class="encabezado-comentario">
                         <img src="images/avatar.png" class="avatar-comentario">
                         <p class="nombre-usuario">marioGamer777</p>
                         </div>
-                        ¡Excelente artículo!
+                        ¡Excelente artícuasaslo!
                     </div>
+                </div>
+                    <button id="verMasComentarios">Ver mas</button>
                     
                 </div>
             </section>

@@ -789,10 +789,11 @@
 
        .flechaPerfil{
         width: 40px;
-        margin-top:-35px
+        margin-top:-35px;
          }
         .nav-perfil.show{
-        top:103px
+        top:103px;
+        height: auto;
         }
         .btn-perfil:hover{
             color:var(--secundario);
@@ -972,9 +973,10 @@
     .contenedor-card{
         width: 175px;
         height: 181px;
-        border-radius: 20px;
     }
-
+    .contenedor-card .imagen-card{
+        margin: auto;
+    }
     .imagen-card{
         width: 167px;
         height: 120px;
@@ -1074,7 +1076,6 @@
     .contenedor-card-principal{
         width: 305px;
         height: 250px;
-        border-radius: 20px;
         transform: 0.2s ease;
     }
     .contenedor-card-principal:hover{
@@ -1181,10 +1182,19 @@
     .comentario{
         background-color: var(--luz-sec-2);
         color: var(--sombra-ppal-1);
-        margin: 10px;
         width: 600px;
+        height: 65px;
+        margin-bottom: 30px;
         
     }
+    .ultimos-comentarios{
+        margin-top: 40px;
+    }
+    .comentarios-adicionales{
+        display: none;
+    
+    }
+
     /* Estilos para el ícono dentro del input */
     .input-con-icono {
         position: relative;
@@ -1345,5 +1355,8 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
+
+    
+
 }
 

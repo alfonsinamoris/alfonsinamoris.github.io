@@ -16,7 +16,7 @@
        <div class="img-header">
             <div class="header-izq">
                 <img class="btnmenu" src="images/hamburger-button2.png" onclick="toggleMenu()">
-                <img src="images/logo.png" class="logoheader">
+                <a href="index.html"><img src="images/logo.png" class="logoheader"></a>
             </div>
             <input type="text" class="buscador">
             <div class="header-der">
@@ -27,11 +27,11 @@
         <nav class="navbar">
             <ul class="menu">
                 <p class="txt_categoria">categorias</p>
-                <li class="btn_cat"><span>accion</span></li>
-                <li class="btn_cat"><span>shooter</span></li>
-                <li class="btn_cat"><span>arcade</span></li>
-                <li class="btn_cat"><span>estrategia</span></li>
-                <li class="btn_cat"><span>deportes</span></li>
+               <a href="#masjugados"><li class="btn_cat"><span>Mas jugados</span></li></a>
+               <a href="#nuevos"><li class="btn_cat"><span>Nuevos</span></li></a>
+                <a href="#accion"><li class="btn_cat"><span>Acción</span></li></a>
+                <a href="#shooter"><li class="btn_cat"><span>Shooter</span></li></a>
+                <a href="#arcade"><li class="btn_cat"><span>Arcade</span></li></a>
             </ul>
         </nav>
         <div class="desp-carrito">
@@ -43,8 +43,8 @@
         <nav class="nav-perfil">
             <img class="flechaPerfil" src="images/flechaPerfil.png" alt="">
             <ul class="menu-perfil">
-                <li class="btn-perfil"><a href="login.html" class="ov-btn-slide-left">Mi perfil</a></li>
-                <li class="btn-perfil"><a href="login.html" class="ov-btn-slide-left">Favoritos</a></li>
+                <li class="btn-perfil"><a href="" class="ov-btn-slide-left">Mi perfil</a></li>
+                <li class="btn-perfil"><a href="index.html" class="ov-btn-slide-left">Favoritos</a></li>
                 <buttom class="btn-perfil"><a href="login.html" class="ov-btn-slide-left">Cerrar Sesion</a></buttom>
             </ul>
         </nav>
@@ -56,7 +56,7 @@
     </div>
     <main class="index" >
         <div class="carruselCompleto">
-            <h2 class="cat-juego">accion</h2>
+            <h2 class="cat-juego" id="mas-jugados">Más jugados</h2>
             <section class="wrapper1">
                 <i id="left" class="fa-solid fa-angle-left"></i>
                 <div class="carousel">
@@ -187,7 +187,7 @@
             </section>
         </div>
         <div class="carruselCompleto">
-        <h2 class="cat-juego">accion</h2>
+        <h2 class="cat-juego" id="nuevos">Nuevos</h2>
         <section class="wrapper">
             <i id="left" class="fa-solid fa-angle-left"></i>
             <div class="carousel">
@@ -299,9 +299,9 @@
             </div> 
             <i id="right" class="fa-solid fa-angle-right"></i>
         </section>
-    </div>
-    <div class="carruselCompleto">
-        <h2 class="cat-juego">accion</h2>
+        </div>
+        <div class="carruselCompleto">
+        <h2 class="cat-juego" id="accion">Acción</h2>
         <section class="wrapper">
             <i class="fa-solid fa-angle-left"></i>
             <div class="carousel">
@@ -395,18 +395,20 @@
             </div> 
             <i class="fa-solid fa-angle-right"></i>
         </section>
-    </div>
-        <div class="carruselCompleto">
-            <h2 class="cat-juego">Explorar categorias</h2>
-            <section class="carrusel-btns">
-                <button class="btn-carrusel-categorias"><span class="span-btn"></span>accion</button>
-                <button class="btn-carrusel-categorias"><span class="span-btn"></span>accion</button>
-                <button class="btn-carrusel-categorias"><span class="span-btn"></span>accion</button>
-                <button class="btn-carrusel-categorias"><span class="span-btn"></span>accion</button>
-            </section>
         </div>
-    <div class="carruselCompleto">
-        <h2 class="cat-juego">accion</h2>
+        <div class="carruselCompleto">
+        <h2 class="cat-juego">Explorar categorias</h2>
+            <section class="carrusel-btns">
+                <a href="#accion">  <button class="btn-carrusel-categorias"><span class="span-btn"></span>Acción</button></a>
+                <a href="#arcade"> <button class="btn-carrusel-categorias"><span class="span-btn"></span>Arcade</button></a>
+                <a href="#shooter"><button class="btn-carrusel-categorias"><span class="span-btn"></span>Shooter</button></a>
+                <a href="#nuevos"><button class="btn-carrusel-categorias"><span class="span-btn"></span>Nuevos</button></a>
+                <a href="#masjugados"><button class="btn-carrusel-categorias"><span class="span-btn"></span>Mas jugados</button></a>
+
+            </section>
+        </div>    
+        <div class="carruselCompleto">
+        <h2 class="cat-juego" id="shooter">Shooter</h2>
         <section class="wrapper">
             <i class="fa-solid fa-angle-left"></i>
             <div class="carousel">
@@ -496,9 +498,9 @@
             </div> 
             <i class="fa-solid fa-angle-right"></i>
         </section>
-    </div>
-    <div class="carruselCompleto">
-        <h2 class="cat-juego">accion</h2>
+        </div>
+         <div class="carruselCompleto">
+        <h2 class="cat-juego" id="arcade">Arcade</h2>
         <section class="wrapper">
             <i class="fa-solid fa-angle-left"></i>
             <div class="carousel">
@@ -586,7 +588,7 @@
         </section>
     </div>
     </main> 
-    <footer class="footer">
+    <footer>
         <section class="acerca-de">
             <h2 class="titulo-footer">Acerca de nosotros</h2>
             <span class="text-footer">Bienvenidos a nuestra plataforma de juegos en línea, tu destino favorito para sumergirte en emocionantes aventuras virtuales. Permítenos presentarnos: somos Mateo Viera y Alfonsina Moris, estudiantes de la Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN), inscriptos en la carrera de Tecnología Universitaria en Desarrollo de Aplicaciones Informáticas (TUDAI).</span>
@@ -648,6 +650,9 @@
             </section>
         </div>
     </footer>
+    <script src="menu.js"></script>
+    </html>
+    
     <script src="menu.js"></script>
 </body>
 </html>

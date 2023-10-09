@@ -60,9 +60,57 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }, 50);
+});  
+
+
+function registroCompleto(){
+    alert("gracias hdp");
+
+
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.querySelector(".formLogin");
+    formulario.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+  
+      // Simula un envío exitoso (reemplaza esto con tu lógica real)
+      const envioExitoso = true;
+  
+      if (envioExitoso) {
+        // Realiza acciones adicionales después del envío exitoso, por ejemplo:
+        alert("El formulario se envió con éxito.");
+  
+        // Agrega funcionalidad al botón después del envío exitoso
+        const boton = document.querySelector("button[type='submit']");
+        boton.textContent = "Enviado"; // Cambia el texto del botón
+        boton.disabled = true; // Deshabilita el botón
+  
+        // También puedes agregar otras acciones, como redireccionar a otra página
+        // window.location.href = "pagina-de-agradecimiento.html";
+      } else {
+        // En caso de error en el envío, puedes mostrar un mensaje de error o tomar otras acciones
+        alert("Hubo un problema al enviar el formulario. Inténtalo de nuevo más tarde.");
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Encuentra el botón "Ver más" y los comentarios adicionales
+    const verMasBoton = document.getElementById("verMasComentarios");
+    const comentariosAdicionales = document.querySelector(".comentarios-adicionales");
+    
+    // Manejador de eventos para el clic en el botón "Ver más"
+    verMasBoton.addEventListener("click", function () {
+        // Muestra los comentarios adicionales
+        comentariosAdicionales.style.display = "block";
+        
+        // Oculta el botón "Ver más" después de mostrar todos los comentarios
+        verMasBoton.style.display = "none";
+    });
 });
 
-
+  
 
 
 
