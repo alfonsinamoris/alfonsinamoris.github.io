@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Encuentra el botón "Ver más" y los comentarios adicionales
     const verMasBoton = document.getElementById("verMasComentarios");
     const comentariosAdicionales = document.querySelector(".comentarios-adicionales");
+    const verMenosBoton = document.getElementById("verMenosComentarios");
     
     // Manejador de eventos para el clic en el botón "Ver más"
     verMasBoton.addEventListener("click", function () {
@@ -107,6 +108,15 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Oculta el botón "Ver más" después de mostrar todos los comentarios
         verMasBoton.style.display = "none";
+        verMenosBoton.style.display = "block";
+
+    });
+
+    verMenosBoton.addEventListener("click", function() {
+    
+        comentariosAdicionales.style.display = "none";
+        verMasBoton.style.display = "block";
+        verMenosBoton.style.display = "none";
     });
 });
 

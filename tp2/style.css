@@ -1172,7 +1172,9 @@
         color: var(--sombra-ppal-2);
 
     }
-
+    .comentario span {
+        margin-left: 10px;
+    }
     .btn-agregar{
         height: 35px;
         background-color: var(--luz-sec-2);
@@ -1190,7 +1192,7 @@
     .ultimos-comentarios{
         margin-top: 40px;
     }
-    .comentarios-adicionales{
+    .comentarios-adicionales, .btn-verMenos{
         display: none;
     
     }
@@ -1201,7 +1203,6 @@
     }
 
     .input-con-icono input[type="text"] {
-        padding-right: 30px; /* Espacio para el ícono */
     }
 
     .input-con-icono span {
