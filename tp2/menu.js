@@ -14,7 +14,7 @@ function toggleCarrito(){
 
 //carrusel
 const carousel = document.querySelector(".carousel"),
- // firstImg = carousel.querySelectorAll("img")[0],
+ firstImg = carousel.querySelectorAll("img")[0],
 arrowIcons = document.querySelectorAll(".wrapper1 i ");
 let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
 const showHideIcons = () => {
@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         mensajeBienvenida.style.display = "flex";
         document.getElementById("formRegistro").style.display= "none";
+        document.querySelector("footer").style.display="none"
+        document.querySelector("header").style.display="none"
         setTimeout(function () {
             window.location.href = "index.html";
         }, 3000);
