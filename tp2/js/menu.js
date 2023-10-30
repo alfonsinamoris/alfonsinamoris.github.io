@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const simularCarga = setInterval(function () {
         
         cargaActual += 1;
-        porcentajeCarga.innerText = cargaActual + "%";
+       porcentajeCarga.innerText = cargaActual + "%";
 
         // Calcula la opacidad gradualmente
         const opacityValue = 1 - cargaActual / 100;
