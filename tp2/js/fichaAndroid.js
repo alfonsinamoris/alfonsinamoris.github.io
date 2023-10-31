@@ -1,4 +1,4 @@
-class Circle extends Figure {
+class fichaAndroid extends Ficha {
     constructor(posX, posY, radius, fill, context) {
         super(posX, posY, fill, context);
         this.radius = radius;
