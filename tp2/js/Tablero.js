@@ -39,7 +39,7 @@ dibujarTablero(context,canvasWidth, canvasHeight){
 
     for(let fila = 0; fila<this.filas; fila++){
         for(let col = 0; col<this.columnas; col++){
-            this.dibujarCelda(context,fila,col,"#fff",startX,startY)
+            this.dibujarCelda(context,fila,col,"#54616B",startX,startY)
         }
     }
 }
@@ -50,4 +50,5 @@ dibujarCelda(context, fila, col, color, startX, startY) {
     context.strokeStyle = "#000";
     context.strokeRect(startX + col * this.medida, startY + fila * this.medida, this.medida, this.medida);
 }
+
 }

@@ -5,6 +5,8 @@ class Ficha {
         this.fill = fill;
         this.resaltado = false;
         this.resaltadoEstilo = 'blue';
+        this.bordeEstilo = 'black';
+        this.bordeAncho = 2;
         this.context = context;
     }
 

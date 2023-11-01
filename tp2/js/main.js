@@ -6,9 +6,12 @@ let canvasWidth = canvas.width
 let canvasHeight = canvas.height
 
 let isMouseDown = false;
-let lastClickedFigure = null;
+let lastClickedFicha = null;
 let fichas = []
 const cant_fichas = 42;
+
+let image = new Image();
+image.src = 'images/apple.svg';
 
 const tablero = new Tablero(80,6,7);
 tablero.dibujarTablero(context, canvasWidth, canvasHeight);
@@ -25,12 +28,13 @@ function addFicha() {
 
 
 function findClickedFicha(x, y){
-    for(let i = 0; i < fichas.length; i++){
+    for(let i = fichas.length - 1; i >=0; i--){
          const element = fichas[i];
          if(element.isPointInside(x, y)){
             return element;
         }
     }
+    return null;
 }
 
 function drawFichas() {
@@ -41,22 +45,22 @@ function drawFichas() {
     }
 }
 
-let posY = 100;
+let posYApple = 100;
 
 function addFichaApple() {
     let posX = 100;
     let color = 'red';
-    let apple = new fichaApple(posX, posY, 10, color, context);
+    let apple = new fichaApple(posX, posYApple, 30, color, context);
     fichas.push(apple);
-    posY+=20;
+    posYApple+=20;
 }
-
+let posYAndroid=100;
 function addFichaAndroid() {
     let posX = 800;
     let color = 'green';
-    let android = new fichaAndroid(posX, posY, 10, color, context);
+    let android = new fichaAndroid(posX, posYAndroid, 30, color, context);
     fichas.push(android);
-    posY+=20;
+    posYAndroid+=20;
 }
 
 function onMouseDown(e){
@@ -66,9 +70,12 @@ function onMouseDown(e){
         lastClickedFicha.setResaltado(false);
         lastClickedFicha = null;
     }
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    //captura pos en x e y donde hago click
+    const x = e.offsetX;
+    const y = e.offsetY;
+    console.log(x);
+    console.log(y);
+
     let clickFig = findClickedFicha(x, y);
     if(clickFig != null){
         clickFig.setResaltado(true);
@@ -79,10 +86,9 @@ function onMouseDown(e){
 
 function onMouseMove(e){
     if(isMouseDown && lastClickedFicha!=null){
-        const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-        lastClickedFicha.setPosition(x,y);
+      const x = e.offsetX;
+      const y = e.offsetY;
+     lastClickedFicha.setPosition(x,y);
       drawFichas();
     }
 
@@ -114,5 +120,6 @@ function clearCanvas() {
 canvas.addEventListener("mousedown", onMouseDown, false);
 canvas.addEventListener("mouseup", onMouseUp, false);
 canvas.addEventListener("mousemove", onMouseMove, false);
+
 
 }

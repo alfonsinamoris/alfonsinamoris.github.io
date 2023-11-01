@@ -8,7 +8,10 @@ class fichaApple extends Ficha {
         super.draw();
         this.context.beginPath();
         this.context.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+        this.context.strokeStyle = this.bordeEstilo;
+        this.context.lineWidth = this.bordeAncho;
         this.context.fill();
+        this.context.stroke();
 
         if(this.resaltado === true){
             this.context.strokeStyle = this.resaltadoEstilo;
