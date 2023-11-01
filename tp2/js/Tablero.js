@@ -1,8 +1,9 @@
 class Tablero{
-    constructor(medida, filas, columnas){
+    constructor(medida, filas, columnas,canvasWidth){
         this.medida = medida;
         this.filas = filas;
         this.columnas = columnas;
+        this.canvasWidth = 0;
     }
 
     setMedida(medida){
@@ -29,6 +30,10 @@ class Tablero{
         return this.columnas;
     }
 
+    setCanvasWidth(canvasWidth) {
+        this.canvasWidth = canvasWidth;
+    }
+
 
 dibujarTablero(context,canvasWidth, canvasHeight){
     context.fillStyle = '#1D2429';
@@ -49,6 +54,23 @@ dibujarCelda(context, fila, col, color, startX, startY) {
     context.fillRect(startX + col * this.medida, startY + fila * this.medida, this.medida, this.medida);
     context.strokeStyle = "#000";
     context.strokeRect(startX + col * this.medida, startY + fila * this.medida, this.medida, this.medida);
+}
+
+calculateColumn(x) {
+    const startX = (this.canvasWidth - this.columnas * this.medida) / 2; ;
+    const columnWidth = this.medida;
+
+    // Calcula la columna en función de la posición X
+    const columnIndex = Math.floor((x - startX) / columnWidth);
+
+    // Asegúrate de que columnIndex esté dentro del rango de columnas válidas
+    if (columnIndex < 0) {
+        return 0;
+    } else if (columnIndex >= this.columnas) {
+        return this.columnas - 1;
+    }
+
+    return columnIndex;
 }
 
 }

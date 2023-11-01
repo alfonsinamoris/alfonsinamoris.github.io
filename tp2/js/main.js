@@ -63,6 +63,8 @@ function addFichaAndroid() {
     posYAndroid+=20;
 }
 
+let posInicialX;
+let posInicialY;
 function onMouseDown(e){
     isMouseDown = true;
 
@@ -71,12 +73,10 @@ function onMouseDown(e){
         lastClickedFicha = null;
     }
     //captura pos en x e y donde hago click
-    const x = e.offsetX;
-    const y = e.offsetY;
-    console.log(x);
-    console.log(y);
+    posInicialX = e.offsetX;
+    posInicialY= e.offsetY;
 
-    let clickFig = findClickedFicha(x, y);
+    let clickFig = findClickedFicha(posInicialX, posInicialY);
     if(clickFig != null){
         clickFig.setResaltado(true);
         lastClickedFicha = clickFig;
@@ -84,11 +84,12 @@ function onMouseDown(e){
    drawFichas();
 }
 
+
 function onMouseMove(e){
     if(isMouseDown && lastClickedFicha!=null){
       const x = e.offsetX;
       const y = e.offsetY;
-     lastClickedFicha.setPosition(x,y);
+      lastClickedFicha.setPosition(x,y);
       drawFichas();
     }
 
@@ -96,7 +97,25 @@ function onMouseMove(e){
 
 function onMouseUp(e){
     isMouseDown = false;
+    const x = e.offsetX;
+    const y = e.offsetY;
+    lastClickedFicha.setResaltado(true);
+
+    if(lastClickedFicha !== null){
+    if((x<810 && x>170) && (y>60 && y< 140) ){
+        const columna = tablero.calculateColumn(x);
+        //zona permitida para soltar ficha
+        console.log('soltar',columna);
+        console.log(x);
+
+    } else{
+        lastClickedFicha.setPosition(posInicialX,posInicialY)
+    }
+    drawFichas();
 }
+
+}
+
 
 // Evento temporal para agregar figuras
 function addFichas() {
