@@ -57,7 +57,7 @@ dibujarCelda(context, fila, col, color, startX, startY) {
 }
 
 calculateColumn(x) {
-    const startX = (this.canvasWidth - this.columnas * this.medida) / 2; ;
+    const startX = 170 ;
     const columnWidth = this.medida;
 
     // Calcula la columna en función de la posición X
