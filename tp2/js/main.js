@@ -36,7 +36,6 @@ function addFicha() {
     
 }
 
-let turnojugador1 = true;
 
 function findClickedFicha(x, y) {
     for (let i = fichas.length - 1; i >= 0; i--) {
@@ -83,6 +82,24 @@ function addFichaAndroid() {
     posYAndroid+=20;
 }
 
+
+let jugadorApple = new Jugador(fichaApple);
+let jugadorAndroid = new Jugador(fichaAndroid);
+jugadorApple.setJugadorActual();
+function cambiarTurno(){
+    let turnoDe;
+    if(jugadorApple.esTurno()){
+        turnoDe = 'es turno de android';
+        jugadorApple.desactivarJugador();
+        jugadorAndroid.setJugadorActual();
+    } else{
+        turnoDe = 'es turno de apple';
+        jugadorAndroid.desactivarJugador();
+        jugadorApple.setJugadorActual();
+    }
+    console.log(turnoDe);
+}
+
 let posInicialX;
 let posInicialY;
 function onMouseDown(e){
@@ -97,13 +114,13 @@ function onMouseDown(e){
     posInicialY= e.offsetY;
 
     let clickFig = findClickedFicha(posInicialX, posInicialY);
-    if(turnojugador1){
+    if(jugadorApple.esTurno()){
         if(clickFig != null && clickFig instanceof fichaApple){
             clickFig.setResaltado(true);
             lastClickedFicha = clickFig;
         }
     }    
-    if(!turnojugador1){
+    if(jugadorAndroid.esTurno()){
         if(clickFig != null && clickFig instanceof fichaAndroid){
             clickFig.setResaltado(true);
             lastClickedFicha = clickFig;
@@ -128,21 +145,17 @@ function onMouseUp(e){
     isMouseDown = false;
     const x = e.offsetX;
     const y = e.offsetY;
-    lastClickedFicha.setResaltado(true);
 
     if(lastClickedFicha !== null){
     if((x<810 && x>170) && (y>60 && y< 140) ){
         const columna = tablero.calculateColumn(x);
-        //zona permitida para soltar ficha
         if(columna>-1 && columna<7){
             let fila = coincideColumna(columna, lastClickedFicha);
             colocarFicha(fila,columna,posInicialX,posInicialY);
-            const ganador = hayGanador(tableroOcupado, fila, columna);
+            const ganador = hayGanador(tableroOcupado, fila,columna,lastClickedFicha);
             console.log("¿Hay un ganador?", ganador);
-            turnojugador1 = !turnojugador1;
-
-
-
+            if(!ganador)
+            cambiarTurno();
         }
         else{
             lastClickedFicha.setPosition(posInicialX,posInicialY)
@@ -151,62 +164,63 @@ function onMouseUp(e){
     } else{
         lastClickedFicha.setPosition(posInicialX,posInicialY)
     }
+    lastClickedFicha.setResaltado(false);
     drawFichas();
     }
 
 }
-    function hayGanador(tableroOcupado, fila, columna) {
-        if (
-            fila < 0 ||
-            fila > tableroOcupado.length ||
-            columna < 0 ||
-            columna >= tableroOcupado[0].length
-          ) {
-            // Las coordenadas están fuera de los límites del tablero
-            return false;
-          }
-        
-      // error corta la funcion    const ficha = tableroOcupado[fila][columna];
-        
-          if (ficha === null) {
-            // La posición en el tablero está vacía
-            return false;
-          }
-              
-        // Función para verificar una dirección específica (horizontal, vertical o diagonal)
-        function verificarDireccion(dx, dy) {
-          let cont = 1; // Contador de fichas iguales
-          let x, y;
-      
-          // Verificar hacia la derecha (o arriba o abajo en caso de dirección vertical)
-          x = columna + dx;
-          y = fila + dy;
-          while (x >= 0 && x < tableroOcupado[0].length && y >= 0 && y < tableroOcupado.length && tableroOcupado[y][x] === ficha) {
-            cont++;
+
+
+function hayGanador(tableroOcupado, fila, columna, lastClickedFicha) {
+    if (lastClickedFicha === null) {
+        // Si la última ficha es nula, no hay ganador.
+        return false;
+    }
+
+    const fichaActual = lastClickedFicha;
+    const direcciones = [
+        [0, 1],     // Horizontal
+        [1, 0],     // Vertical
+        [1, 1],     // Diagonal derecha arriba a izquierda abajo
+        [1, -1]     // Diagonal derecha abajo a izquierda arriba
+    ];
+
+    for (const direccion of direcciones) {
+        const dx = direccion[0];
+        const dy = direccion[1];
+        let fichasEnDireccion = 1; // La ficha actual ya se cuenta.
+
+        // Verificar hacia adelante
+        let x = columna + dx;
+        let y = fila + dy;
+        while (x >= 0 && x < tableroOcupado[0].length &&
+            y >= 0 && y < tableroOcupado.length &&
+            tableroOcupado[y][x] === fichaActual) {
+            fichasEnDireccion++;
             x += dx;
             y += dy;
-          }
-      
-          // Verificar hacia la izquierda (o arriba o abajo en caso de dirección vertical)
-          x = columna - dx;
-          y = fila - dy;
-          while (x >= 0 && x < tableroOcupado[0].length && y >= 0 && y < tableroOcupado.length && tableroOcupado[y][x] === ficha) {
-            cont++;
+        }
+
+        // Verificar hacia atrás
+        x = columna - dx;
+        y = fila - dy;
+        while (x >= 0 && x < tableroOcupado[0].length &&
+            y >= 0 && y < tableroOcupado.length &&
+            tableroOcupado[y][x] === fichaActual) {
+            fichasEnDireccion++;
             x -= dx;
             y -= dy;
-          }
-      
-          return cont >= 4;
         }
-      
-        // Verificar en todas las direcciones posibles
-        return (
-          verificarDireccion(1, 0) || // Horizontal (derecha e izquierda)
-          verificarDireccion(0, 1) || // Vertical (arriba y abajo)
-          verificarDireccion(1, 1) || // Diagonal derecha arriba e izquierda abajo
-          verificarDireccion(1, -1)   // Diagonal derecha abajo e izquierda arriba
-        );
-  }
+
+        if (fichasEnDireccion >= 4) {
+            // Si encontramos cuatro fichas del mismo tipo en una dirección, hay un ganador.
+            return true;
+        }
+    }
+
+    return false;
+}
+
   
 function colocarFicha(fila,columna,posInicialX,posInicialY){
     if(fila === -1){
