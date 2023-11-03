@@ -5,16 +5,15 @@ let context = canvas.getContext('2d')
 let canvasWidth = canvas.width
 let canvasHeight = canvas.height
 
+
 const tableroOcupado= [
-    [0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0]
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
 ];
-
-
 
 let isMouseDown = false;
 let lastClickedFicha = null;
@@ -37,16 +36,26 @@ function addFicha() {
     
 }
 
+let turnojugador1 = true;
 
-function findClickedFicha(x, y){
-    for(let i = fichas.length - 1; i >=0; i--){
-         const element = fichas[i];
-         if(element.isPointInside(x, y)){
-            return element;
+function findClickedFicha(x, y) {
+    for (let i = fichas.length - 1; i >= 0; i--) {
+      const element = fichas[i];
+      if (element.isPointInside(x, y)) {
+        if (element instanceof fichaApple) {
+          console.log('Es una ficha Apple');
+          // Realiza acciones específicas para fichaApple
+        } 
+    else if (element instanceof fichaAndroid) {
+          console.log('Es una ficha Android');
+          // Realiza acciones específicas para fichaAndroid
         }
+        return element;
+      }
     }
     return null;
-}
+  }
+  
 
 function drawFichas() {
     clearCanvas();
@@ -77,7 +86,7 @@ function addFichaAndroid() {
 let posInicialX;
 let posInicialY;
 function onMouseDown(e){
-    isMouseDown = true;
+        isMouseDown = true;
 
     if(lastClickedFicha != null){
         lastClickedFicha.setResaltado(false);
@@ -88,22 +97,31 @@ function onMouseDown(e){
     posInicialY= e.offsetY;
 
     let clickFig = findClickedFicha(posInicialX, posInicialY);
-    if(clickFig != null){
-        clickFig.setResaltado(true);
-        lastClickedFicha = clickFig;
+    if(turnojugador1){
+        if(clickFig != null && clickFig instanceof fichaApple){
+            clickFig.setResaltado(true);
+            lastClickedFicha = clickFig;
+        }
+    }    
+    if(!turnojugador1){
+        if(clickFig != null && clickFig instanceof fichaAndroid){
+            clickFig.setResaltado(true);
+            lastClickedFicha = clickFig;
+        }
     }
-   drawFichas();
+    drawFichas();
+
 }
 
 
 function onMouseMove(e){
-    if(isMouseDown && lastClickedFicha!=null){
-      const x = e.offsetX;
-      const y = e.offsetY;
-      lastClickedFicha.setPosition(x,y);
-      drawFichas();
-    }
-
+        if(isMouseDown && lastClickedFicha!=null){
+        const x = e.offsetX;
+        const y = e.offsetY;
+        lastClickedFicha.setPosition(x,y);
+        drawFichas();
+        }
+    
 }
 
 function onMouseUp(e){
@@ -117,24 +135,79 @@ function onMouseUp(e){
         const columna = tablero.calculateColumn(x);
         //zona permitida para soltar ficha
         if(columna>-1 && columna<7){
-            let fila = coincideColumna(columna);
+            let fila = coincideColumna(columna, lastClickedFicha);
             colocarFicha(fila,columna,posInicialX,posInicialY);
+            const ganador = hayGanador(tableroOcupado, fila, columna);
+            console.log("¿Hay un ganador?", ganador);
+            turnojugador1 = !turnojugador1;
+
+
 
         }
         else{
             lastClickedFicha.setPosition(posInicialX,posInicialY)
         }
-        console.log('soltar',columna);
-        console.log(x);
-        console.log(y);
 
     } else{
         lastClickedFicha.setPosition(posInicialX,posInicialY)
     }
     drawFichas();
-}
-}
+    }
 
+}
+    function hayGanador(tableroOcupado, fila, columna) {
+        if (
+            fila < 0 ||
+            fila > tableroOcupado.length ||
+            columna < 0 ||
+            columna >= tableroOcupado[0].length
+          ) {
+            // Las coordenadas están fuera de los límites del tablero
+            return false;
+          }
+        
+      // error corta la funcion    const ficha = tableroOcupado[fila][columna];
+        
+          if (ficha === null) {
+            // La posición en el tablero está vacía
+            return false;
+          }
+              
+        // Función para verificar una dirección específica (horizontal, vertical o diagonal)
+        function verificarDireccion(dx, dy) {
+          let cont = 1; // Contador de fichas iguales
+          let x, y;
+      
+          // Verificar hacia la derecha (o arriba o abajo en caso de dirección vertical)
+          x = columna + dx;
+          y = fila + dy;
+          while (x >= 0 && x < tableroOcupado[0].length && y >= 0 && y < tableroOcupado.length && tableroOcupado[y][x] === ficha) {
+            cont++;
+            x += dx;
+            y += dy;
+          }
+      
+          // Verificar hacia la izquierda (o arriba o abajo en caso de dirección vertical)
+          x = columna - dx;
+          y = fila - dy;
+          while (x >= 0 && x < tableroOcupado[0].length && y >= 0 && y < tableroOcupado.length && tableroOcupado[y][x] === ficha) {
+            cont++;
+            x -= dx;
+            y -= dy;
+          }
+      
+          return cont >= 4;
+        }
+      
+        // Verificar en todas las direcciones posibles
+        return (
+          verificarDireccion(1, 0) || // Horizontal (derecha e izquierda)
+          verificarDireccion(0, 1) || // Vertical (arriba y abajo)
+          verificarDireccion(1, 1) || // Diagonal derecha arriba e izquierda abajo
+          verificarDireccion(1, -1)   // Diagonal derecha abajo e izquierda arriba
+        );
+  }
+  
 function colocarFicha(fila,columna,posInicialX,posInicialY){
     if(fila === -1){
         lastClickedFicha.setPosition(posInicialX,posInicialY);
@@ -159,6 +232,9 @@ function colocarFicha(fila,columna,posInicialX,posInicialY){
         }
         if(columna===5){
             x=610;
+        }
+        if(columna===6){
+            x=690;
         }
 
         let i = (fila*100);
@@ -193,23 +269,23 @@ function colocarFicha(fila,columna,posInicialX,posInicialY){
 
 
 
-function coincideColumna(columna){
+function coincideColumna(columna, lastClickedFicha){
     let filas = tableroOcupado.length;
     let i = 0;
     while (i < filas) {
-        if(i === filas - 1 && tableroOcupado[i][columna] === 0) {//comprueba que si la ultima posicion es 0, se coloca ahi
-            tableroOcupado[i][columna] = 1; // Colocar en la última posición si es 0
+        if(i === filas - 1 && tableroOcupado[i][columna] === null) {//comprueba que si la ultima posicion es 0, se coloca ahi
+            tableroOcupado[i][columna] = lastClickedFicha; // Colocar en la última posición si es 0
             return i+1;
         }
-        else if(i=== 0 && tableroOcupado[i][columna]===1){// si la primera posicion esta ocupada, retorna negativo
+        else if(i=== 0 && tableroOcupado[i][columna]!==null){// si la primera posicion esta ocupada, retorna negativo
             return -1;
         }
-        else if (tableroOcupado[i][columna] === 0) {
+        else if (tableroOcupado[i][columna] === null) {
             i++;
         }
         
         else {
-            tableroOcupado[i-1][columna] = 1;
+            tableroOcupado[i-1][columna] = lastClickedFicha;
             return i;
         }
     }
