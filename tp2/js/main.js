@@ -84,6 +84,24 @@ function addFichaAndroid() {
     fichas.push(android);
     posYAndroid+=20;
 }
+let jugadorApple = new Jugador(fichaApple);
+let jugadorAndroid = new Jugador(fichaAndroid);
+jugadorApple.setJugadorActual();
+function cambiarTurno(){
+    let turnoDe;
+    if(jugadorApple.esTurno()){
+        turnoDe = 'es turno de android';
+        jugadorApple.desactivarJugador();
+        jugadorAndroid.setJugadorActual();
+    } else{
+        turnoDe = 'es turno de apple';
+        jugadorAndroid.desactivarJugador();
+        jugadorApple.setJugadorActual();
+    }
+    console.log(turnoDe);
+}
+
+
 
 let posInicialX;
 let posInicialY;
@@ -99,13 +117,13 @@ function onMouseDown(e){
     posInicialY= e.offsetY;
 
     let clickFig = findClickedFicha(posInicialX, posInicialY);
-    if(turnojugador1){
+    if(jugadorApple.esTurno()){
         if(clickFig != null && clickFig instanceof fichaApple){
             clickFig.setResaltado(true);
             lastClickedFicha = clickFig;
         }
     }    
-    if(!turnojugador1){
+    if(jugadorAndroid.esTurno()){
         if(clickFig != null && clickFig instanceof fichaAndroid){
             clickFig.setResaltado(true);
             lastClickedFicha = clickFig;
@@ -146,7 +164,7 @@ function onMouseUp(e){
             const resultado = verificarCuatroEnLinea(tableroOcupado, fila, columna);
             console.log(resultado); // Debería imprimir true
             
-            turnojugador1 = !turnojugador1;
+            cambiarTurno();
 
 
 
@@ -210,7 +228,7 @@ function onMouseUp(e){
         if (fila >= 3) {
           let contador = 0;
           let aux = fila;
-          while(aux> fila - 4) {
+          while(aux > fila - 4) {
             let p1 = tableroOcupado[fila][aux];
             if (p1 && elemento) {
                 if(p1.getName() === elemento.getName())
@@ -227,7 +245,7 @@ function onMouseUp(e){
         if (fila <= filas - 4) {
           let contador = 0;
           let aux = fila;
-          while(aux> fila + 4) {
+          while(aux < fila + 4) {
             let p1 = tableroOcupado[fila][aux];
             if (p1 && elemento) {
                 if(p1.getName() === elemento.getName())
