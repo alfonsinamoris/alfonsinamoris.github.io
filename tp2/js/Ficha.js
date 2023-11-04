@@ -1,5 +1,5 @@
 class Ficha {
-    constructor(posX, posY, fill, context) {
+    constructor(posX, posY, fill, context,name) {
         this.posX = posX;
         this.posY = posY;
         this.fill = fill;
@@ -8,7 +8,11 @@ class Ficha {
         this.bordeEstilo = 'black';
         this.bordeAncho = 2;
         this.context = context;
+        this.name = name;
+
+ 
     }
+    
 
     setFill(fill) {
         this.fill = fill;
@@ -46,4 +50,7 @@ class Ficha {
     isPointInside(x, y){
     
     };
+    getName(){
+        }
+
 }

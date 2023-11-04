@@ -1,6 +1,6 @@
 class fichaAndroid extends Ficha {
-    constructor(posX, posY, radius, fill, context) {
-        super(posX, posY, fill, context);
+    constructor(posX, posY, radius, fill, context,name) {
+        super(posX, posY, fill, context,name);
         this.radius = radius;
     }
 
@@ -23,6 +23,9 @@ class fichaAndroid extends Ficha {
 
     getRadius() {
         return this.radius;
+    }
+    getName(){
+        return this.name;
     }
 
     isPointInside(x, y){

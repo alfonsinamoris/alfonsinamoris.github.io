@@ -1,6 +1,6 @@
 class fichaApple extends Ficha {
     constructor(posX, posY, radius, fill, context) {
-        super(posX, posY, fill, context);
+        super(posX, posY, fill, context,name);
         this.radius = radius;
     }
 
@@ -29,5 +29,8 @@ class fichaApple extends Ficha {
         let _x = this.posX - x;
         let _y = this.posY - y;
         return Math.sqrt(_x * _x + _y * _y)<this.radius;
+    }
+    getName(){
+        return this.name;
     }
 }

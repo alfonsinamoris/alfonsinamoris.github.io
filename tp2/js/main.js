@@ -70,7 +70,8 @@ let posYApple = 100;
 function addFichaApple() {
     let posX = 100;
     let color = 'red';
-    let apple = new fichaApple(posX, posYApple, 30, color, context);
+    let name = "apple";
+    let apple = new fichaApple(posX, posYApple, 30, color, context,name);
     fichas.push(apple);
     posYApple+=20;
 }
@@ -78,7 +79,8 @@ let posYAndroid=100;
 function addFichaAndroid() {
     let posX = 800;
     let color = 'green';
-    let android = new fichaAndroid(posX, posYAndroid, 30, color, context);
+    let name = "android";
+    let android = new fichaAndroid(posX, posYAndroid, 30, color, context,name);
     fichas.push(android);
     posYAndroid+=20;
 }
@@ -137,8 +139,13 @@ function onMouseUp(e){
         if(columna>-1 && columna<7){
             let fila = coincideColumna(columna, lastClickedFicha);
             colocarFicha(fila,columna,posInicialX,posInicialY);
-            const ganador = hayGanador(tableroOcupado, fila, columna);
-            console.log("¿Hay un ganador?", ganador);
+            if(fila === 6){
+                fila=5;
+            }
+            console.log(tableroOcupado);
+            const resultado = verificarCuatroEnLinea(tableroOcupado, fila, columna);
+            console.log(resultado); // Debería imprimir true
+            
             turnojugador1 = !turnojugador1;
 
 
@@ -155,58 +162,141 @@ function onMouseUp(e){
     }
 
 }
-    function hayGanador(tableroOcupado, fila, columna) {
-        if (
-            fila < 0 ||
-            fila > tableroOcupado.length ||
-            columna < 0 ||
-            columna >= tableroOcupado[0].length
-          ) {
-            // Las coordenadas están fuera de los límites del tablero
+       // Función para buscar objetos iguales en una tableroOcupado
+       function verificarCuatroEnLinea(tableroOcupado, fila, columna) {
+        const filas = tableroOcupado.length;
+        const columnas = tableroOcupado[0].length;
+        if (fila < 0 || fila >= filas || columna < 0 || columna >= columnas) {
             return false;
           }
-        
-      // error corta la funcion    const ficha = tableroOcupado[fila][columna];
-        
-          if (ficha === null) {
-            // La posición en el tablero está vacía
-            return false;
-          }
-              
-        // Función para verificar una dirección específica (horizontal, vertical o diagonal)
-        function verificarDireccion(dx, dy) {
-          let cont = 1; // Contador de fichas iguales
-          let x, y;
+        const elemento = tableroOcupado[fila][columna];
       
-          // Verificar hacia la derecha (o arriba o abajo en caso de dirección vertical)
-          x = columna + dx;
-          y = fila + dy;
-          while (x >= 0 && x < tableroOcupado[0].length && y >= 0 && y < tableroOcupado.length && tableroOcupado[y][x] === ficha) {
-            cont++;
-            x += dx;
-            y += dy;
+        // Verificar hacia la derecha
+        if (columna <= columnas - 4) {
+          let contador = 0;
+          let aux = columna;
+          while(aux< columna+4) {
+            let p1 = tableroOcupado[fila][aux];
+            if (p1 && elemento) {
+                if(p1.getName() === elemento.getName())
+                    contador++;
+                }
+            
+            aux++;
           }
-      
-          // Verificar hacia la izquierda (o arriba o abajo en caso de dirección vertical)
-          x = columna - dx;
-          y = fila - dy;
-          while (x >= 0 && x < tableroOcupado[0].length && y >= 0 && y < tableroOcupado.length && tableroOcupado[y][x] === ficha) {
-            cont++;
-            x -= dx;
-            y -= dy;
+          if (contador === 4) {
+            return true;
           }
-      
-          return cont >= 4;
         }
       
-        // Verificar en todas las direcciones posibles
-        return (
-          verificarDireccion(1, 0) || // Horizontal (derecha e izquierda)
-          verificarDireccion(0, 1) || // Vertical (arriba y abajo)
-          verificarDireccion(1, 1) || // Diagonal derecha arriba e izquierda abajo
-          verificarDireccion(1, -1)   // Diagonal derecha abajo e izquierda arriba
-        );
-  }
+        // Verificar hacia la izquierda
+        if (columna >= 3) {
+          let contador = 0;
+          let aux = columna;
+          while (aux > columna - 4) {
+            let p1 = tableroOcupado[fila][aux];
+            if (p1 && elemento) {
+                if(p1.getName() === elemento.getName())
+                    contador++;
+                }
+            aux--;
+          }
+          if (contador === 4) {
+            return true;
+          }
+        }
+      
+        // Verificar hacia arriba
+        if (fila >= 3) {
+          let contador = 0;
+          let aux = fila;
+          while(aux> fila - 4) {
+            let p1 = tableroOcupado[fila][aux];
+            if (p1 && elemento) {
+                if(p1.getName() === elemento.getName())
+                    contador++;
+                }
+            aux--;
+          }
+          if (contador === 4) {
+            return true;
+          }
+        }
+      
+        // Verificar hacia abajo
+        if (fila <= filas - 4) {
+          let contador = 0;
+          let aux = fila;
+          while(aux> fila + 4) {
+            let p1 = tableroOcupado[fila][aux];
+            if (p1 && elemento) {
+                if(p1.getName() === elemento.getName())
+                    contador++;
+                }
+            aux++;
+          }
+          if (contador === 4) {
+            return true;
+          }
+        }
+      
+        // Verificar en diagonal hacia la derecha y abajo
+        if (fila <= filas - 4 && columna <= columnas - 4) {
+          let contador = 0;
+          for (let i = 0; i < 4; i++) {
+            let p1 = tableroOcupado[fila + i][columna + i];
+                if(p1.getName() === elemento.getName()){
+                    contador++;
+                    }
+          }
+          if (contador === 4) {
+            return true;
+          }
+        }
+      
+        // Verificar en diagonal hacia la derecha y arriba
+        if (fila >= 3 && columna <= columnas - 4) {
+          let contador = 0;
+          for (let i = 0; i < 4; i++) {
+            if (tableroOcupado[fila - i][columna + i] === elemento) {
+              contador++;
+            }
+          }
+          if (contador === 4) {
+            return true;
+          }
+        }
+      
+        // Verificar en diagonal hacia la izquierda y abajo
+        if (fila <= filas - 4 && columna >= 3) {
+          let contador = 0;
+          for (let i = 0; i < 4; i++) {
+            if (tableroOcupado[fila + i][columna - i] === elemento) {
+              contador++;
+            }
+          }
+          if (contador === 4) {
+            return true;
+          }
+        }
+      
+        // Verificar en diagonal hacia la izquierda y arriba
+        if (fila >= 3 && columna >= 3) {
+          let contador = 0;
+          for (let i = 0; i < 4; i++) {
+            if (tableroOcupado[fila - i][columna - i] === elemento) {
+              contador++;
+            }
+          }
+          if (contador === 4) {
+            return true;
+          }
+        } 
+      
+        return false; // No se encontraron cuatro en línea en ninguna dirección
+      }
+      
+          
   
 function colocarFicha(fila,columna,posInicialX,posInicialY){
     if(fila === -1){
@@ -278,7 +368,7 @@ function coincideColumna(columna, lastClickedFicha){
             return i+1;
         }
         else if(i=== 0 && tableroOcupado[i][columna]!==null){// si la primera posicion esta ocupada, retorna negativo
-            return -1;
+            return null;
         }
         else if (tableroOcupado[i][columna] === null) {
             i++;
@@ -289,7 +379,7 @@ function coincideColumna(columna, lastClickedFicha){
             return i;
         }
     }
-    return -1;
+    return nullS;
 }
 
 
