@@ -36,7 +36,6 @@ function addFicha() {
     
 }
 
-let turnojugador1 = true;
 
 function findClickedFicha(x, y) {
     for (let i = fichas.length - 1; i >= 0; i--) {
@@ -157,162 +156,160 @@ function onMouseUp(e){
         if(columna>-1 && columna<7){
             let fila = coincideColumna(columna, lastClickedFicha);
             colocarFicha(fila,columna,posInicialX,posInicialY);
-            if(fila === 6){
-                fila=5;
-            }
+            
             console.log(tableroOcupado);
             const resultado = verificarCuatroEnLinea(tableroOcupado, fila, columna);
-            console.log(resultado); // Debería imprimir true
-            
-            cambiarTurno();
-
-
+            drawFichas();
+            if(resultado === true){
+              mostrarGanador(lastClickedFicha);
+            }
+            else
+              cambiarTurno();
 
         }
         else{
-            lastClickedFicha.setPosition(posInicialX,posInicialY)
+            lastClickedFicha.setPosition(posInicialX,posInicialY);
+            drawFichas();
         }
 
-    } else{
+      } 
+      else{
         lastClickedFicha.setPosition(posInicialX,posInicialY)
-    }
-    drawFichas();
+        drawFichas();
+      }
     }
 
 }
        // Función para buscar objetos iguales en una tableroOcupado
-       function verificarCuatroEnLinea(tableroOcupado, fila, columna) {
-        const filas = tableroOcupado.length;
-        const columnas = tableroOcupado[0].length;
-        if (fila < 0 || fila >= filas || columna < 0 || columna >= columnas) {
-            return false;
-          }
-        const elemento = tableroOcupado[fila][columna];
-      
-        // Verificar hacia la derecha
-        if (columna <= columnas - 4) {
-          let contador = 0;
-          let aux = columna;
-          while(aux< columna+4) {
-            let p1 = tableroOcupado[fila][aux];
-            if (p1 && elemento) {
-                if(p1.getName() === elemento.getName())
-                    contador++;
-                }
-            
-            aux++;
-          }
-          if (contador === 4) {
-            return true;
-          }
-        }
-      
-        // Verificar hacia la izquierda
-        if (columna >= 3) {
-          let contador = 0;
-          let aux = columna;
-          while (aux > columna - 4) {
-            let p1 = tableroOcupado[fila][aux];
-            if (p1 && elemento) {
-                if(p1.getName() === elemento.getName())
-                    contador++;
-                }
-            aux--;
-          }
-          if (contador === 4) {
-            return true;
-          }
-        }
-      
-        // Verificar hacia arriba
-        if (fila >= 3) {
-          let contador = 0;
-          let aux = fila;
-          while(aux > fila - 4) {
-            let p1 = tableroOcupado[fila][aux];
-            if (p1 && elemento) {
-                if(p1.getName() === elemento.getName())
-                    contador++;
-                }
-            aux--;
-          }
-          if (contador === 4) {
-            return true;
-          }
-        }
-      
-        // Verificar hacia abajo
-        if (fila <= filas - 4) {
-          let contador = 0;
-          let aux = fila;
-          while(aux < fila + 4) {
-            let p1 = tableroOcupado[fila][aux];
-            if (p1 && elemento) {
-                if(p1.getName() === elemento.getName())
-                    contador++;
-                }
-            aux++;
-          }
-          if (contador === 4) {
-            return true;
-          }
-        }
-      
-        // Verificar en diagonal hacia la derecha y abajo
-        if (fila <= filas - 4 && columna <= columnas - 4) {
-          let contador = 0;
-          for (let i = 0; i < 4; i++) {
-            let p1 = tableroOcupado[fila + i][columna + i];
-                if(p1.getName() === elemento.getName()){
-                    contador++;
-                    }
-          }
-          if (contador === 4) {
-            return true;
-          }
-        }
-      
-        // Verificar en diagonal hacia la derecha y arriba
-        if (fila >= 3 && columna <= columnas - 4) {
-          let contador = 0;
-          for (let i = 0; i < 4; i++) {
-            if (tableroOcupado[fila - i][columna + i] === elemento) {
-              contador++;
+  function verificarCuatroEnLinea(tableroOcupado, fila, columna) {
+  const filas = tableroOcupado.length;
+  const columnas = tableroOcupado[0].length;
+  if (fila < 0 || fila >= filas || columna < 0 || columna >= columnas) {
+      return false;
+    }
+  const elemento = tableroOcupado[fila][columna];
+
+  // Verificar hacia la derecha
+  if (columna <= columnas - 4) {
+    let contador = 0;
+    let aux = columna;
+    while(aux< columna+4) {
+      let p1 = tableroOcupado[fila][aux];
+      if(p1 !== null){
+        if (p1 && elemento) {
+            if(p1.getName() === elemento.getName())
+                contador++;
             }
           }
-          if (contador === 4) {
-            return true;
-          }
-        }
-      
-        // Verificar en diagonal hacia la izquierda y abajo
-        if (fila <= filas - 4 && columna >= 3) {
-          let contador = 0;
-          for (let i = 0; i < 4; i++) {
-            if (tableroOcupado[fila + i][columna - i] === elemento) {
+      aux++;
+    }
+    if (contador === 4) {
+      return true;
+    }
+  }
+
+  // Verificar hacia la izquierda
+  if (columna >= 3) {
+    let contador = 0;
+    let aux = columna;
+    while (aux > columna - 4) {
+      let p1 = tableroOcupado[fila][aux];
+      if (p1 && elemento) {
+          if(p1.getName() === elemento.getName())
               contador++;
+          }
+      aux--;
+    }
+    if (contador === 4) {
+      return true;
+    }
+  }
+
+  // Verificar hacia abajo
+  if (fila <= 3) {
+    let contador = 0;
+    let aux = fila;
+    while(aux < fila + 4 && aux<filas) {
+      let p1 = tableroOcupado[aux][columna];
+      if(p1 != null){
+        if (p1 && elemento) {
+            if(p1.getName() === elemento.getName())
+                contador++;
             }
-          }
-          if (contador === 4) {
-            return true;
-          }
         }
-      
-        // Verificar en diagonal hacia la izquierda y arriba
-        if (fila >= 3 && columna >= 3) {
-          let contador = 0;
-          for (let i = 0; i < 4; i++) {
-            if (tableroOcupado[fila - i][columna - i] === elemento) {
+      aux++;
+    }
+    if (contador === 4) {
+      return true;
+    }
+  }
+
+  // Verificar en diagonal hacia la derecha y abajo
+  if (fila <= filas - 4 && columna <= columnas - 4) {
+    let contador = 0;
+    for (let i = 0; i < 4; i++) {
+      let p1 = tableroOcupado[fila + i][columna + i];
+      if(p1 != null){
+          if(p1.getName() === elemento.getName()){
               contador++;
+              }
             }
-          }
-          if (contador === 4) {
-            return true;
-          }
-        } 
-      
-        return false; // No se encontraron cuatro en línea en ninguna dirección
-      }
+    }
+    if (contador === 4) {
+      return true;
+    }
+  }
+
+  // Verificar en diagonal hacia la derecha y arriba
+  if (fila >= 3 && columna <= columnas - 4) {
+    let contador = 0;
+    for (let i = 0; i < 4; i++) {
+      let p1 = tableroOcupado[fila - i][columna + i];
+      if(p1 != null){
+          if(p1.getName() === elemento.getName()){
+              contador++;
+              }
+            }
+    }
+    if (contador === 4) {
+      return true;
+    }
+  }
+
+  // Verificar en diagonal hacia la izquierda y abajo
+  if (fila <= filas - 4 && columna >= 3) {
+    let contador = 0;
+    for (let i = 0; i < 4; i++) {
+      let p1 = tableroOcupado[fila + i][columna - i];
+      if(p1 != null){
+          if(p1.getName() === elemento.getName()){
+              contador++;
+              }
+            }
+    }
+    if (contador === 4) {
+      return true;
+    }
+  }
+
+  // Verificar en diagonal hacia la izquierda y arriba
+  if (fila >= 3 && columna >= 3) {
+    let contador = 0;
+    for (let i = 0; i < 4; i++) {
+      let p1 = tableroOcupado[fila - i][columna - i];
+      if(p1 != null){
+          if(p1.getName() === elemento.getName()){
+              contador++;
+              }
+            }
+    }
+    if (contador === 4) {
+      return true;
+    }
+  } 
+
+  return false; // No se encontraron cuatro en línea en ninguna dirección
+}
       
           
   
@@ -347,28 +344,28 @@ function colocarFicha(fila,columna,posInicialX,posInicialY){
 
         let i = (fila*100);
         switch(fila){
+            case 0:
+                lastClickedFicha.setPosition(x,i+100);
+                break;
+
             case 1:
-                lastClickedFicha.setPosition(x,i);
+                lastClickedFicha.setPosition(x,i+80);
                 break;
 
             case 2:
-                lastClickedFicha.setPosition(x,i-20);
+                lastClickedFicha.setPosition(x,i+60);
                 break;
 
             case 3:
-                lastClickedFicha.setPosition(x,i-40);
+                lastClickedFicha.setPosition(x,i+40);
                 break;
 
             case 4:
-                lastClickedFicha.setPosition(x,i-60);
+                lastClickedFicha.setPosition(x,i+20);
                 break;
 
             case 5:
-                lastClickedFicha.setPosition(x,i-80);
-                break;
-
-            case 6:
-                lastClickedFicha.setPosition(x,i-100);
+                lastClickedFicha.setPosition(x,i);
                 break;
         }
     }
@@ -383,7 +380,7 @@ function coincideColumna(columna, lastClickedFicha){
     while (i < filas) {
         if(i === filas - 1 && tableroOcupado[i][columna] === null) {//comprueba que si la ultima posicion es 0, se coloca ahi
             tableroOcupado[i][columna] = lastClickedFicha; // Colocar en la última posición si es 0
-            return i+1;
+            return i;
         }
         else if(i=== 0 && tableroOcupado[i][columna]!==null){// si la primera posicion esta ocupada, retorna negativo
             return null;
@@ -394,12 +391,52 @@ function coincideColumna(columna, lastClickedFicha){
         
         else {
             tableroOcupado[i-1][columna] = lastClickedFicha;
-            return i;
+            return i-1;
         }
     }
-    return nullS;
+    return null;
 }
+function mostrarGanador(lastClickedFicha){
+  if(lastClickedFicha instanceof fichaAndroid){
+    let text = "El ganador es Android";
+    context.font="50px Arial";
+    context.strokeStyle = "black"; // Color del borde
+    context.lineWidth = 2; // Ancho del borde
+    var x = 300;
+    var y = 300;
+    context.fillText(text, x, y);
+  }
+  else{
+    let text = "El ganador es Apple";
+    context.font="50px Arial";
+    context.fillStyle="red"
+    context.strokeStyle = "black"; // Color del borde
+    context.lineWidth = 2; // Ancho del borde
 
+    var x = 300;
+    var y = 300;
+    context.fillText(text, x, y);
+  }
+  setTimeout(reiniciarJuego, 2000);
+
+}
+function reiniciarJuego() {
+  // Restablece el arreglo tableroOcupado a su estado inicial
+  for (let fila = 0; fila < tableroOcupado.length; fila++) {
+      for (let columna = 0; columna < tableroOcupado[fila].length; columna++) {
+          tableroOcupado[fila][columna] = null;
+      }
+  }
+
+  // Elimina todas las fichas del arreglo fichas
+  fichas = [];
+
+  // Vuelve a dibujar el tablero y agregar fichas iniciales
+  tablero.dibujarTablero(context, canvasWidth, canvasHeight);
+  posYAndroid= 100;
+  posYApple = 100;
+  addFichas();
+}
 
 // Evento temporal para agregar figuras
 function addFichas() {
