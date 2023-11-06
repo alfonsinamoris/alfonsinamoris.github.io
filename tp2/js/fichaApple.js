@@ -2,6 +2,8 @@ class fichaApple extends Ficha {
     constructor(posX, posY, radius, fill, context) {
         super(posX, posY, fill, context,name);
         this.radius = radius;
+        this.image = new Image();
+        this.image.src ='images/apple.svg';
     }
 
     draw() {
@@ -18,7 +20,7 @@ class fichaApple extends Ficha {
             this.context.lineWidth = 2;
             this.context.stroke();
         }
-        this.context.closePath();
+        this.context.drawImage(this.image,this.posX - this.radius, this.posY-this.radius,this.radius*2,this.radius*2);
     }
 
     getRadius() {

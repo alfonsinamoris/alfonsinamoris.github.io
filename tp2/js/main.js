@@ -20,12 +20,74 @@ let lastClickedFicha = null;
 let fichas = []
 const cant_fichas = 42;
 
-let image = new Image();
-image.src = 'images/apple.svg';
 
 const tablero = new Tablero(80,6,7);
+
 tablero.dibujarTablero(context, canvasWidth, canvasHeight);
 
+
+let gameStarted = false;
+let gameTimer=null;
+let startButton = document.getElementById('startButton');
+startButton.addEventListener('click', iniciarJuego);
+
+//inicia juego cuando toco boton de iniciar juego
+function iniciarJuego() {
+    gameStarted = true;
+    startGameTimer(20); // 180 segundos = 3 minutos
+    document.querySelector('#buttonContainer').style.display = 'none';
+    document.getElementById('endButton').style.display = 'block';
+}
+
+document.getElementById('endButton').addEventListener('click', function() {
+    endGame();
+});
+
+//empieza a correr el tiempo
+function startGameTimer(seconds) {
+    let timerDisplay = document.getElementById('timer'); // Selecciona el elemento timerDisplay
+    timerDisplay.style.display = 'block'; // Muestra el contador de tiempo
+    
+    let startButton = document.getElementById('startButton');
+    let endButton = document.getElementById('endButton');
+    
+    timerDisplay.textContent = formatTime(seconds);
+    
+    gameTimer = setInterval(function() {
+        seconds--;
+        timerDisplay.textContent = formatTime(seconds);
+        
+        if (seconds <= 0) {
+            endGame(); // Se acabó el tiempo
+        }
+    }, 1000);
+    
+    startButton.style.display = 'none';
+    endButton.style.display = 'block';
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+}
+
+//finaliza el juego tocando el boton de finalizar o cuando se acaba el tiempo
+function endGame() {
+
+    gameStarted = false;
+    clearInterval(gameTimer);
+    gameTimer = null;
+    mostrarGanador();
+    
+    let endButton = document.getElementById('endButton');
+    endButton.style.display = 'none';
+    reiniciarJuego();
+
+}
+
+
+//agrega ficha al arreglo
 function addFicha() {
     if(fichas.length < cant_fichas/2){
         addFichaApple();
@@ -106,6 +168,7 @@ let posInicialX;
 let posInicialY;
 function onMouseDown(e){
         isMouseDown = true;
+    if(gameStarted===true){
 
     if(lastClickedFicha != null){
         lastClickedFicha.setResaltado(false);
@@ -129,6 +192,7 @@ function onMouseDown(e){
         }
     }
     drawFichas();
+    }
 
 }
 
@@ -147,7 +211,6 @@ function onMouseUp(e){
     isMouseDown = false;
     const x = e.offsetX;
     const y = e.offsetY;
-    lastClickedFicha.setResaltado(true);
 
     if(lastClickedFicha !== null){
     if((x<810 && x>170) && (y>60 && y< 140) ){
@@ -177,6 +240,7 @@ function onMouseUp(e){
         lastClickedFicha.setPosition(posInicialX,posInicialY)
         drawFichas();
       }
+         lastClickedFicha.setResaltado(false); 
     }
 
 }
@@ -405,8 +469,18 @@ function mostrarGanador(lastClickedFicha){
     var x = 300;
     var y = 300;
     context.fillText(text, x, y);
+  } else if(gameStarted === false){
+    let text = "empate, se acabo el tiempo"
+    context.font="50px Arial";
+    context.fillStyle="red"
+    context.strokeStyle = "black"; // Color del borde
+    context.lineWidth = 2; // Ancho del borde
+
+    var x = 300;
+    var y = 300;
+    context.fillText(text, x, y);
   }
-  else{
+  else {
     let text = "El ganador es Apple";
     context.font="50px Arial";
     context.fillStyle="red"
@@ -417,6 +491,7 @@ function mostrarGanador(lastClickedFicha){
     var y = 300;
     context.fillText(text, x, y);
   }
+
   setTimeout(reiniciarJuego, 2000);
 
 }
@@ -436,6 +511,7 @@ function reiniciarJuego() {
   posYAndroid= 100;
   posYApple = 100;
   addFichas();
+  startButton.style.display='block';
 }
 
 // Evento temporal para agregar figuras

@@ -2,6 +2,8 @@ class fichaAndroid extends Ficha {
     constructor(posX, posY, radius, fill, context,name) {
         super(posX, posY, fill, context,name);
         this.radius = radius;
+        this.image = new Image();
+        this.image.src ='images/android.svg';
     }
 
     draw() {
@@ -18,7 +20,7 @@ class fichaAndroid extends Ficha {
             this.context.lineWidth = 2;
             this.context.stroke();
         }
-        this.context.closePath();
+        this.context.drawImage(this.image,this.posX - this.radius, this.posY-this.radius,this.radius*2,this.radius*2);
     }
 
     getRadius() {
