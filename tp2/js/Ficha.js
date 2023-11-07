@@ -9,10 +9,17 @@ class Ficha {
         this.bordeAncho = 2;
         this.context = context;
         this.name = name;
+        this.disponible=true;
 
  
     }
-    
+    getDisponible(){
+        return this.disponible;
+    }
+
+    setDisponible(){
+        this.disponible = false;
+    }
 
     setFill(fill) {
         this.fill = fill;

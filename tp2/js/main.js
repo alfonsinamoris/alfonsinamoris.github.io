@@ -198,14 +198,14 @@ function onMouseDown(e){
     posInicialY= e.offsetY;
 
     let clickFig = findClickedFicha(posInicialX, posInicialY);
-    if(jugadorApple.esTurno()){
-        if(clickFig != null && clickFig instanceof fichaApple){
+    if(jugadorApple.esTurno() ){
+        if(clickFig != null && clickFig instanceof fichaApple && clickFig.getDisponible()){
             clickFig.setResaltado(true);
             lastClickedFicha = clickFig;
         }
     }    
     if(jugadorAndroid.esTurno()){
-        if(clickFig != null && clickFig instanceof fichaAndroid){
+        if(clickFig != null && clickFig instanceof fichaAndroid&& clickFig.getDisponible()){
             clickFig.setResaltado(true);
             lastClickedFicha = clickFig;
         }
@@ -244,6 +244,7 @@ function onMouseUp(e){
             //por cada ficha, chequea si hay ganador
             const resultado = verificarCuatroEnLinea(tableroOcupado, fila, columna);
             drawFichas();
+            lastClickedFicha.setDisponible();
             //si lo encontro, lo muestra
             if(resultado === true){
               mostrarGanador(lastClickedFicha);
