@@ -7,20 +7,14 @@ class fichaAndroid extends Ficha {
     }
 
     draw() {
-        super.draw();
         this.context.beginPath();
         this.context.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
-        this.context.strokeStyle = this.bordeEstilo;
-        this.context.lineWidth = this.bordeAncho;
+        this.context.fillStyle = 'transparent'; // Establece el fondo transparente
+        this.context.strokeStyle = 'transparent'; // Establece el borde transparente
         this.context.fill();
         this.context.stroke();
 
-        if(this.resaltado === true){
-            this.context.strokeStyle = this.resaltadoEstilo;
-            this.context.lineWidth = 2;
-            this.context.stroke();
-        }
-        this.context.drawImage(this.image,this.posX - this.radius, this.posY-this.radius,this.radius*2,this.radius*2);
+        this.context.drawImage(this.image, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
     }
 
     getRadius() {

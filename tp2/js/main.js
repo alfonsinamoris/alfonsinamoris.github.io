@@ -34,7 +34,7 @@ startButton.addEventListener('click', iniciarJuego);
 //inicia juego cuando toco boton de iniciar juego
 function iniciarJuego() {
     gameStarted = true;
-    startGameTimer(20); // 180 segundos = 3 minutos
+    startGameTimer(180); // 180 segundos = 3 minutos
     document.querySelector('#buttonContainer').style.display = 'none';
     document.getElementById('endButton').style.display = 'block';
 }
