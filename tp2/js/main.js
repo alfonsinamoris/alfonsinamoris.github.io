@@ -30,13 +30,15 @@ let gameStarted = false;
 let gameTimer=null;
 let startButton = document.getElementById('startButton');
 startButton.addEventListener('click', iniciarJuego);
-
+let turnoDisplay = document.getElementById('turnoDisplay');
 //inicia juego cuando toco boton de iniciar juego
 function iniciarJuego() {
     gameStarted = true;
     startGameTimer(180); // 180 segundos = 3 minutos
-    document.querySelector('#buttonContainer').style.display = 'none';
+    document.querySelector('.buttonContainer').style.display = 'none';
     document.getElementById('endButton').style.display = 'block';
+    turnoDisplay.style.display='block'
+
 }
 
 document.getElementById('endButton').addEventListener('click', function() {
@@ -82,8 +84,15 @@ function endGame() {
     
     let endButton = document.getElementById('endButton');
     endButton.style.display = 'none';
+    turnoDisplay.style.display='none'
     reiniciarJuego();
 
+}
+
+function mostrarBotonInicio(){
+    const buttonContainer = document.querySelector('.buttonContainer');
+    buttonContainer.style.display = 'block';
+    startButton.style.display = 'block';
 }
 
 
@@ -145,21 +154,26 @@ function addFichaAndroid() {
     fichas.push(android);
     posYAndroid+=20;
 }
+
+
 let jugadorApple = new Jugador(fichaApple);
 let jugadorAndroid = new Jugador(fichaAndroid);
 jugadorApple.setJugadorActual();
 function cambiarTurno(){
-    let turnoDe;
+    var turnoDisplay = document.getElementById('turnoDisplay');
+    var turnoTextoElement = document.getElementById('turnoTexto');
+   
     if(jugadorApple.esTurno()){
-        turnoDe = 'es turno de android';
+        turnoTextoElement.textContent = 'android';
         jugadorApple.desactivarJugador();
         jugadorAndroid.setJugadorActual();
     } else{
-        turnoDe = 'es turno de apple';
+        turnoTextoElement.textContent = 'apple';
         jugadorAndroid.desactivarJugador();
         jugadorApple.setJugadorActual();
     }
-    console.log(turnoDe);
+
+    turnoDisplay.style.display = 'block';
 }
 
 
@@ -269,6 +283,7 @@ function onMouseUp(e){
     }
     if (contador === 4) {
       return true;
+      
     }
   }
 
@@ -491,11 +506,13 @@ function mostrarGanador(lastClickedFicha){
     var y = 300;
     context.fillText(text, x, y);
   }
-
   setTimeout(reiniciarJuego, 2000);
 
 }
 function reiniciarJuego() {
+  clearInterval(gameTimer);
+  gameTimer = null;
+  mostrarBotonInicio();
   // Restablece el arreglo tableroOcupado a su estado inicial
   for (let fila = 0; fila < tableroOcupado.length; fila++) {
       for (let columna = 0; columna < tableroOcupado[fila].length; columna++) {
@@ -511,7 +528,6 @@ function reiniciarJuego() {
   posYAndroid= 100;
   posYApple = 100;
   addFichas();
-  startButton.style.display='block';
 }
 
 // Evento temporal para agregar figuras
