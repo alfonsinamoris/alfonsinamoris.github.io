@@ -66,6 +66,7 @@ function startGameTimer(seconds) {
     
     startButton.style.display = 'none';
     endButton.style.display = 'block';
+    endButton.style.marginLeft = "400px";
 }
 
 function formatTime(seconds) {
@@ -172,7 +173,7 @@ function cambiarTurno(){
         jugadorAndroid.desactivarJugador();
         jugadorApple.setJugadorActual();
     }
-
+    turnoDisplay.
     turnoDisplay.style.display = 'block';
 }
 
