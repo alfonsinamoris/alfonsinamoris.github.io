@@ -31,17 +31,19 @@ let gameTimer=null;
 let startButton = document.getElementById('startButton');
 startButton.addEventListener('click', iniciarJuego);
 let turnoDisplay = document.getElementById('turnoDisplay');
+
+
 //inicia juego cuando toco boton de iniciar juego
 function iniciarJuego() {
     gameStarted = true;
     startGameTimer(180); // 180 segundos = 3 minutos
-    document.querySelector('.buttonContainer').style.display = 'none';
-    document.getElementById('endButton').style.display = 'block';
-    turnoDisplay.style.display='block'
+    document.querySelector('.buttonContainer').style.display = 'none';//oculto el boton de iniciar juego
+    document.getElementById('endButton').style.display = 'block';//muestro el boton de finalizar
+    turnoDisplay.style.display='block'//muestro de quien es el turno
 
 }
 
-document.getElementById('endButton').addEventListener('click', function() {
+document.getElementById('endButton').addEventListener('click', function() { //al hacer click en el boton de finalizar, llamo a funcion end
     endGame();
 });
 
@@ -64,8 +66,8 @@ function startGameTimer(seconds) {
         }
     }, 1000);
     
-    startButton.style.display = 'none';
-    endButton.style.display = 'block';
+    startButton.style.display = 'none';//oculto boton start
+    endButton.style.display = 'block';//muestro boton finalizar
     endButton.style.marginLeft = "400px";
 }
 
@@ -79,7 +81,7 @@ function formatTime(seconds) {
 function endGame() {
 
     gameStarted = false;
-    clearInterval(gameTimer);
+    clearInterval(gameTimer);//vuelvo tiempo a 0:00
     gameTimer = null;
     mostrarGanador();
     
@@ -90,6 +92,7 @@ function endGame() {
 
 }
 
+//muestra el boton para comenzar juego
 function mostrarBotonInicio(){
     const buttonContainer = document.querySelector('.buttonContainer');
     buttonContainer.style.display = 'block';
@@ -127,7 +130,7 @@ function findClickedFicha(x, y) {
     return null;
   }
   
-
+//dibuja fichas en el tablero
 function drawFichas() {
     clearCanvas();
     tablero.dibujarTablero(context,canvasWidth,canvasHeight);
@@ -136,8 +139,8 @@ function drawFichas() {
     }
 }
 
-let posYApple = 100;
 
+let posYApple = 100;
 function addFichaApple() {
     let posX = 100;
     let color = 'red';
@@ -159,7 +162,9 @@ function addFichaAndroid() {
 
 let jugadorApple = new Jugador(fichaApple);
 let jugadorAndroid = new Jugador(fichaAndroid);
-jugadorApple.setJugadorActual();
+jugadorApple.setJugadorActual();//el juego comienza con apple como actual
+
+//cuando apple se pone false, le cede el turno a android
 function cambiarTurno(){
     var turnoDisplay = document.getElementById('turnoDisplay');
     var turnoTextoElement = document.getElementById('turnoTexto');
@@ -173,12 +178,11 @@ function cambiarTurno(){
         jugadorAndroid.desactivarJugador();
         jugadorApple.setJugadorActual();
     }
-    turnoDisplay.
     turnoDisplay.style.display = 'block';
 }
 
 
-
+// presiono en la ficha
 let posInicialX;
 let posInicialY;
 function onMouseDown(e){
@@ -211,7 +215,7 @@ function onMouseDown(e){
 
 }
 
-
+//muevo la ficha
 function onMouseMove(e){
         if(isMouseDown && lastClickedFicha!=null){
         const x = e.offsetX;
@@ -222,35 +226,41 @@ function onMouseMove(e){
     
 }
 
+//desclickeo la ficha
 function onMouseUp(e){
     isMouseDown = false;
     const x = e.offsetX;
     const y = e.offsetY;
 
     if(lastClickedFicha !== null){
+    //si suelta la ficha en una zona permitida
     if((x<810 && x>170) && (y>60 && y< 140) ){
+        //calcula en que columna la solto
         const columna = tablero.calculateColumn(x);
-        //zona permitida para soltar ficha
         if(columna>-1 && columna<7){
+            //si la columna coincide con el tablero, la coloca en la ultima posicion disponible en la columna
             let fila = coincideColumna(columna, lastClickedFicha);
             colocarFicha(fila,columna,posInicialX,posInicialY);
-            
-            console.log(tableroOcupado);
+            //por cada ficha, chequea si hay ganador
             const resultado = verificarCuatroEnLinea(tableroOcupado, fila, columna);
             drawFichas();
+            //si lo encontro, lo muestra
             if(resultado === true){
               mostrarGanador(lastClickedFicha);
             }
             else
+            //si no lo encontro, es turno del siguiente jugador
               cambiarTurno();
 
         }
+        //si lo suelta fuera de las columnas, la vuelve a su posicion original
         else{
             lastClickedFicha.setPosition(posInicialX,posInicialY);
             drawFichas();
         }
 
       } 
+      //si lo suelta en una posicion no permitida, vuelve a la pila
       else{
         lastClickedFicha.setPosition(posInicialX,posInicialY)
         drawFichas();
@@ -259,7 +269,7 @@ function onMouseUp(e){
     }
 
 }
-       // Función para buscar objetos iguales en una tableroOcupado
+ // chequeo de 4 en linea
   function verificarCuatroEnLinea(tableroOcupado, fila, columna) {
   const filas = tableroOcupado.length;
   const columnas = tableroOcupado[0].length;
@@ -388,11 +398,13 @@ function onMouseUp(e){
     }
   } 
 
-  return false; // No se encontraron cuatro en línea en ninguna dirección
+  return false; // No se encontraron cuatro en línea 
 }
       
           
-  
+//coloca la ficha en la ultima posicion disponible de la columna
+
+
 function colocarFicha(fila,columna,posInicialX,posInicialY){
     if(fila === -1){
         lastClickedFicha.setPosition(posInicialX,posInicialY);
@@ -453,7 +465,7 @@ function colocarFicha(fila,columna,posInicialX,posInicialY){
 }
 
 
-
+//retorna la fila y la agrega en el tablero 
 function coincideColumna(columna, lastClickedFicha){
     let filas = tableroOcupado.length;
     let i = 0;
@@ -476,6 +488,8 @@ function coincideColumna(columna, lastClickedFicha){
     }
     return null;
 }
+
+//muestra quien gano, si paso o el tiempo o se completo el tablero muestra empate
 function mostrarGanador(lastClickedFicha){
   if(lastClickedFicha instanceof fichaAndroid){
     let text = "El ganador es Android";
@@ -510,9 +524,13 @@ function mostrarGanador(lastClickedFicha){
   setTimeout(reiniciarJuego, 2000);
 
 }
+
+//reinicia el juego a su original
 function reiniciarJuego() {
+    //vuelve tiempo a 0:00
   clearInterval(gameTimer);
   gameTimer = null;
+  //muestra el boton de iniciar juego
   mostrarBotonInicio();
   // Restablece el arreglo tableroOcupado a su estado inicial
   for (let fila = 0; fila < tableroOcupado.length; fila++) {
