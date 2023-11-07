@@ -1515,9 +1515,11 @@
         cursor: pointer;
         height: 40px;
         width: 100px;
+        align-content: center;
 
     }
-    #buttonContainer {
+    .buttonContainer {
+        display: block;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -1539,6 +1541,18 @@
         padding: 10px;
         border-radius: 5px;
     
+    }
+
+    #turnoDisplay{
+        display: none;
+        position: absolute;
+        top: 180px;
+        right: 200px;
+        color: whitesmoke;
+    }
+
+    #turnoTexto{
+        color: whitesmoke;
     }
 }
 
