@@ -1,0 +1,39 @@
+header{
+    height:100px ;
+    width: 1280px;
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#logoNav{
+    width: 130px;
+    height: 68px;
+    margin-left: 400px;
+    margin-right: 300px;
+}
+#hamburguesa{
+    height: 26px;
+    width: 34px;
+    margin-left: 100px;
+}
+
+#btnComprar{
+    width: 200px;
+    height: 50px;
+    border-radius: 111px;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background: #FFE901;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    margin-right: 100px;
+
+    /*estilo letra*/
+    color: #02187E;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 18.9px;
+    letter-spacing: 2.2px;
+
+}
