@@ -1,11 +1,18 @@
-header{
+.header{
     height:100px ;
-    width: 1280px;
+    width: 100%;
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 #logoNav{
     width: 130px;
     height: 68px;
@@ -36,4 +43,61 @@ header{
     line-height: 18.9px;
     letter-spacing: 2.2px;
 
+}
+
+
+.parallax1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.parallax1 img{
+    position: absolute;
+
+}
+
+#capa1{
+    width: 100%;
+}
+#capa2{
+    left: -50px;
+    bottom: 0;
+}
+#capa3{
+    right: 0;
+    bottom: 0;
+}
+#capa4{
+    bottom: 0;
+
+}
+#capa5{
+    left: 180px;
+    bottom: 80px;
+}
+#capa6{
+    bottom: -10px;
+    left: 600px;
+    width: 456px;
+    height: 465px;
+}
+
+#capa7{
+    right: 180px;
+    bottom: 170px;
+}
+
+#capa8{
+    bottom: -195px;
+    left: -20px;
+
+
+}
+
+#capa9{
+    right: -170px;
+    bottom: 100px;
 }
