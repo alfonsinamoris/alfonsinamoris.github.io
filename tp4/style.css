@@ -10,6 +10,7 @@
 .sticky{
     position: fixed;
     top: 0;
+    bottom: 0;
     width: 100%;
 }
 
@@ -18,6 +19,7 @@
     height: 68px;
     margin-left: 400px;
     margin-right: 300px;
+    display: none;
 }
 #hamburguesa{
     height: 26px;
@@ -48,10 +50,10 @@
 
 .parallax1{
     position: relative;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
 }
 
 .parallax1 img{
@@ -61,17 +63,20 @@
 
 #capa1{
     width: 100%;
+    height: 100%;
 }
 #capa2{
-    left: -50px;
-    bottom: 0;
+    left: -4%;
+    bottom: 0%;
 }
 #capa3{
-    right: 0;
-    bottom: 0;
+    right: 0%;
+    bottom: 0%;
 }
 #capa4{
     bottom: 0;
+    right: 400px;
+    left: 400px;
 
 }
 #capa5{
@@ -79,8 +84,9 @@
     bottom: 40px;
 }
 #capa6{
-    bottom: -15px;
-    left: 380px;
+    bottom: 0px;
+    left: 400px;
+    right: 540px;
     width: 456px;
     height: 465px;
 }
@@ -91,7 +97,7 @@
 }
 
 #capa8{
-    bottom: -195px;
+    bottom: 0px;
     left: -220px;
 
 
@@ -101,3 +107,16 @@
     right: -140px;
     bottom: 80px;
 }
+
+.containerTam{
+    width: 1080px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#logoPag1{
+    left: 320px;
+    right: 400px;
+    top: 150px;
+}
+
