@@ -1,5 +1,5 @@
 // nav sticky
-window.onscroll = function() {myFunction()};
+/*window.onscroll = function() {myFunction()};
 var navbar = document.querySelector(".header");
 var sticky = navbar.offsetTop;
 var logo = document.getElementById("logoNav");
@@ -43,4 +43,4 @@ window.addEventListener('scroll',()=>{
 
 
   //duende.style.top = value * -0.5 +'px';
-});
+});*/

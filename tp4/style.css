@@ -80,7 +80,7 @@
     bottom: 0%;
 }
 #capa4{
-    bottom: 0;
+    top: 500px;
     right: 400px;
     left: 400px;
 
@@ -187,10 +187,72 @@ position: relative;
     right: -100px;
     z-index: 2;
 }
-
 #blanco{
-    z-index: 1;
+    z-index: 0;
     position: relative;
-    top: -1850px;
     width: 100%;
+}
+.recctBlanco{
+    position: relative;
+    top: -1760px;
+
+}
+.infoSpider{
+    position: relative;
+    z-index: 10;
+    margin-left: 95px;
+    margin-top: -800px;
+
+}
+#cuadroSpider{
+    width: 332.96px;
+    height: 302.69px;
+    padding-right: 40px;
+}
+.textInfoSpider{
+    width: 333px;
+    height: 189px;
+    padding-right: 40px;
+}
+p.textInfoSpider{
+    color: black;
+}
+.grupoTextInfoSpider{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.fondoGhostSpider{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    top: -600px;
+}
+.tarjetasGhostSpider{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    padding-bottom: -200px;
+
+}
+.tarjeta1, .tarjeta2, .tarjeta3{
+    width: 543.218px;
+    height: 325.787px;
+    flex-shrink: 0;
+}
+.tarjeta1{
+    position: relative;
+    bottom: -295px;
+}
+.tarjeta2{
+    z-index: 3;
+    position: relative;
+    bottom: -100px;
+}
+.tarjeta3{
+    position: relative;
+    bottom: 64px;
+        z-index: 4;
 }
