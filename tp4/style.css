@@ -227,32 +227,80 @@ p.textInfoSpider{
     position: relative;
     z-index: 0;
     width: 100%;
-    top: -600px;
+    height: 566px;
+    top: -2650px;
 }
 .tarjetasGhostSpider{
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 10;
-    padding-bottom: -200px;
+    top: -2100px;
+    left: 40px;
 
 }
-.tarjeta1, .tarjeta2, .tarjeta3{
-    width: 543.218px;
-    height: 325.787px;
-    flex-shrink: 0;
+
+.ghostSpider{
+    height: 300px;
 }
+
 .tarjeta1{
     position: relative;
-    bottom: -295px;
+    bottom: -300px;
+    width: 546.108px;
+    height: 326.509px;
 }
 .tarjeta2{
     z-index: 3;
     position: relative;
-    bottom: -100px;
+    bottom: -95px;
+    width: 543.218px;
+    height: 325.787px;
 }
 .tarjeta3{
     position: relative;
     bottom: 64px;
-        z-index: 4;
+    z-index: 4;
+    width: 546.108px;
+    height: 326.509px;
+    
+}
+
+#fondoP2{
+    position: relative;
+    bottom: 1100px;
+    width: 100%;
+    height: 527px;
+}
+#capa2P2{
+    position: relative;
+    bottom: 1630px;
+    width: 100%;
+}
+
+#capa1P2{
+    position: relative;
+    bottom: 2252px;
+    width: 100%;
+    z-index: 2;
+}
+
+#hulk{
+    position: relative;
+    bottom: 2900px;
+    left: 850px;
+    z-index: 1;
+}
+#elastica{
+    position: relative;
+    bottom: 2900px;
+    right: 400px;
+    z-index: 1; 
+
+}
+#aranaNegro{
+    position: relative;
+    bottom: 3800px;
+    left: 530px;
+    z-index: 1; 
 }
