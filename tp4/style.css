@@ -66,11 +66,15 @@
 #capa1{
     width: 100%;
     height: 100%;
+    position: relative;
+    top: -15px;
 }
 #capa2{
     left: -4%;
     bottom: 0%;
 }
+
+/*edificios derecha*/
 #capa3{
     right: 0%;
     bottom: 0%;
@@ -94,7 +98,7 @@
     right: 540px;
     width: 456px;
     height: 465px;
-    z-index: 2;
+    z-index: 4;
 }
 /*spider derecha*/
 #capa7{
@@ -105,13 +109,15 @@
 #capa8{
     bottom: -190px;
     left: -220px;
-    z-index: 2;
+    z-index: 4;
+
 
 }
 /*telarana izquierda*/
 #capa9{
     right: -140px;
     bottom: 80px;
+    z-index: 4;
 }
 
 .containerTam{
@@ -131,6 +137,7 @@
     height: 840px;
     position: relative;
     top: -60px;
+    z-index: 2;
 }
 
 h1{
@@ -140,6 +147,8 @@ font-size: 60px;
 font-style: normal;
 font-weight: 600;
 line-height: 56.7px;
+z-index: 3;
+position: relative;
 }
 
 p{
@@ -149,6 +158,8 @@ font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+z-index: 3;
+position: relative;
 }
 
 #contenedorTexto{
@@ -159,10 +170,27 @@ line-height: normal;
     left: 95px;
 }
 
-#personajeVerde{
+#duende{
     height: 920px;
     width: 550px;
     top: -1100px;
-    left: 600px;
+    left: 700px;
     position: relative;
+    z-index: 3;
+}
+
+#juegoVerde{
+    top: -1600px;
+    position: relative;
+    width: 750px;
+    height: 410px;
+    right: -100px;
+    z-index: 2;
+}
+
+#blanco{
+    z-index: 1;
+    position: relative;
+    top: -1850px;
+    width: 100%;
 }
