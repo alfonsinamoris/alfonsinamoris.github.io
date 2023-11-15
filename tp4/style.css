@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 20;
 }
 
 .sticky{
@@ -12,6 +13,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
+
 }
 
 #logoNav{
@@ -60,7 +62,7 @@
     position: absolute;
 
 }
-
+/*fondo*/
 #capa1{
     width: 100%;
     height: 100%;
@@ -79,30 +81,34 @@
     left: 400px;
 
 }
+/*spider izquierda*/
 #capa5{
     left: 100px;
     bottom: 40px;
 }
+
+/*spider medio*/
 #capa6{
-    bottom: 0px;
+    bottom: -10px;
     left: 400px;
     right: 540px;
     width: 456px;
     height: 465px;
+    z-index: 2;
 }
-
+/*spider derecha*/
 #capa7{
     right: 200px;
     bottom: 130px;
 }
-
+/*telarana derecha*/
 #capa8{
-    bottom: 0px;
+    bottom: -190px;
     left: -220px;
-
+    z-index: 2;
 
 }
-
+/*telarana izquierda*/
 #capa9{
     right: -140px;
     bottom: 80px;
@@ -120,3 +126,43 @@
     top: 150px;
 }
 
+#violeta{
+    width: 100%;
+    height: 840px;
+    position: relative;
+    top: -60px;
+}
+
+h1{
+color: #FFF;
+font-family: Lato;
+font-size: 60px;
+font-style: normal;
+font-weight: 600;
+line-height: 56.7px;
+}
+
+p{
+color: #FFF;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+#contenedorTexto{
+    height: 270px;
+    width: 580px;
+    top: -700px;
+    position: relative;
+    left: 95px;
+}
+
+#personajeVerde{
+    height: 920px;
+    width: 550px;
+    top: -1100px;
+    left: 600px;
+    position: relative;
+}
