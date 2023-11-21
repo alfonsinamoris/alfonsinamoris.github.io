@@ -51,6 +51,7 @@ body {
     font-weight: 900;
     line-height: 18.9px;
     letter-spacing: 2.2px;
+    -webkit-text-stroke: 2px;
 
 }
 
@@ -136,7 +137,9 @@ body {
     right: 400px;
     top: 150px;
 }
-
+#contenedorVioleta{
+    position: relative;
+}
 #violeta{
     width: 100%;
     height: 840px;
@@ -145,7 +148,7 @@ body {
     z-index: 2;
 }
 
-h1{
+#contenedorTexto h1{
 color: #FFF;
 font-family: Lato;
 font-size: 60px;
@@ -153,10 +156,11 @@ font-style: normal;
 font-weight: 600;
 line-height: 56.7px;
 z-index: 3;
-position: relative;
+position: absolute;
+
 }
 
-p{
+#contenedorTexto p{
 color: #FFF;
 font-family: Lato;
 font-size: 20px;
@@ -164,49 +168,53 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 z-index: 3;
-position: relative;
+position: absolute;
+margin-top: 200px;
 }
 
 #contenedorTexto{
     height: 270px;
     width: 580px;
-    top: -700px;
-    position: relative;
+    top: 100px;
+    position: absolute;
     left: 95px;
 }
 
 #duende{
     height: 920px;
     width: 550px;
-    top: -1100px;
-    left: 700px;
-    position: relative;
+    right: 30px;
+    position: absolute;
     z-index: 3;
+    margin-top: 60px;
 }
 
 #juegoVerde{
-    top: -1600px;
-    position: relative;
+    top: 450px;
+    position: absolute;
     width: 750px;
     height: 410px;
-    right: -100px;
+    left: 100px;
     z-index: 2;
 }
+
+
 #blanco{
     z-index: 0;
-    position: relative;
+    position: absolute;
     width: 100%;
+    height: 1085px;
 }
 .recctBlanco{
     position: relative;
-    top: -1760px;
+    margin-top: 150px;
+    height: 500px;
 
 }
 .infoSpider{
-    position: relative;
+    position: absolute;
     z-index: 10;
     margin-left: 95px;
-    margin-top: -800px;
 
 }
 #cuadroSpider{
@@ -228,21 +236,26 @@ p.textInfoSpider{
 
 }
 
-.fondoGhostSpider{
+#contenedorGhostSpider{
     position: relative;
+    height: 600px;
+}
+
+.fondoGhostSpider{
+    position: absolute;
     z-index: 0;
     width: 100%;
     height: 566px;
-    top: -2650px;
+
 }
 .tarjetasGhostSpider {
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
     z-index: 10;
-    top: -2100px;
+    height: 700px;
     left: 40px;
-    margin-bottom: 10px; /* Ajusta la cantidad de margen según sea necesario */
+    margin-bottom: 10px; 
 }
 
 .ghostSpider{
@@ -251,72 +264,75 @@ p.textInfoSpider{
 
 .tarjeta1{
     position: relative;
-    bottom: -300px;
+    bottom: 100px;
     width: 546.108px;
-    height: 326.509px;
+
 }
 .tarjeta2{
     z-index: 3;
     position: relative;
-    bottom: -95px;
+    bottom: 340px;
     width: 543.218px;
-    height: 325.787px;
+
 }
 .tarjeta3{
     position: relative;
-    bottom: 64px;
+    bottom: 600px;
     z-index: 4;
     width: 546.108px;
-    height: 326.509px;
+
     
 }
 
-#fondoP2{
+#paralax2{
     position: relative;
-    bottom: 1100px;
+    height: 600px;
+    margin-top: 150px;
+}
+#fondoP2{
+    position: absolute;
     width: 1070px;
     height: 527px;
     margin-left:100px ;
 
 }
 #capa2P2{
-    position: relative;
-    bottom: 1630px;
+    position: absolute;
+
     width: 1070px;
     margin-left:100px ;
 }
 
 #capa1P2{
-    position: relative;
-    bottom: 2155px;
+    position: absolute;
+
     width: 1070px;
     z-index: 2;
     margin-left:100px ;
 }
 
 #hulk{
-    position: relative;
-    bottom: 2770px;
+    position: absolute;
+    top: 100px;
     left: 780px;
     z-index: 1;
 }
 #elastica{
-    position: relative;
-    bottom: 2790px;
-    right: 360px;
+    position: absolute;
+    top: -100px;
+    left: 100px;
     z-index: 1; 
 
 }
 #aranaNegro{
-    position: relative;
-    bottom: 3620px;
+    position: absolute;
+    bottom: 230px;
     left: 530px;
     z-index: 1; 
 }
 
 #masAmigos{
     position: relative;
-    top: -3400px;
     margin-left: 100px;
 }
 
@@ -326,7 +342,7 @@ p.textInfoSpider{
     font-size: 60px;
     font-style: normal;
     font-weight: 600;
-    line-height: 94.5%; /* 56.7px */
+    line-height: 94.5%; 
 }
 .contenedorMasAmigos h2{
     color: #000;
@@ -334,7 +350,7 @@ p.textInfoSpider{
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    line-height: 94.5%; /* 37.8px */
+    line-height: 94.5%; 
 }
 .contenedorMasAmigos p{
     color: #000;
@@ -342,7 +358,7 @@ p.textInfoSpider{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 94.5%; /* 18.9px */
+    line-height: 94.5%; 
 }
 
 .contenedorMasAmigos{
@@ -366,8 +382,65 @@ p.textInfoSpider{
     border: 8px solid var(--2982-ff, #2982FF);
     background: #FFE901;
     box-shadow: 4px 5px 0px 0px #02187E;
-    position: relative;
     bottom: 3500px;
+    color: #02187E;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%; 
+    letter-spacing: 2.2px;
+    margin-left: 100px;
+    margin-top: 300px;
+    -webkit-text-stroke: 2px;
+}
+
+#tresSpiders{
+    position:relative;
+    margin-top: 200px;
+    height: 600px;
+}
+
+#spiderRosa{
+    position: absolute;
+    left: 200px;
+
+}
+
+#spiderRojo{
+position: absolute;
+right: 430px;
+}
+
+#spiderNegro{
+position: absolute;
+right: 150px;
+}
+
+#inputSuscribirse{
+    position: absolute;
+    top: 400px;
+    left: 250px;
+}
+
+.correo{
+    width: 562px;
+    height: 75px;
+    flex-shrink: 0;
+    border-radius: 50px 0px 0px 50px;
+    border-top: 9px solid #2982FF;
+    border-bottom: 9px solid #2982FF;
+    border-left: 9px solid #2982FF;
+    background: #FFF;
+    box-shadow: 4px 5px 0px 0px #02187E;
+}
+
+.suscribirse{
+    width: 218px;
+    height: 100px;
+    border-radius:  0px 50px 50px 0px ;
+    border: 9px solid #2982FF;
+    background: #FFE901;
     color: #02187E;
     font-family: Lato;
     font-size: 20px;
@@ -375,53 +448,135 @@ p.textInfoSpider{
     font-weight: 900;
     line-height: 94.5%; /* 18.9px */
     letter-spacing: 2.2px;
-    margin-left: 100px;
-}
+    -webkit-text-stroke: 2px;
 
-#spiderRosa{
-    position: relative;
-    bottom:2900px;
-    left: -200px;
-
-}
-
-#spiderRojo{
-position: relative;
-bottom: 3320px;
-left: 400px;
-}
-
-#spiderNegro{
-position: relative;
-bottom: 2920px;
-left: 100px;
 }
 
 #fondoUltimo{
+    position: absolute;
     width: 100%;
     height: 1296px;
    
 }
-
-
-.correo{
-    width: 562px;
-    height: 100px;
-    flex-shrink: 0;
-    border-radius: 50px 0px 0px 50px;
-    border-top: 9px solid #2982FF;
-    border-bottom: 9px solid #2982FF;
-    border-left: 9px solid #2982FF;
-    background: #FFF;
-
-    /* Drop Shadow */
-    box-shadow: 4px 5px 0px 0px #02187E;
+#ultimo{
+    position: relative;
+    height: 1296px;
 }
-.suscribirse{
-    width: 218px;
-    height: 100px;
-    border-radius:  0px 50px 50px 0px ;
-    border: 9px solid #2982FF;
-    background: #FFE901;
 
+#edificios{
+    position: absolute;
+    right: 0;
+    top: 600px;
+}
+
+#spiderChiquito{
+z-index: 3;
+position: absolute;
+right: 190px;
+top: 988px;
+}
+
+#spiderChiquitoNegro{
+    z-index: 3;
+    position: absolute;
+    left: 210px;
+    top: 1150px;
+}
+
+#spiderChiquitoBlanco{
+    z-index: 3;
+    position: absolute;
+    left: 540px;
+    top: 1100px;
+}
+
+#ultimo h1{
+    width: 816px;
+    position: absolute;
+    z-index: 3;
+    color: #000;
+    text-align: center;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%; /* 56.7px */
+    left: 230px;
+    top: 150px;
+}
+
+#ultimo p{
+    width: 578px;
+    height: 95px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%; /* 18.9px */
+    position: absolute;
+    top: 550px;
+    left: 300px;
+}
+
+#imgTeen{
+    position: absolute;
+    width:231px;
+    height: 145px;
+    left: 302px;
+    top: 670px;
+}
+
+footer{
+    position: relative;
+    width: 1280px;
+    height: 598px;
+    flex-shrink: 0;
+    background: #5E5E5D;
+}
+#rectNegro{
+    position: absolute;
+    width: 1280px;
+    height: 80px;
+    background: #242424;
+}
+
+#xbox{
+    position: absolute;
+    left: 100px;
+}
+
+#rights{
+    width: 820px;
+    color: #FFF;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%; /* 18.9px */
+    letter-spacing: 2.2px;
+    position: absolute;
+    top: 108px;
+    left: 100px;
+}
+
+#cookies{
+    color: #FFF;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 94.5%;
+letter-spacing: 2.2px;
+text-decoration-line: underline;
+position: absolute;
+top: 430px;
+left: 100px;
+}
+
+#redes{
+    position: absolute;
+    left: 100px;
+    top: 500px;
 }
