@@ -28,12 +28,22 @@ let capa7 = document.getElementById('capa7');
 let capa8 = document.getElementById('capa8');
 let capa9 = document.getElementById('capa9');
 let duende = document.getElementById('duende');
+let imgSticky1 = document.getElementById('IMG1');
+
+
+
+
 
 //agarra la posicion inicial de las capas para moverlas a partir de esa
 let intialBottomPosition7 = parseFloat(getComputedStyle(capa7).bottom);
 let intialRightPosition7 = parseFloat(getComputedStyle(capa7).right);
+
+let intialBottomPosition9 = parseFloat(getComputedStyle(capa9).bottom);
+let intialRightPosition9 = parseFloat(getComputedStyle(capa9).right);
+
 let intialLeftPosition5 = parseFloat(getComputedStyle(capa5).left);
 let intialBottomPosition6 = parseFloat(getComputedStyle(capa6).bottom);
+let intialBottomPosition8 = parseFloat(getComputedStyle(capa8).bottom);
 
 
 window.addEventListener('scroll',()=>{
@@ -41,10 +51,34 @@ window.addEventListener('scroll',()=>{
   //le agrega o resta px o porcentajes del inicial a medida q se scrollea y le suma el scroll en y
   capa7.style.bottom = intialBottomPosition7 + value * 0.5 + 'px';
   capa7.style.right = intialRightPosition7 + value * -0.5 + 'px';
+
+  capa9.style.bottom = intialBottomPosition9 + value * 0.5 + 'px';
+  capa9.style.right = intialRightPosition9 + value * -0.5 + 'px';
+
   capa5.style.left = intialLeftPosition5 + value * -0.4 +'px';
   logoPag1.style.top = value *-0.5 +'px';
   capa6.style.bottom =intialBottomPosition6 + value * 0.5+'px';
+  capa8.style.bottom = intialBottomPosition8 + value *0.5 + 'px';
+  // Ajusta la posición de la imagen en respuesta al desplazamiento
+  duende.style.top = 0 + value * 0.2 + 'px';
 
+  var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
+  // Obtener la altura total de la página
+  var totalHeight = document.documentElement.scrollHeight;
+
+  // Obtener la altura de la ventana del navegador
+  var windowHeight = window.innerHeight;
+
+  if(scrollPosition + windowHeight>=4150 && scrollPosition + windowHeight <= 4505){
+    imgSticky1.classList.add('stickyIMG');
+  }
+  else{
+    imgSticky1.classList.remove('stickyIMG');
+
+  }
+  // Verificar si el usuario ha llegado al final de la página
   //duende.style.top = value * -0.5 +'px';
 });
+
+//4250 al 4585
