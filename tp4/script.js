@@ -1,5 +1,5 @@
 // nav sticky
-/*window.onscroll = function() {myFunction()};
+window.onscroll = function() {myFunction()};
 var navbar = document.querySelector(".header");
 var sticky = navbar.offsetTop;
 var logo = document.getElementById("logoNav");
@@ -15,7 +15,7 @@ function myFunction() {
     logo.style.display="none";
   }
 }
-
+/*s
 //parallax
 let logoPag1 = document.getElementById('logoPag1');
 let capa1 = document.getElementById('capa1');
