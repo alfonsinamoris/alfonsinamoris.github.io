@@ -27,6 +27,7 @@ body {
     margin-left: 400px;
     margin-right: 300px;
     display: none;
+
 }
 #hamburguesa{
     height: 26px;
@@ -89,7 +90,7 @@ body {
 }
 /*edificios medio*/
 #capa4{
-    top: 700px;
+    top: 900px;
     right: 400px;
     left: 400px;
 
@@ -138,7 +139,7 @@ body {
 #logoPag1{
     left: 320px;
     right: 400px;
-    top: 150px;
+    margin-top: 180px;
 }
 #contenedorVioleta{
     position: relative;
@@ -189,7 +190,7 @@ margin-top: 200px;
     right: 30px;
     position: absolute;
     z-index: 3;
-    margin-top: -150;
+    margin-top: 60px;
 }
 
 #juegoVerde{
@@ -224,6 +225,8 @@ margin-top: 200px;
     width: 332.96px;
     height: 302.69px;
     padding-right: 40px;
+    opacity: 0; /* Por defecto, las imágenes están completamente transparentes */
+    transition: opacity 3s ease-in-out;
 }
 .textInfoSpider{
     width: 333px;
