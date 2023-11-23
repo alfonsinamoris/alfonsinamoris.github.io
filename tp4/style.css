@@ -276,29 +276,32 @@ p.textInfoSpider{
 }
 
 .tarjeta1:hover, .tarjeta2:hover, .tarjeta3:hover {
-    transform: perspective(1000px) rotateY(10deg);
+    transform: perspective(1000px) rotateY(6deg);
 }
 .tarjeta1{
+    margin-bottom:10px ;
     position: relative;
     bottom: 100px;
     width: 546.108px;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 
 }
 .tarjeta2{
+    margin-top: 15px;
     z-index: 3;
     position: relative;
     bottom: 340px;
     width: 543.218px;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 
 }
 .tarjeta3{
+    margin-top: 15px;
     position: relative;
     bottom: 600px;
     z-index: 4;
     width: 546.108px;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 
     
 }
@@ -361,14 +364,25 @@ p.textInfoSpider{
     max-width: 600px; /* Ajustar según sea necesario */
     transition: top 0.3s ease;
 }
-.contenedorMasAmigos img{
+
+.contenedorImagenes{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+
+}
+.contenedorImagenes img{
     width: 552px;
     height: 302.762px;
-    flex-shrink: 0;
+    margin: 20px;
 }
 #masAmigos{
     position: relative;
     margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #masAmigos h1{
@@ -379,7 +393,7 @@ p.textInfoSpider{
     font-weight: 600;
     line-height: 94.5%; 
 }
-.contenedorMasAmigos h2{
+.contenedorTxtMA h2{
     color: #000;
     font-family: Lato;
     font-size: 40px;
@@ -389,7 +403,7 @@ p.textInfoSpider{
     width: 467px;
     height: 76px;
 }
-.contenedorMasAmigos p{
+.contenedorTxtMA p{
     margin-top: -20px;
     color: #000;
     font-family: Lato;
@@ -400,10 +414,13 @@ p.textInfoSpider{
     width: 467px;
 }
 
-.contenedorMasAmigos{
+.contenedorTxtMA{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 100px;
+    flex-grow: 1;
+    height: fit-content;
+    width: fit-content;
 }
 
 .txtMasAmigos{
