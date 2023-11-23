@@ -103,3 +103,59 @@ window.addEventListener('scroll',()=>{
 });
 
 //4250 al 4585
+
+//parallax hover
+
+
+  document.addEventListener("mousemove", parallax);
+  const elem = document.querySelector("#aranaNegro");
+  function parallax(e){
+    let _w = window.innerWidth/2;
+        let _h = window.innerHeight/2;
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+        let _depth1 = `${50 - (_mouseX - _w) * 1}px ${50 - (_mouseY - _h) * 1}px`;
+        let _depth2 = `${50 - (_mouseX - _w) * 1}px ${50 - (_mouseY - _h) * 1}px`;
+        let _depth3 = `${50 - (_mouseX - _w) * 1}px ${50 - (_mouseY - _h) * 1}px`;
+        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+        console.log(x);
+        elem.style.backgroundPosition = x;
+  }
+
+//seccion ghost spider
+document.addEventListener('DOMContentLoaded', function () {
+  const tarjeta1 = document.querySelector('.tarjeta1');
+  const tarjeta2 = document.querySelector('.tarjeta2');
+  const tarjeta3 = document.querySelector('.tarjeta3');
+
+  // Obtenemos las posiciones iniciales
+  const tarjeta1PosInicial = tarjeta1.getBoundingClientRect().top + window.scrollY;
+  const tarjeta2PosInicial = tarjeta2.getBoundingClientRect().top + window.scrollY;
+  const tarjeta3PosInicial = tarjeta3.getBoundingClientRect().top + window.scrollY;
+
+  window.addEventListener('scroll', function () {
+      const scrollPosition = window.scrollY;
+
+      // Calculamos el desplazamiento desde la posición inicial
+      const desplazamiento1 = tarjeta1PosInicial - scrollPosition;
+      const desplazamiento2 = tarjeta2PosInicial - scrollPosition;
+      const desplazamiento3 = tarjeta3PosInicial - scrollPosition;
+
+      // Aplicamos el desplazamiento a las tarjetas
+      tarjeta1.style.transform = `translateY(${desplazamiento1 * 0.1}px)`;
+      tarjeta2.style.transform = `translateY(${desplazamiento2 * 0.1}px)`;
+      tarjeta3.style.transform = `translateY(${desplazamiento3 * 0.1}px)`;
+  });
+
+  // Añadimos el efecto de rotación al hacer hover
+  const tarjetas = document.querySelectorAll('.tarjeta1, .tarjeta2, .tarjeta3');
+  tarjetas.forEach(tarjeta => {
+      tarjeta.addEventListener('mouseover', function () {
+          tarjeta.style.transform = 'perspective(1000px) rotateY(10deg)';
+      });
+
+      tarjeta.addEventListener('mouseout', function () {
+          tarjeta.style.transform = '';
+      });
+  });
+});

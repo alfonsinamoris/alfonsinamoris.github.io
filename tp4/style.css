@@ -56,6 +56,12 @@ body {
 
 }
 
+#btnComprar:hover{
+    border: 8px solid var(--2982-ff, #142a48);
+    background: #7d783f;
+    box-shadow: 4px 5px 0px 0px #070810;
+    
+}
 
 .parallax1{
     position: relative;
@@ -245,6 +251,7 @@ p.textInfoSpider{
 #contenedorGhostSpider{
     position: relative;
     height: 600px;
+
 }
 
 .fondoGhostSpider{
@@ -268,10 +275,14 @@ p.textInfoSpider{
     height: 300px;
 }
 
+.tarjeta1:hover, .tarjeta2:hover, .tarjeta3:hover {
+    transform: perspective(1000px) rotateY(10deg);
+}
 .tarjeta1{
     position: relative;
     bottom: 100px;
     width: 546.108px;
+    transition: transform 0.5s ease;
 
 }
 .tarjeta2{
@@ -279,6 +290,7 @@ p.textInfoSpider{
     position: relative;
     bottom: 340px;
     width: 543.218px;
+    transition: transform 0.5s ease;
 
 }
 .tarjeta3{
@@ -286,6 +298,7 @@ p.textInfoSpider{
     bottom: 600px;
     z-index: 4;
     width: 546.108px;
+    transition: transform 0.5s ease;
 
     
 }
@@ -331,10 +344,16 @@ p.textInfoSpider{
 
 }
 #aranaNegro{
+    width: 1070px;
+    height: 500px;
     position: absolute;
-    bottom: 230px;
-    left: 530px;
+
     z-index: 1; 
+    background-image: url(images/aranaNegro.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 50% 50%;
+    overflow: visible;
 }
 .stickyIMG{
     position: fixed;
@@ -415,6 +434,12 @@ p.textInfoSpider{
     -webkit-text-stroke: 2px;
 }
 
+#comprarAhora:hover{
+    border: 8px solid var(--2982-ff, #142a48);
+    background: #7d783f;
+    box-shadow: 4px 5px 0px 0px #070810;
+}
+
 #tresSpiders{
     position:relative;
     margin-top: 200px;
@@ -492,8 +517,16 @@ right: 150px;
 #spiderChiquito{
 z-index: 3;
 position: absolute;
-right: 190px;
-top: 988px;
+right: 230px;
+bottom: 220px;
+width: 34px;
+height: 31px;
+background: url(images/spriteSheets.png) repeat-x;
+animation: walk .8s steps(7) infinite;
+}
+@keyframes walk{
+    0%{background-position:0 ;}
+    100%{background-position: -238px;}
 }
 
 #spiderChiquitoNegro{
@@ -599,4 +632,37 @@ left: 100px;
     position: absolute;
     left: 100px;
     top: 500px;
+}
+
+
+/* loader*/
+.spinner-container {
+    text-align: center;
+    margin-top: 70px;
+
+}
+
+
+#porcentaje-carga{
+    color: var(--luz-sec-2);
+}
+/* Aplica un efecto de desvanecimiento a la imagen con la clase ".logoSpinner" */
+.logoSpinner {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    border: 8px solid #3498db;
+    border-top: 8px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
