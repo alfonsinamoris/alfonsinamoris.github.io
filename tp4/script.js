@@ -30,7 +30,10 @@ let capa9 = document.getElementById('capa9');
 let duende = document.getElementById('duende');
 let imgSticky1 = document.getElementById('IMG1');
 let logoNav = document.getElementById('logoNav');
-let cuadros = document.querySelectorAll('.cuadroFade');
+let cuadro1 = document.querySelector('.cuadroFade1');
+let cuadro2 = document.querySelector('.cuadroFade2');
+let cuadro3 = document.querySelector('.cuadroFade3');
+
 
 
 
@@ -76,16 +79,27 @@ window.addEventListener('scroll',()=>{
       duende.style.top = 0 - value * 0.2 + 'px';
 
         // fade-in cards
-        if(value>635){
-          cuadros.forEach(function (cuadro) {
-            cuadro.style.opacity = 1;
-        });
+        if(value>670){
+          if (cuadro1 && cuadro2 && cuadro3) {
+            setTimeout(function () {
+                cuadro1.style.opacity = 1;
+            }, 1000); 
+
+            setTimeout(function () {
+                cuadro2.style.opacity = 1;
+            }, 1300); 
+
+            setTimeout(function () {
+                cuadro3.style.opacity = 1;
+            }, 1500);
         
         }
+      }
         else{
-          cuadros.forEach(function (cuadro) {
-            cuadro.style.opacity = 0;
-        });
+          cuadro1.style.opacity = 0;
+          cuadro2.style.opacity = 0;
+          cuadro3.style.opacity = 0;
+
       }
       
 
@@ -151,11 +165,52 @@ document.addEventListener('DOMContentLoaded', function () {
   const tarjetas = document.querySelectorAll('.tarjeta1, .tarjeta2, .tarjeta3');
   tarjetas.forEach(tarjeta => {
       tarjeta.addEventListener('mouseover', function () {
-          tarjeta.style.transform = 'perspective(1000px) rotateY(10deg)';
+          tarjeta.style.transform = 'perspective(1000px) rotateX(40deg)';
       });
 
       tarjeta.addEventListener('mouseout', function () {
           tarjeta.style.transform = '';
       });
   });
-});
+})
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Simula la carga de la página
+  let cargaActual = 0;
+  const porcentajeCarga = document.getElementById("porcentaje-carga");
+  const logoSpinner = document.querySelector(".logoSpinner");
+  const hombreAraña = document.querySelector(".spiderCarga");
+
+  const simularCarga = setInterval(function () {
+      
+      cargaActual += 1;
+     porcentajeCarga.innerText = cargaActual + "%";
+
+      // Calcula la caida gradualmente
+
+      const translateYValue = cargaActual / 100 * logoSpinner.offsetHeight;
+
+
+      // aplica el movimiento al logo 
+
+      logoSpinner.style.transform = 'translateY(' + translateYValue + 'px)';
+      hombreAraña.style.transform = 'translateY(' + translateYValue + 'px)';
+
+
+      if (cargaActual < 100) {
+          document.querySelectorAll(".header, .parallax1, .contenedorVioleta, .recctBlanco, .contenedorGhostSpider, .paralax2, .masAmigos,  .tresSpiders, .ultimo, .footerClass, .contenedorVioleta, .ghostSpider, .buttonComprar, .header ").forEach(function(element) {
+              element.style.display = "none";
+          });
+      } else {
+          clearInterval(simularCarga);
+          // Oculta el spinner y el porcentaje de carga una vez que la carga esté completa
+          document.querySelector(".spinner-container").style.display = "none";
+          document.querySelector(".header").style.display = "flex";
+          document.querySelectorAll(".parallax1, .contenedorVioleta, .recctBlanco, .contenedorGhostSpider, .paralax2, .masAmigos,  .tresSpiders, .ultimo, .footerClass, .contenedorVioleta, .ghostSpider, .buttonComprar").forEach(function(element) {
+            element.style.display = "block";
+        });
+      }
+  }, 50);
+});  
+

@@ -513,6 +513,12 @@ right: 150px;
     right: 0;
     top: 600px;
 }
+.cuadroFade {
+    opacity: 0; /* Por defecto, los cuadros están completamente transparentes */
+    transition: opacity 1s ease-in-out; /* Transición suave de opacidad durante 1 segundo */
+}
+
+
 
 #spiderChiquito{
 z-index: 3;
@@ -639,9 +645,21 @@ left: 100px;
 .spinner-container {
     text-align: center;
     margin-top: 70px;
+    display: flex;
+    flex-direction: column;
 
 }
+.logoSpinner, .spiderCarga {
+    width: 600px;
+    margin: auto;
+    z-index: 4;
+    margin-top: -270px;
+}
+.spiderCarga{
+    margin-top: -135px;
+    z-index: 3;
 
+}
 
 #porcentaje-carga{
     color: var(--luz-sec-2);
@@ -660,6 +678,7 @@ left: 100px;
     height: 50px;
     animation: spin 1s linear infinite;
     margin: 0 auto;
+    
 }
 
 @keyframes spin {
