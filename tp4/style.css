@@ -21,6 +21,7 @@ body {
 
 }
 
+
 #logoNav{
     width: 130px;
     height: 68px;
@@ -29,6 +30,29 @@ body {
     display: none;
 
 }
+
+.navigation li{
+    margin: 15px;
+    border:solid #000;
+}
+
+.navigation{
+ display: none;
+ position: absolute;
+ z-index: 2;
+ background-color: #FFE901;
+ width: 200px;
+ height: fit-content;
+ color: #02187E;
+ font-family: Lato;
+ font-size: 20px;
+ font-style: normal;
+ font-weight: 900;
+ line-height: 94.5%; 
+ letter-spacing: 2.2px;
+}
+
+
 #hamburguesa{
     height: 26px;
     width: 34px;

@@ -9,11 +9,17 @@
 </head>
 <body>
     <header class="header">
-        <img id="hamburguesa" src="images/hamburguesa.svg">
+        <img id="hamburguesa" src="images/hamburguesa.svg" onclick="toggleMenu()">
         <img id="logoNav" src="images/logo.png">
-        <nav class="navigation"> </nav>
         <button class="ov-btn-slide-left" id="btnComprar" >COMPRAR</button>
     </header>
+    <nav class="navigation"> 
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Suscribirse</li>
+        </ul>
+    </nav>
     <div class="spinner-container">
         <div id="spinner" class="spinner"></div>
         <div id="porcentaje-carga"><p class="porcentaje"> 0% </p></div>
@@ -172,6 +178,7 @@
 <script src="seccion5.js"></script>
 <script src="seccion6.js"></script>
 <script src="seccion7.js"></script>
+<script src="menu.js"></script>
 
 </body>
 </html>
