@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Simula la carga de la página
   let cargaActual = 0;
+  const spinner = document.querySelector(".spinner"); 
   const porcentajeCarga = document.getElementById("porcentaje-carga");
   const logoSpinner = document.querySelector(".logoSpinner");
   const hombreAraña = document.querySelector(".spiderCarga");
@@ -21,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       logoSpinner.style.transform = 'translateY(' + translateYValue + 'px)';
       hombreAraña.style.transform = 'translateY(' + translateYValue + 'px)';
+
+
+
+
 
 
       if (cargaActual < 100) {

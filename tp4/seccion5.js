@@ -10,6 +10,6 @@ function parallax(e){
       let _depth2 = `${50 - (_mouseX - _w) * 1}px ${50 - (_mouseY - _h) * 1}px`;
       let _depth3 = `${50 - (_mouseX - _w) * 1}px ${50 - (_mouseY - _h) * 1}px`;
       let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-      console.log(x);
+      //console.log(x);
       elem.style.backgroundPosition = x;
 }
