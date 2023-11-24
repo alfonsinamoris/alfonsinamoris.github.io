@@ -146,7 +146,7 @@ body {
 /*edificios izquierda*/
 #capa2{
     left: -4%;
-    bottom: 0%;
+    bottom: -40px;
 }
 
 /*edificios derecha*/
@@ -156,9 +156,9 @@ body {
 }
 /*edificios medio*/
 #capa4{
-    top: 900px;
-    right: 400px;
-    left: 400px;
+    bottom: 0px;
+
+    left: 350px;
 
 }
 /*spider izquierda*/
@@ -508,12 +508,47 @@ right: 150px;
 }
 
 #tresSpiders {
+    height: fit-content;
     position: relative;
     margin-top: 200px;
     height: 600px;
     display: flex;
 }
 
+.lineaRojoArr{
+    display: none;
+    position:absolute;
+    top: -200px;
+}
+.lineaRojoAb{
+    display: none;
+    position: absolute;
+    bottom: -50px;
+
+}
+.lineaRosaArr{
+    display: none;
+    position: absolute;
+    top: -195px;
+}
+
+.lineaRosaAb{
+    display: none;
+    position: absolute;
+    bottom: -45px;
+}
+
+.lineaNegroArr{
+    display: none;
+    position: absolute;
+    top: -195px;
+}
+
+.lineaNegroAb{
+    display: none;
+    position: absolute;
+    bottom:-45px;
+}
 
 
 #spiderRosa:hover {
@@ -528,12 +563,30 @@ right: 150px;
     transform: scale(1.3); /* Achicar la imagen al hacer hover */
 }
 
-.rectSpiderRojo, .rectSpiderNegro, .rectSpiderRosa{
+.rectSpiderNegro{
+    height: 840px;
     display: none;
+    width: 1280px;
+    position: absolute;
+    top: -200px;
 
 }
-.rectSpiderRojo, .rectSpiderNegro, .rectSpiderRosa{
+
+.rectSpiderRojo{
+    height: 840px;
+    display: none;
     width: 1280px;
+    position: absolute;
+    top: -200px;
+
+}
+.rectSpiderRosa{
+    height: 840px;
+    display: none;
+    width: 1280px;
+    position: absolute;
+    top: -200px;
+
 }
 
 #inputSuscribirse{
