@@ -627,7 +627,6 @@ right: 150px;
     height: 840px;
     display: none;
     width: 1280px;
-<<<<<<< HEAD
     margin-top: -300px;
 }
 .rectanguloBlanco3{
@@ -639,12 +638,12 @@ margin-top: -215px;
 }
 .tituloComprar{
     color: white;
+    margin-top: 200px;
 
 }
 .comprar{
     z-index: 100;
     position: relative;
-=======
     position: absolute;
     top: -200px;
 
@@ -656,7 +655,6 @@ margin-top: -215px;
     position: absolute;
     top: -200px;
 
->>>>>>> 28087517eeff5c55f69ab27c932b13a99ac2e0cb
 }
 
 #inputSuscribirse{
