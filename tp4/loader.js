@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       if (cargaActual < 100) {
-          document.querySelectorAll(".header, .parallax1, .contenedorVioleta, .recctBlanco, .contenedorGhostSpider, .paralax2, .masAmigos,  .tresSpiders, .ultimo, .footerClass, .contenedorVioleta, .ghostSpider, .buttonComprar, .header ").forEach(function(element) {
+          document.querySelectorAll(".header, .parallax1, .contenedorVioleta, .recctBlanco, .contenedorGhostSpider, .paralax2, .masAmigos,  .tresSpiders, .ultimo, .footerClass, .contenedorVioleta, .ghostSpider, .buttonComprar, .header, .rectanguloBlanco1, .rectanguloBlanco2, .rectanguloBlanco3, .comprar").forEach(function(element) {
               element.style.display = "none";
           });
       } else {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Oculta el spinner y el porcentaje de carga una vez que la carga esté completa
           document.querySelector(".spinner-container").style.display = "none";
           document.querySelector(".header").style.display = "flex";
-          document.querySelectorAll(".parallax1, .contenedorVioleta, .recctBlanco, .contenedorGhostSpider, .paralax2, .masAmigos,  .tresSpiders, .ultimo, .footerClass, .contenedorVioleta, .ghostSpider, .buttonComprar").forEach(function(element) {
+          document.querySelectorAll(".parallax1, .contenedorVioleta, .recctBlanco, .contenedorGhostSpider, .paralax2, .masAmigos,  .tresSpiders, .ultimo, .footerClass, .contenedorVioleta, .ghostSpider, .buttonComprar, .rectanguloBlanco1, .rectanguloBlanco2, .rectanguloBlanco3, .comprar").forEach(function(element) {
             element.style.display = "block";
         });
       }

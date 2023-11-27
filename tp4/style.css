@@ -1,7 +1,10 @@
+@import url(https://fonts.google.com/specimen/Lato?query=Lato);
+
 body {
     margin: 0;
     padding: 0;
     background-color: #000;
+    font-family: 'Lato', sans-serif;
 }
 .rectanguloBlanco1{
     z-index: -200;
@@ -38,15 +41,28 @@ body {
 }
 
 .navigation li{
+    background-color: #FFE901;
     margin: 15px;
-    border:solid #000;
 }
+.navigation ul {
+    list-style-type: none;
+}
+.navigation ul li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.navigation ul li.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 .navigation{
  display: none;
  position: absolute;
  z-index: 2;
- background-color: #FFE901;
  width: 200px;
  height: fit-content;
  color: #02187E;
@@ -56,6 +72,7 @@ body {
  font-weight: 900;
  line-height: 94.5%; 
  letter-spacing: 2.2px;
+ top: 60px;
 }
 
 
@@ -260,7 +277,7 @@ font-weight: 600;
 line-height: 56.7px;
 z-index: 3;
 position: absolute;
-
+bottom: 50px;
 }
 
 #contenedorTexto p{
@@ -546,7 +563,12 @@ p.textInfoSpider{
     margin-bottom: 100px;
 
 }
-
+.txt3 p{
+    margin-top: 25px;
+}
+.txt3{
+    margin-bottom: 16px;
+}
 
 
 
