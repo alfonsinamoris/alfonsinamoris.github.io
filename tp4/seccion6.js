@@ -35,14 +35,14 @@ document.addEventListener("scroll", () => {
 
       imagen.src = img2;
       txt2.style.opacity = 1;
-  } else if(posScroll > 4690 && posScroll < 5140) {
+  } else if(posScroll > 4690 && posScroll < 5260) {
       txt2.style.opacity = 0;
       txt4.style.opacity = 0;
       txt1.style.opacity = 0;
 
       imagen.src = img3;
       txt3.style.opacity = 1;
-  } else if(posScroll > 5140) {
+  } else if(posScroll > 5260) {
       txt3.style.opacity = 0;
       txt1.style.opacity = 0;
       txt2.style.opacity = 0;
@@ -53,10 +53,10 @@ document.addEventListener("scroll", () => {
 
   //Aca verifico que cuando este dentro del rango de la seccion la imagen sea sticky
   //si se pasa, que sea absoluta asi no sigue bajando al resto de la pagina.
-  if(posScroll > 3300 && posScroll < 5400) {
+  if(posScroll > 3300 && posScroll < 5470) {
       imagen.style.position = "sticky";
       imagen.style.top = "150px";
-  } else if(posScroll > 5400) {
+  } else if(posScroll > 5470) {
       imagen.style.position = "absolute";
       imagen.style.top = "1342px";
       imagen.style.opacity = 1;
