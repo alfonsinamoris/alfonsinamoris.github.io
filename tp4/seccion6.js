@@ -1,22 +1,64 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollContainer = document.getElementById("scrollContainer");
-  const sections = document.querySelectorAll(".txtMasAmigos, .contenedorImagenes img");
+document.addEventListener("scroll", () => {
+  let posScroll = window.scrollY;
 
-  window.addEventListener("scroll", function () {
-    const scrollOffset = scrollContainer.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+  let imagen = document.getElementById('masAmigos-img');
 
-    sections.forEach((section) => {
-      const sectionOffset = section.getBoundingClientRect().top;
 
-      // Ajustar el valor de acuerdo al diseño y posición de tus elementos
-      const triggerOffset = windowHeight * 0.3;
+  //Agarro urls de las imagenes
+  let img1 = "images/image 21.png";
+  let img2 = "images/image 9.png";
+  let img3 = "images/image 10.png";
+  let img4 = "images/image 6.png";
 
-      if (sectionOffset < triggerOffset) {
-        section.style.opacity = 1;
-      } else {
-        section.style.opacity = 0;
-      }
-    });
-  });
-});
+  //Agarro textos
+  let txt1 = document.getElementById('masAmigos-txt1');
+  let txt2 = document.getElementById('masAmigos-txt2');
+  let txt3 = document.getElementById('masAmigos-txt3');
+  let txt4 = document.getElementById('masAmigos-txt4');
+
+
+  //Segun la posicion del scroll voy cambiando la url de la imagen, que queda
+  //sticky a la izquierda de la pantalla, y ademas le voy poniendo o sacando
+  //opacidad a los textos que se corresponden con la imagen.
+  if(posScroll > 1800 && posScroll < 4250) {
+      txt2.style.opacity = 0;
+      txt3.style.opacity = 0;
+      txt4.style.opacity = 0;
+
+      imagen.src = img1;
+      imagen.style.opacity = 1;
+      txt1.style.opacity = 1;
+  } else if(posScroll > 4250 && posScroll < 4690) {
+      txt1.style.opacity = 0;
+      txt3.style.opacity = 0;
+      txt4.style.opacity = 0;
+
+      imagen.src = img2;
+      txt2.style.opacity = 1;
+  } else if(posScroll > 4690 && posScroll < 5140) {
+      txt2.style.opacity = 0;
+      txt4.style.opacity = 0;
+      txt1.style.opacity = 0;
+
+      imagen.src = img3;
+      txt3.style.opacity = 1;
+  } else if(posScroll > 5140) {
+      txt3.style.opacity = 0;
+      txt1.style.opacity = 0;
+      txt2.style.opacity = 0;
+
+      imagen.src = img4;
+      txt4.style.opacity = 1;
+  }
+
+  //Aca verifico que cuando este dentro del rango de la seccion la imagen sea sticky
+  //si se pasa, que sea absoluta asi no sigue bajando al resto de la pagina.
+  if(posScroll > 3300 && posScroll < 5400) {
+      imagen.style.position = "sticky";
+      imagen.style.top = "150px";
+  } else if(posScroll > 5400) {
+      imagen.style.position = "absolute";
+      imagen.style.top = "1342px";
+      imagen.style.opacity = 1;
+  }
+})
