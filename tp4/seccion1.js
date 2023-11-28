@@ -17,10 +17,8 @@ let intialBottomPosition8 = parseFloat(getComputedStyle(capa8).bottom);
 
 window.addEventListener('scroll',()=>{
     let value = window.scrollY;
-    capa7.style.bottom = intialBottomPosition7 + value * 0.5 + 'px';
-      capa7.style.right = intialRightPosition7 + value * -0.5 + 'px';
+      capa7.style.bottom = intialBottomPosition7 + value * 0.5 + 'px';
       capa9.style.bottom = intialBottomPosition9 + value * 0.5 + 'px';
-      capa9.style.right = intialRightPosition9 + value * -0.5 + 'px';
       capa5.style.left = intialLeftPosition5 + value * -0.4 +'px';
       logoPag1.style.top = value *-0.5 +'px';
       capa6.style.bottom =intialBottomPosition6 + value * 0.5+'px';

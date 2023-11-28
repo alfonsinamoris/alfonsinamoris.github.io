@@ -6,7 +6,7 @@ body {
     padding: 0;
     background-color: #000;
     font-family: 'Lato', sans-serif;
-    width:100%;
+    width:1280px;
 }
 .rectanguloBlanco1{
     z-index: -200;
@@ -16,7 +16,7 @@ body {
 
 .header {
     height: 100px;
-    width: 100%;
+    width: 1280px;
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ body {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 100%;
+    width: 1280px;
     z-index: 20;
 }
 
@@ -48,16 +48,25 @@ body {
 }
 .navigation ul {
     list-style-type: none;
+    margin-left: -40px;
 }
 .navigation ul li {
     opacity: 0;
     transform: translateX(-20px);
     transition: opacity 0.5s, transform 0.5s;
+    
 }
 
 .navigation ul li.visible {
     opacity: 1;
     transform: translateX(0);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 20px;
+    height: 35px;
+    width: 140px;
+    
 }
 
 
@@ -75,17 +84,42 @@ body {
  line-height: 94.5%; 
  letter-spacing: 2.2px;
  top: 60px;
+ z-index: 500;
+ position: fixed;
+
+
+ 
 }
 
 
-#hamburguesa{
-    position: absolute;
-    z-index: 3;
-    height: 26px;
-    width: 34px;
+
+/* Estilo para el estado abierto */
+.hamburguesa.abierto .linea:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: #242424;
+    border-color: #FFE901;
 }
 
+.hamburguesa.abierto .linea:nth-child(2) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background-color: #242424;
+    border-color: #FFE901;
 
+
+}
+
+.hamburguesa.abierto .linea:nth-child(3) {
+    display: none; /* Oculta la tercera línea en el estado "X" */
+}
+
+.hamburguesa{
+    margin-left: 100px;
+
+}
+#masAmigos-txt4{
+margin-top: -300px;
+
+}
 
 .linea {
     width: 38px;
@@ -258,7 +292,7 @@ body {
 }
 /*telarana izquierda*/
 #capa9{
-    right: -140px;
+    right: -5px;
     bottom: 80px;
     z-index: 4;
 }
@@ -416,7 +450,7 @@ p.textInfoSpider{
     height: 700px;
     left: 40px;
     margin-bottom: 10px; 
-    margin-top: -150px;
+    margin-top: -50px;
 }
 
 .ghostSpider{
@@ -529,7 +563,7 @@ p.textInfoSpider{
 
 .container-masAmigos h1 {
     position: absolute;
-    top: 255.5px;
+    top: 600.5px;
     left: 4px;
     width: 802px;
     height: auto;
@@ -542,7 +576,7 @@ p.textInfoSpider{
     width: 556px;
     height: 100%;
     left: 0;
-    top: 380.5px;
+    top: 750.5px;
 }
 
 .masAmigos-col-img img {
@@ -563,7 +597,7 @@ p.textInfoSpider{
     width: 467px;
     height: 100%;
     right: 0;
-    top: 380.5px;
+    top: 720.5px;
     display: flex;
     flex-direction: column;
     gap: 150px;
